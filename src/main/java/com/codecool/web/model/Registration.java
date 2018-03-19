@@ -9,9 +9,12 @@ public final class Registration {
     private String confirmPassword;
     private String role;
 
-    public Registration(String name, String email, String message) {
+    public Registration(String name, String email, String password, String confirmPassword, String role, String message) {
         this.name = name;
         this.email = email;
+        this.role = role;
+        this.password = password;
+        this.confirmPassword = confirmPassword;
         this.message = message;
     }
 

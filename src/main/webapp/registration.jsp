@@ -13,8 +13,8 @@
 <p style="font-size: 0.8em">
     <b>Name:</b> ${registration.name}<br>
     <b>E-mail:</b> ${registration.email}<br>
-    <b>Password:</b> ...<br>
-    <b>Role:</b> ...<br>
+    <b>Password:</b> ${registration.password}<br>
+    <b>Role:</b> ${registration.role}<br>
 </p>
 <p>Redirecting to <b>index.html</b> in 5 seconds</p>
 </body>
