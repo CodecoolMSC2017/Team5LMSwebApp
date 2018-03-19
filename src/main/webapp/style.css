@@ -6,12 +6,6 @@ body {
 	font-size: 12px;
 	color: #000;
 }
-h1 {
-    margin-top: 0px;
-    margin-bottom: 30px;
-    font-size: 1.5em;
-    text-align: left;
-}
 .login_box, .registration_box {
     margin: 0px auto;
     margin-top: 100px;
@@ -20,10 +14,17 @@ h1 {
     height: auto;
     border: 1px solid #000;
     background-color: #FFF;
-    font-size: 1.em;
+    font-size: 1.0em;
     text-align: center;
     line-height: 1.3em;
     box-shadow: 0px 0px 25px 1px #666;
+}
+.login_box h1, .registration_box h1 {
+    margin: 0px -20px 25px -20px;
+    padding: 0px 0px 15px 15px;
+    border-bottom: 1px dotted #000;
+    font-size: 1.5em;
+    text-align: left;
 }
 .login_box a {
     text-decoration: none;
@@ -38,8 +39,11 @@ h1 {
     color: red;
 }
 .input_field {
+    font-size: 1.0em;
 }
 .send_button {
+    font-size: 1.0em;
 }
 .drop_down_button {
+    font-size: 1.0em;
 }
