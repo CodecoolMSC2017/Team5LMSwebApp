@@ -2,12 +2,12 @@ package com.codecool.web.model;
 
 public final class Registration {
 
-    private String message;
     private String name;
     private String email;
     private String password;
     private String confirmPassword;
     private String role;
+    private String message;
 
     public Registration(String name, String email, String password, String confirmPassword, String role, String message) {
         this.name = name;
