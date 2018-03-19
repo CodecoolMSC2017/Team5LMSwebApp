@@ -9,20 +9,18 @@
 
     <div class="registration_box">
         <form action="loginServlet" method="post">
-            <br>
-            Name:<br>
-            <input type="text" name="name" value=""><br>
-            <br>
-            Email:<br>
-            <input type="email" name="email" value=""><br>
-            <br>
-            Password:<br>
-            <input type="text" name="password" value=""><br>
-            <br>
-            <select>
+            <h1>Registration</h1>
+            <p>Name:<br><input type="text" name="name" value="" class="input_field"></p>
+            <p>E-mail:<br><input type="email" name="email" value="" class="input_field"></p>
+            <p>Password:<br><input type="password" name="password" value="" class="input_field"><br>
+            Confirm password:<br><input type="password" name="password_confirm" value="" class="input_field"><br></p>
+            <p>Role:
+            <select class="drop_down_button">
                 <option value="student">Student</option>
                 <option value="mentor">Mentor</option>
-            </select>
+            </select></p>
+            <input type="submit" value="Submit" class="send_button">
+            <input type="button" value="Cancel" class="send_button" onclick="history.back()">
         </form>
     </div>
 
