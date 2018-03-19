@@ -10,12 +10,12 @@
     <div class="registration_box">
         <form action="registrationServlet" method="post">
             <h1>Registration</h1>
-            <p>Name:<br><input type="text" name="name" value="" class="input_field"></p>
-            <p>E-mail:<br><input type="email" name="email" value="" class="input_field"></p>
-            <p>Password:<br><input type="password" name="password" value="" class="input_field"><br>
-            Confirm password:<br><input type="password" name="password_confirm" value="" class="input_field"><br></p>
+            <p>Name:<br><input type="text" name="name" value="" class="input_field" required></p>
+            <p>E-mail:<br><input type="email" name="email" value="" class="input_field" required></p>
+            <p>Password:<br><input type="password" name="password" value="" class="input_field" required><br>
+            Confirm password:<br><input type="password" name="password_confirm" value="" class="input_field" required><br></p>
             <p>Role:
-            <select name="role" class="drop_down_button">
+            <select name="role" class="drop_down_button" required>
                 <option value="student">Student</option>
                 <option value="mentor">Mentor</option>
             </select></p>
