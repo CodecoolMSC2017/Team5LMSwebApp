@@ -14,6 +14,7 @@
     <b>Name:</b> ${registration.name}<br>
     <b>E-mail:</b> ${registration.email}<br>
     <b>Password:</b> ${registration.password}<br>
+    <b>confPassword:</b> ${registration.confirmPassword}<br>
     <b>Role:</b> ${registration.role}
 </p>
 <p>Redirecting to <b>index.html</b> in 5 seconds</p>

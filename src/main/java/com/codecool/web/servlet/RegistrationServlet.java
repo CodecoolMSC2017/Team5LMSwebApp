@@ -18,7 +18,7 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("registration",
-            service.registration(req.getParameter("name"), req.getParameter("email"), req.getParameter("password"), req.getParameter("confirmPassword"), req.getParameter("role")));
+            service.registration(req.getParameter("name"), req.getParameter("email"), req.getParameter("password"), req.getParameter("password_confirm"), req.getParameter("role")));
         req.getRequestDispatcher("/registration_result.jsp").include(req, resp);
     }
 }
