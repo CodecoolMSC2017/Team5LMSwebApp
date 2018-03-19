@@ -1,28 +1,29 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	background-color: #FFF;
+	background-color: lightblue;
 	background-image: url(#);
 	font-size: 12px;
 	color: #000;
 }
-
+h1 {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    text-align: left;
+}
 .login_box, .registration_box {
-    position: absolute;
-    left: 0; right: 0;
-    top: 0; bottom: 0;
-    margin: auto;
-    /* this to solve "the content will not be cut when the window is smaller than the content": */
-    max-width: 100%;
-    max-height: 100%;
-    overflow: auto;
-
+    margin: 0px auto;
+    margin-top: 100px;
+    padding: 20px;
     width: 300px;
-    height: 200px;
+    height: auto;
     border: 1px solid #000;
+    background-color: #FFF;
+    font-size: 1.em;
     text-align: center;
     line-height: 1.3em;
-    box-shadow: 0px 0px 30px 1px #333;
+    box-shadow: 0px 0px 25px 1px #666;
 }
 .login_box a {
     text-decoration: none;
@@ -36,7 +37,9 @@ body {
 .login_box a:hover {
     color: red;
 }
-
-.registration_box {
-    height: 250px;
+.input_field {
+}
+.send_button {
+}
+.drop_down_button {
 }
