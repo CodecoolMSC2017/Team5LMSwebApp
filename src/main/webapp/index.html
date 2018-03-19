@@ -1,12 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+
+    <div class="login_box">
+        <form action="loginServlet" method="post">
+            <br>
+            Name:<br>
+            <input type="text" name="name" value=""><br>
+            <br>
+            Password / Email:<br>
+            <input type="text" name="email" value=""><br>
+            <br>
+            <input type="submit" value="Login">
+        </form>
+        <br>
+        <a href="registration.htm" target="_self">Register</a>
+    </div>
+
+
 </body>
-<h1>Hi!</h1>
-<a href="greeting">Click on this link.</a>
 </html>
