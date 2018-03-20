@@ -9,12 +9,15 @@ public class SingletonDataBase implements Storing {
 
     private List<Registration> registrations = new ArrayList<>();
 
+    private List<Assignment> assignmentList = new ArrayList<>();
+
     public static SingletonDataBase getInstance() {
         return Instance;
     }
 
     private SingletonDataBase() {
     }
+
 
 
     @Override
@@ -89,4 +92,10 @@ public class SingletonDataBase implements Storing {
         }
         return false;
     }
+
+    public List<Assignment> getAssignmentList() {
+        return assignmentList;
+    }
+
+    public Assignment firstAssignment = new Assignment(1,"Learn Python", "Check Sololearn");
 }
