@@ -43,7 +43,8 @@ public class SingletonDataBase implements Storing{
     }
 
     @Override
-    public void addRegistration(Registration registration) {
+    public boolean addRegistration(Registration registration) {
         registrations.add(registration);
+        return true;
     }
 }

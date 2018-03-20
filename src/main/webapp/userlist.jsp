@@ -1,5 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
 <!DOCTYPE html>
@@ -12,30 +11,20 @@
 </head>
 <body>
 
-
-
-<c:out value="Hello"/>
-
-<c:forEach items="${userlist}" var="element">
-  <tr>
-    <td>${element.getMessage}</td>
-    <td>${element.getPoster}</td>
-
-  </tr>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="1">
+<TR>
+   <TH>Hash</TH>
+   <TH>Name</TH>
+   <TH>Count</TH>
+</TR>
+<c:forEach var="rr" items="${userlist}">
+<TR>
+   <TD>${rr.name}</TD>
+   <TD>${rr.email}</TD>
+   <TD>${rr.password}</TD>
+</TR>
 </c:forEach>
+</TABLE>
 
-<c:forEach items="${userlist}" var="element">
-    <p>${element.getPoster}: ${element.getMessage}</p>
-</c:forEach>
-
-
-<c:forEach items="${userlist}" var="element">
-    <tr>
-        <td>poster: <c:out value="${element.getPoster}"/></td>
-        <td>Message: <c:out value="${element.getMessage}"/></td>
-    </tr>
-</c:forEach>
-
-<a href="index.html">Go back</a>
 </body>
 </html>

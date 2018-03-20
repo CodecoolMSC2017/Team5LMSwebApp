@@ -22,9 +22,10 @@ public class RegistrationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Registration newUser = service.getRegistration(req.getParameter("name"), req.getParameter("email"), req.getParameter("password"), req.getParameter("password_confirm"), req.getParameter("role"));
         req.setAttribute("registration", newUser);
-        SingletonDataBase.getInstance().addRegistration(newUser);
 
-        if ( newUser.getMessage() == "Password does not match the confirm password." ) req.getRequestDispatcher("/registration_false.jsp").include(req, resp);
-        else req.getRequestDispatcher("/registration_success.jsp").include(req, resp);
+        if ( newUser.getMessage().equals("Your registration was successful.") && SingletonDataBase.getInstance().addRegistration(newUser) == true ) {
+            req.getRequestDispatcher("/registration_success.jsp").include(req, resp);
+        }
+        else req.getRequestDispatcher("/registration_false.jsp").include(req, resp);
     }
 }
