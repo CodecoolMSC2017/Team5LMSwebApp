@@ -33,10 +33,13 @@ public class SingletonDataBase implements Storing {
 
     @Override
     public void updateReg(Registration registration) {
-        if (registration.getRole().equalsIgnoreCase("mentor")) {
+        String newName = new String();
+        String newPass = new String();
+        String newRole = new String();
+        registration.setName(newName);
+        registration.setPassword(newPass);
+        registration.setRole(newRole);
 
-
-        }
     }
 
     @Override

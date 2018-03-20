@@ -16,12 +16,12 @@ public class UserProfileServlet {
     @WebServlet("/userProfileServlet")
     public class RegistrationServlet extends HttpServlet {
 
-        private Registration regUserProfile;
+        private Registration regUser;
 
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            SingletonDataBase.getInstance().updateReg(regUserProfile);
-            req.setAttribute("userProfile", regUserProfile);
+            SingletonDataBase.getInstance().updateReg(regUser);
+            req.setAttribute("userProfile", regUser);
             req.getRequestDispatcher("/userProfile.jsp").include(req, resp);
         }
     }
