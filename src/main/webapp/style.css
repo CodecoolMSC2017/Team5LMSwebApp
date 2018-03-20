@@ -19,23 +19,19 @@ body {
     line-height: 1.3em;
     box-shadow: 0px 0px 25px 1px #666;
 }
-.registration_box_error {
-    background-color: #FFB2B2;
-}
-.registration_box_ok {
-    background-color: #88E188;
-}
 .login_box h1, .registration_box h1, .registration_box_error h1, .registration_box_ok h1 {
-    margin: 0px -20px 25px -20px;
-    padding: 0px 0px 15px 15px;
+    margin: -20px -20px 25px -20px;
+    padding: 20px 0px 15px 15px;
     border-bottom: 1px dotted #000;
     font-size: 1.5em;
     text-align: left;
 }
 .registration_box_error h1 {
+    background-color: #FFB2B2;
     color: red;
 }
 .registration_box_ok h1 {
+    background-color: #88E188;
     color: green;
 }
 .login_box a {

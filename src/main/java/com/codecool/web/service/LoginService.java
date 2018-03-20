@@ -16,21 +16,24 @@ public final class LoginService {
 //        List<String> names = SingletonDataBase.getInstance().getNames();
 //        List<String> emails = SingletonDataBase.getInstance().getEmails();
 
-        for (Registration registeredUser : registrations) {
-            if ( registeredUser.getName().equals(nameOrEmail) && registeredUser.getPassword().equals(password) ) {
-                name = nameOrEmail;
-                email = registeredUser.getEmail();
-                message = "Logged in.";
-                break;
-            }
-            else if ( registeredUser.getEmail().equals(nameOrEmail) && registeredUser.getPassword().equals(password) ) {
-                name = registeredUser.getName();
-                email = nameOrEmail;
-                message = "Logged in.";
-                break;
-            }
-            else {
-                message = "Wrong name or password!";
+        if ( registrations.size() == 0 ) message = "No one registered yet!";
+        else {
+            for (Registration registeredUser : registrations) {
+                if ( registeredUser.getName().equals(nameOrEmail) && registeredUser.getPassword().equals(password) ) {
+                    name = nameOrEmail;
+                    email = registeredUser.getEmail();
+                    message = "Logged in.";
+                    break;
+                }
+                else if ( registeredUser.getEmail().equals(nameOrEmail) && registeredUser.getPassword().equals(password) ) {
+                    name = registeredUser.getName();
+                    email = nameOrEmail;
+                    message = "Logged in.";
+                    break;
+                }
+                else {
+                    message = "Wrong name or password!";
+                }
             }
         }
 
