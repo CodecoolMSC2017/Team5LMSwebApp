@@ -1,6 +1,7 @@
 package com.codecool.web.servlet;
 
 import com.codecool.web.model.Registration;
+import com.codecool.web.model.SingletonDataBase;
 import com.codecool.web.service.RegistrationService;
 
 import javax.servlet.ServletException;
@@ -19,13 +20,10 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("registration", service.registration(req.getParameter("name"), req.getParameter("email"), req.getParameter("password"), req.getParameter("password_confirm"), req.getParameter("role")));
-//        if (req.getParameter("message").equals("Password does not match the confirm password.") ) {
-//        if (req.getAttribute("registration", req.getParameter("message")) ) {
-//            String url = "registration.html";
-//            File htmlFile = new File(url);
-//            Desktop.getDesktop().browse(htmlFile.toURI());
-//        };
+        Registration newUser = service.getRegistration(req.getParameter("name"), req.getParameter("email"), req.getParameter("password"), req.getParameter("password_confirm"), req.getParameter("role"));
+        req.setAttribute("registration", newUser);
+        SingletonDataBase.getInstance().addRegistration(newUser);
+
         req.getRequestDispatcher("/registration_result.jsp").include(req, resp);
     }
 }
