@@ -1,8 +1,10 @@
 package com.codecool.web.servlet;
 
 
+import com.codecool.web.model.Registration;
 import com.codecool.web.model.SingletonDataBase;
-import com.codecool.web.service.GreetingService;
+import com.codecool.web.service.RegistrationService;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +17,7 @@ import java.io.IOException;
 @WebServlet("/userlist")
 public class UserListServlet extends HttpServlet {
 
-    private final GreetingService service = new GreetingService();
+    private final RegistrationService service = new RegistrationService();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
