@@ -1,6 +1,7 @@
 package com.codecool.web.servlet;
 
-import com.codecool.web.model.Greeting;
+
+import com.codecool.web.model.SingletonDataBase;
 import com.codecool.web.service.GreetingService;
 
 import javax.servlet.ServletException;
@@ -11,15 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-    @WebServlet("/userlist")
-    public class UserListServlet extends HttpServlet {
+@WebServlet("/userlist")
+public class UserListServlet extends HttpServlet {
 
-        private final GreetingService service = new GreetingService();
+    private final GreetingService service = new GreetingService();
 
-        @Override
-        protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            req.setAttribute("userlist", userlist.getUser());
-            req.getRequestDispatcher("/userlist.jsp").forward(req, resp);
-        }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("userlist", SingletonDataBase.getInstance().getAllRegistration());
+        req.getRequestDispatcher("/userlist.jsp").forward(req, resp);
     }
 }
