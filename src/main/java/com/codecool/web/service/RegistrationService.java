@@ -4,7 +4,7 @@ import com.codecool.web.model.Registration;
 
 public final class RegistrationService {
 
-    public Registration registration(String name, String email, String password, String confirmPassword, String role) {
+    public Registration getRegistration(String name, String email, String password, String confirmPassword, String role) {
         String message;
 
         if (!(confirmPassword.equals(password))) {
