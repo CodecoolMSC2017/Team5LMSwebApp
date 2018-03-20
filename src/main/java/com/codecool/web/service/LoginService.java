@@ -1,12 +1,39 @@
 package com.codecool.web.service;
 
 import com.codecool.web.model.Login;
+import com.codecool.web.model.Registration;
+import com.codecool.web.model.SingletonDataBase;
+import java.util.List;
 
 public final class LoginService {
 
-    public Login getLogin(String name, String email, String password) {
-        String message;
-        message = "Login successful :)";
+    public Login getLogin(String nameOrEmail, String password) {
+
+        String message = null;
+        String name = null;
+        String email = null;
+        List<Registration> registrations = SingletonDataBase.getInstance().getAllRegistration();
+//        List<String> names = SingletonDataBase.getInstance().getNames();
+//        List<String> emails = SingletonDataBase.getInstance().getEmails();
+
+        for (Registration registeredUser : registrations) {
+            if ( registeredUser.getName().equals(nameOrEmail) && registeredUser.getPassword().equals(password) ) {
+                name = nameOrEmail;
+                email = registeredUser.getEmail();
+                message = "Logged in.";
+                break;
+            }
+            else if ( registeredUser.getEmail().equals(nameOrEmail) && registeredUser.getPassword().equals(password) ) {
+                name = registeredUser.getName();
+                email = nameOrEmail;
+                message = "Logged in.";
+                break;
+            }
+            else {
+                message = "Wrong name or password!";
+            }
+        }
+
         return new Login(name, email, password, message);
     }
 }

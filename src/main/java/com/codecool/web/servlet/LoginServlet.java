@@ -1,7 +1,6 @@
 package com.codecool.web.servlet;
 
 import com.codecool.web.model.Login;
-import com.codecool.web.model.Registration;
 import com.codecool.web.model.SingletonDataBase;
 import com.codecool.web.service.LoginService;
 import javax.servlet.ServletException;
@@ -20,20 +19,13 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        Login user = service.getLogin( req.getParameter("name"), req.getParameter("email"), req.getParameter("password") );
+        Login user = service.getLogin(req.getParameter("name_or_email"), req.getParameter("password"));
         req.setAttribute("login", user);
 
-        List<Registration> registrations = SingletonDataBase.getInstance().getAllRegistration();
-        List<String> names = SingletonDataBase.getInstance().getNames();
-        List<String> emails = SingletonDataBase.getInstance().getEmails();
-
-        for (Registration reg:registrations) {
-            if (names.contains( reg.getName().equals("name")) ) {
-                req.getRequestDispatcher("/main.jsp").include(req, resp);
-            }
-            else req.getRequestDispatcher("/lofin_failed.jsp").include(req, resp);
+        if ( user.getMessage().equals("Logged in.") ) {
+            req.getRequestDispatcher("/main.jsp").include(req, resp);
         }
+        else req.getRequestDispatcher("/redirect_to_login.jsp").include(req, resp);
 
     }
 }

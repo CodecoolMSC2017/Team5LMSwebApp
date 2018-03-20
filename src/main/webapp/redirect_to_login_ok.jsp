@@ -32,7 +32,6 @@
             <b>Name:</b> ${registration.name}<br>
             <b>E-mail:</b> ${registration.email}<br>
             <b>Password:</b> ${registration.password}<br>
-            <b>confPassword:</b> ${registration.confirmPassword}<br>
             <b>Role:</b> ${registration.role}
         </p>
         <p><small>Redirecting to <b>Login</b> page...<br><progress value="0" max="100" id="progressBar"></progress></small></p>

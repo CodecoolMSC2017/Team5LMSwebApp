@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,9 +24,8 @@
         }
     </style>
 
-
     <div class="registration_box">
-        <h1>${login.message}</h1>
+        <h1>Hello ${login.name}!</h1>
         OK, you logged in
     </div>
 

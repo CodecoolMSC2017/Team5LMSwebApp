@@ -26,7 +26,7 @@
 
 
     <div class="registration_box_error">
-        <h1>Registration unsuccessful!</h1>
+        <h1>Login failed!</h1>
         <p><b>${login.message}</b><br></p>
         <p><small>Rdirecting to <b>Login</b> page...<br><progress value="0" max="100" id="progressBar"></progress></small></p>
     </div>
