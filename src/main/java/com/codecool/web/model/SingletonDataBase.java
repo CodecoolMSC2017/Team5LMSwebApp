@@ -33,10 +33,13 @@ public class SingletonDataBase implements Storing {
 
     @Override
     public void updateReg(Registration registration) {
-        if (registration.getRole().equalsIgnoreCase("mentor")) {
+        String newName = new String();
+        String newPass = new String();
+        String newRole = new String();
+        registration.setName(newName);
+        registration.setPassword(newPass);
+        registration.setRole(newRole);
 
-
-        }
     }
 
     @Override
@@ -72,11 +75,18 @@ public class SingletonDataBase implements Storing {
         return emails;
     }
 
-    public List<String> getPasswords(){
+    public List<String> getPasswords() {
         List<String> passes = new ArrayList<>();
-        for(Registration registration:registrations){
+        for (Registration registration : registrations) {
             passes.add(registration.getName());
         }
         return passes;
+    }
+
+    public boolean isMentor(Registration registration) {
+        if(registration.getRole().equals("mentor")) {
+            return true;
+        }
+        return false;
     }
 }
