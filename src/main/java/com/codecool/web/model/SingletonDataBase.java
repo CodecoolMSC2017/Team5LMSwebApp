@@ -71,4 +71,12 @@ public class SingletonDataBase implements Storing {
         }
         return emails;
     }
+
+    public List<String> getPasswords(){
+        List<String> passes = new ArrayList<>();
+        for(Registration registration:registrations){
+            passes.add(registration.getName());
+        }
+        return passes;
+    }
 }
