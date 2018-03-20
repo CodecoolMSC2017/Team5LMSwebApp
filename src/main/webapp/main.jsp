@@ -5,7 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Test Page</title>
+    <c:if test="${login.name == null}">
+        <meta http-equiv="refresh" content="0; url=index.html" />
+    </c:if>
+    <title>Main page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
