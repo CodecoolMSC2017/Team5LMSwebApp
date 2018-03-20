@@ -11,20 +11,13 @@
 </head>
 <body>
 
-<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="1">
-<TR>
-   <TH>Hash</TH>
-   <TH>Name</TH>
-   <TH>Count</TH>
-</TR>
-<c:forEach var="rr" items="${userlist}">
-<TR>
-   <TD>${rr.name}</TD>
-   <TD>${rr.email}</TD>
-   <TD>${rr.password}</TD>
-</TR>
+<c:forEach items="${userlist}" var="element">
+   <form action="page" method="post">
+       <input type="hidden" name="title" value=${element.getName()}>
+       <input type="hidden" name="content" value=${element.getMessage()}>
+       <input type="submit" value=${element.getEmail()}>
+   </form>
 </c:forEach>
-</TABLE>
 
 </body>
 </html>
