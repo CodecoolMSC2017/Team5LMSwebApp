@@ -24,7 +24,11 @@ public class SingletonDataBase implements Storing{
     }
 
     @Override
-    public Registration getRegistration() {
+    public Registration getRegistration(String name) {
+        for (Registration registration:registrations){
+            if(registration.getName().equals(name));
+                return registration;
+        }
         return null;
     }
 
@@ -36,5 +40,10 @@ public class SingletonDataBase implements Storing{
     @Override
     public void deleteReg(Registration registration) {
 
+    }
+
+    @Override
+    public void addRegistration(Registration registration) {
+        registrations.add(registration);
     }
 }
