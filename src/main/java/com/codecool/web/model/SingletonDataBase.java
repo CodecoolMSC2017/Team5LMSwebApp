@@ -46,6 +46,7 @@ public class SingletonDataBase implements Storing{
     public boolean addRegistration(Registration registration) {
 
         if(getNames().contains(registration.getName()) || getEmails().contains(registration.getEmail())){
+            registration.setMessage("The name/password already exist, create a new one");
             return false;
         }else{
             registrations.add(registration);
