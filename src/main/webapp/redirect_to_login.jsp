@@ -25,16 +25,10 @@
     </style>
 
 
-    <div class="registration_box">
-        <h1>${registration.message}</h1>
-        <p style="text-align: left">
-            <b>Name:</b> ${registration.name}<br>
-            <b>E-mail:</b> ${registration.email}<br>
-            <b>Password:</b> ${registration.password}<br>
-            <b>confPassword:</b> ${registration.confirmPassword}<br>
-            <b>Role:</b> ${registration.role}
-        </p>
-        <p>Redirecting to <b>Login</b> page...<br><progress value="0" max="100" id="progressBar"></progress></p>
+    <div class="registration_box_error">
+        <h1>Registration unsuccessful!</h1>
+        <p><b>${login.message}</b><br></p>
+        <p><small>Rdirecting to <b>Login</b> page...<br><progress value="0" max="100" id="progressBar"></progress></small></p>
     </div>
 
 </body>

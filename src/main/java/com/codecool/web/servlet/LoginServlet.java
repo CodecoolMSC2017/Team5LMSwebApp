@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+
 @WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
 
@@ -25,6 +26,7 @@ public class LoginServlet extends HttpServlet {
 
         List<Registration> registrations = SingletonDataBase.getInstance().getAllRegistration();
         List<String> names = SingletonDataBase.getInstance().getNames();
+        List<String> emails = SingletonDataBase.getInstance().getEmails();
 
         for (Registration reg:registrations) {
             if (names.contains( reg.getName().equals("name")) ) {
@@ -32,6 +34,6 @@ public class LoginServlet extends HttpServlet {
             }
             else req.getRequestDispatcher("/lofin_failed.jsp").include(req, resp);
         }
-        
+
     }
 }

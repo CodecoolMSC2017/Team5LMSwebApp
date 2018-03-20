@@ -25,9 +25,10 @@
     </style>
 
 
-    <div class="registration_box">
-        <h1>${registration.message}</h1>
-        <p>Redirecting to <b>Registration</b> page...<br><progress value="0" max="100" id="progressBar"></progress></p>
+    <div class="registration_box_error">
+        <h1>Registration unsuccessful!</h1>
+        <p><b>${registration.message}</b><br><br></p>
+        <p><small>Redirecting to <b>Registration</b> page...<br><progress value="0" max="100" id="progressBar"></progress></small></p>
     </div>
 
 </body>

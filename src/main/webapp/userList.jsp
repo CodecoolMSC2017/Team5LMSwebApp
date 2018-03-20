@@ -11,11 +11,20 @@
 </head>
 <body>
 
-
+<table width="60%" border="1" colspan="0" rowspan="0" align="center">
+    <tr align="center">
+        <td><b>Name</b</td>
+        <td><b>E-Mail</b</td>
+        <td><b>Role</b></td>
+    </tr>
 <c:forEach items="${userlist}" var="element">
-    <p>${element.getName()}: ${element.getMessage()}</p>
+    <tr>
+        <td>${element.getName()}</td>
+        <td>${element.getEmail()}</td>
+        <td>${element.getRole()}</td>
+    </tr>
 </c:forEach>
-
+</table>
 
 </body>
 </html>
