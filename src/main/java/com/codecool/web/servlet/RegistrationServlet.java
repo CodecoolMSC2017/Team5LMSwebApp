@@ -24,6 +24,7 @@ public class RegistrationServlet extends HttpServlet {
         req.setAttribute("registration", newUser);
         SingletonDataBase.getInstance().addRegistration(newUser);
 
-        req.getRequestDispatcher("/registration_result.jsp").include(req, resp);
+        if ( newUser.getMessage() == "Password does not match the confirm password." ) req.getRequestDispatcher("/registration_false.jsp").include(req, resp);
+        else req.getRequestDispatcher("/registration_success.jsp").include(req, resp);
     }
 }

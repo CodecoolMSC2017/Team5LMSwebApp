@@ -34,7 +34,7 @@
             <b>confPassword:</b> ${registration.confirmPassword}<br>
             <b>Role:</b> ${registration.role}
         </p>
-        <p>Redirecting to <b>index.html</b>...<br><progress value="0" max="100" id="progressBar"></progress></p>
+        <p>Redirecting to <b>Login</b> page...<br><progress value="0" max="100" id="progressBar"></progress></p>
     </div>
 
 </body>
