@@ -71,4 +71,11 @@ public class SingletonDataBase implements Storing {
         }
         return emails;
     }
+
+    public boolean isMentor(Registration registration) {
+        if(registration.getRole().equals("mentor")) {
+            return true;
+        }
+        return false;
+    }
 }
