@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="5; url=index.html" />
+    <meta http-equiv="refresh" content="2; url=index.html" />
     <title>Registration Test Page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -16,7 +16,7 @@
           document.getElementById("progressBar").value = 100 - --timeleft;
           if(timeleft <= 0)
             clearInterval(downloadTimer);
-        },50);
+        },20);
     </script>
     <style>
         #progressBar {
