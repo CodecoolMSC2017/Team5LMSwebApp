@@ -44,7 +44,28 @@ public class SingletonDataBase implements Storing{
 
     @Override
     public boolean addRegistration(Registration registration) {
-        registrations.add(registration);
-        return true;
+
+        if(getNames().contains(registration.getName()) || getEmails().contains(registration.getEmail())){
+            return false;
+        }else{
+            registrations.add(registration);
+            return true;
+        }
+    }
+
+    public List<String> getNames(){
+        List<String> names = new ArrayList<>();
+        for(Registration registration:registrations){
+            names.add(registration.getName());
+        }
+        return names;
+    }
+
+    public List<String> getEmails(){
+        List<String> emails = new ArrayList<>();
+        for(Registration registration:registrations){
+            emails.add(registration.getName());
+        }
+        return emails;
     }
 }
