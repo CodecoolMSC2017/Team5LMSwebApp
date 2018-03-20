@@ -11,13 +11,11 @@
 </head>
 <body>
 
+
 <c:forEach items="${userlist}" var="element">
-   <form action="page" method="post">
-       <input type="hidden" name="title" value=${element.getName()}>
-       <input type="hidden" name="content" value=${element.getMessage()}>
-       <input type="submit" value=${element.getEmail()}>
-   </form>
+    <p>${element.getName()}: ${element.getMessage()}</p>
 </c:forEach>
+
 
 </body>
 </html>
