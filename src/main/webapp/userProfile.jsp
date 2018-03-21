@@ -21,7 +21,7 @@
     </header>
     <div class="content_frame">
 
-<!-- ---------- CONTENT START FROM HERE ---------- -->
+<!-- ---------- CONTENT START HERE ---------- -->
 
         <table>
             <tr>
@@ -43,7 +43,7 @@
         </table>
 
 
-<!-- ---------- CONTENT END FROM HERE ---------- -->
+<!-- ---------- CONTENT END HERE ---------- -->
 
     </div>
 

@@ -21,7 +21,7 @@
     </header>
     <div class="content_frame">
 
-<!-- ---------- CONTENT START FROM HERE ---------- -->
+<!-- ---------- CONTENT START HERE ---------- -->
 
         <h1>Hi, it's good to see you!</h1>
 
@@ -49,7 +49,7 @@
         Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
 
 
-<!-- ---------- CONTENT END FROM HERE ---------- -->
+<!-- ---------- CONTENT END HERE ---------- -->
 
     </div>
 

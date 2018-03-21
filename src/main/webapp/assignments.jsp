@@ -21,7 +21,7 @@
     </header>
     <div class="content_frame">
 
-<!-- ---------- CONTENT START FROM HERE ---------- -->
+<!-- ---------- CONTENT START HERE ---------- -->
 
     <form action="curicullum" method="post">
         <input type="submit" value="Show aasignments" class="send_button">
@@ -39,7 +39,7 @@
         </form>
     </c:forEach>
 
-<!-- ---------- CONTENT END FROM HERE ---------- -->
+<!-- ---------- CONTENT END HERE ---------- -->
 
     </div>
 
