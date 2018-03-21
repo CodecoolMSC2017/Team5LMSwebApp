@@ -10,7 +10,6 @@ public class SingletonDataBase implements Storing {
     private List<Registration> registrations = new ArrayList<>();
     private List<Assignment> assignmentList = new ArrayList<>();
     private Login login;
-
     public static SingletonDataBase getInstance() {
         return Instance;
     }
@@ -116,5 +115,37 @@ public class SingletonDataBase implements Storing {
         return assignmentList;
     }
 
-    public Assignment firstAssignment = new Assignment(1,"Learn Python", "Check Sololearn");
+
+    public void setAssignmentList(List<Assignment> assignmentList) {
+        this.assignmentList = assignmentList;
+    }
+
+    public void addAssingmentList(Assignment newAssgnment) {
+        assignmentList.add(newAssgnment);
+    }
+
+    public List<Integer> getAssignmentnumber() {
+        List<Integer> assignmentNumbers = new ArrayList<>();
+        for(Assignment assignment: getAssignmentList()) {
+            assignmentNumbers.add(assignment.getNumber());
+        }
+        return assignmentNumbers;
+    }
+
+    public List<String> getAssignmentTitle() {
+        List<String> assignmentTitles = new ArrayList<>();
+        for(Assignment assignment: getAssignmentList()) {
+            assignmentTitles.add(assignment.getTitle());
+        }
+        return assignmentTitles;
+    }
+
+    public List<String> getAssignmentDescription() {
+        List<String> assignmentDesriptions = new ArrayList<>();
+        for(Assignment assignment: getAssignmentList()) {
+            assignmentDesriptions.add(assignment.getDescription());
+        }
+        return assignmentDesriptions;
+    }
+
 }
