@@ -10,13 +10,13 @@ public class SingletonDataBase implements Storing {
     private List<Registration> registrations = new ArrayList<>();
     private List<Assignment> assignmentList = new ArrayList<>();
     private Login login;
+
     public static SingletonDataBase getInstance() {
         return Instance;
     }
 
     private SingletonDataBase() {
     }
-
 
     @Override
     public void newLogin(Login login) {
