@@ -15,6 +15,6 @@ public class UserListServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("userlist", SingletonDataBase.getInstance().getAllRegistration());
-        req.getRequestDispatcher("/userList.jsp").forward(req, resp);
+        req.getRequestDispatcher("/userlist.jsp").forward(req, resp);
     }
 }
