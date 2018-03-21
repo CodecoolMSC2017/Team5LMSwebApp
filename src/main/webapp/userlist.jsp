@@ -28,11 +28,5 @@
     </c:forEach>
     </table>
 
-    <center>
-    <form action="main.jsp">
-        <input type="submit" value="Back">
-    </form>
-    </center>
-
 </body>
 </html>
