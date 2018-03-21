@@ -12,24 +12,22 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <div class="menu_on_top">
+        <ul>
+          <li><a class="active" href="main.jsp">Home</a></li>
+          <li><a class="active" href="userlist.jsp">Userlist</a></li>
+          <li><a class="active" href="curicullum.jsp">Assigments</a></li>
+          <li><a class="active" href="">My Profile</a></li>
+          <li style="float:right"><a class="active" href="index.html">Logout</a></li>
+        </ul>
+    </div>
 
     <div class="registration_box">
         <h1>Hello ${login.name}!</h1>
         OK, you logged in
-        <form action="userlist" method="post">
-            <input type="submit" value="Show user list" class="send_button">
-        </form>
-
-        <form action="" method="post">
-            <input type="submit" value="..." class="send_button">
-        </form>
 
         <form action="userProfileServlet" method="post">
             <input type="submit" value="Edit user profile" class="send_button">
-        </form>
-
-        <form action="curicullum" method="post">
-            <input type="submit" value="Show aasignments" class="send_button">
         </form>
     </div>
 
