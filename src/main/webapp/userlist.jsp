@@ -16,7 +16,7 @@
     <table class="user_table" align="center">
         <tr class="header">
             <td>Name</td>
-            <td>E-Mail</td>
+            <td>E-mail</td>
             <td>Role</td>
         </tr>
     <c:forEach items="${userlist}" var="element">
