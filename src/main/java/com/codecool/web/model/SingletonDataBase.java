@@ -9,6 +9,7 @@ public class SingletonDataBase implements Storing {
 
     private List<Registration> registrations = new ArrayList<>();
     private List<Assignment> assignmentList = new ArrayList<>();
+    private Login login;
 
     public static SingletonDataBase getInstance() {
         return Instance;
@@ -18,6 +19,20 @@ public class SingletonDataBase implements Storing {
     }
 
 
+    @Override
+    public void newLogin(Login login) {
+        this.login = login;
+    }
+
+    @Override
+    public Login getLogin() {
+        return null;
+    }
+
+    @Override
+    public void delLogin(){
+        this.login = null;
+    }
 
     @Override
     public List<Registration> getAllRegistration() {

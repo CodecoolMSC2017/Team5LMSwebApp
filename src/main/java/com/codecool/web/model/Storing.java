@@ -5,6 +5,9 @@ import java.util.List;
 
 public interface Storing {
 
+    public void newLogin(Login login);
+    public Login getLogin();
+    public void delLogin();
     public List<Registration> getAllRegistration();
     public boolean addRegistration(Registration registration);
     public Registration getRegistration(String name);
