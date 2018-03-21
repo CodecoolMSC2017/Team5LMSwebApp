@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <meta http-equiv="refresh" content="0; url=?page=login" />
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bla Bla Bla...</title>
@@ -35,14 +37,14 @@
 
 
         <% } else if(request.getParameter("page").equals("home")) { %>
-            <jsp:include page="test_login.jsp"/>
+            <jsp:include page="home.jsp"/>
         <% } else if(request.getParameter("page").equals("userlist")) { %>
             <jsp:include page="userlist.jsp"/>
         <% } else if(request.getParameter("page").equals("assignment")) { %>
-            <jsp:include page="test_userlist.jsp"/>
+            <jsp:include page="serlist.jsp"/>
 
         <% } else { %>
-            <jsp:include page="test_userlist.jsp"/>
+            <jsp:include page="home.jsp"/>
         <% } %>
 
     </div>
