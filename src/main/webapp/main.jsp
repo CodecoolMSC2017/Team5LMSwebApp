@@ -22,10 +22,9 @@
         </ul>
     </div>
 
-    <div class="registration_box">
-        <h1>Hello ${login.name}!</h1>
-        OK, you logged in
+    <h1>Main page!</h1>
 
+    <div class="registration_box">
         <form action="userProfileServlet" method="post">
             <input type="submit" value="Edit user profile" class="send_button">
         </form>

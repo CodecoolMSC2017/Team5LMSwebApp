@@ -23,7 +23,7 @@ public class LoginServlet extends HttpServlet {
         req.setAttribute("login", user);
 
         if ( user.getMessage().equals("Logged in.") ) {
-            req.getRequestDispatcher("/main.jsp").include(req, resp);
+            req.getRequestDispatcher("/login_success.jsp").include(req, resp);
         }
         else req.getRequestDispatcher("/login_failed.jsp").include(req, resp);
 
