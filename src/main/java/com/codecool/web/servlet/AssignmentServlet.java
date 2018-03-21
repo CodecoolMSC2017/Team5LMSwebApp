@@ -18,13 +18,13 @@ public class AssignmentServlet extends HttpServlet {
         Assignment firstAssignment = new Assignment(1,"Learn Python", "Check Sololearn");
         SingletonDataBase.getInstance().addAssingmentList(firstAssignment);
 
-        Assignment secondAssignment = new Assignment(2, "Learn Java", "Check Sololern/Java")
+        Assignment secondAssignment = new Assignment(2, "Learn Java", "Check Sololern/Java");
         SingletonDataBase.getInstance().addAssingmentList(secondAssignment);
 
-        Assignment thirdAssignment = new Assignment(3, "Learn Html", "Check Sololern/html")
+        Assignment thirdAssignment = new Assignment(3, "Learn Html", "Check Sololern/html");
         SingletonDataBase.getInstance().addAssingmentList(thirdAssignment);
 
-        Assignment fourthAssignment = new Assignment(4, "Learn Javascript", "Check Sololern/javascript")
+        Assignment fourthAssignment = new Assignment(4, "Learn Javascript", "Check Sololern/javascript");
         SingletonDataBase.getInstance().addAssingmentList(fourthAssignment);
 
 
