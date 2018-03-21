@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <table align="center">
+    <table class="user_table" align="center">
         <tr class="header">
             <td>Name</td>
             <td>E-mail</td>

@@ -16,7 +16,23 @@
     <div class="registration_box">
         <h1>Hello ${login.name}!</h1>
         OK, you logged in
+        <form action="userlist" method="post">
+            <input type="submit" value="Show user list" class="send_button">
+        </form>
+
+        <form action="" method="post">
+            <input type="submit" value="..." class="send_button">
+        </form>
+
+        <form action="userProfileServlet" method="post">
+            <input type="submit" value="Edit user profile" class="send_button">
+        </form>
+
+        <form action="curicullum" method="post">
+            <input type="submit" value="Show aasignments" class="send_button">
+        </form>
     </div>
+
 
 </body>
 </html>
