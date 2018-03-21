@@ -9,13 +9,14 @@
 </head>
 <body>
 
-<c:forEach items="${assignlist}" var="element">
-        <tr class="content">
-            <td>${element.getAssignmentNumber()}</td>
-            <td>${element.getAssignmentTitle()}</td>
-            <td>${element.getAssignmentDescription()}</td>
-            <td align="center">${element.getRole()}</td>
-        </tr>
+    <c:forEach items="${assignlist}" var="element">
+        <table>
+            <tr class="content">
+                <td>${element.getNumber()}</td>
+                <td>${element.getTitle()}</td>
+                <td>${element.getDescription()}</td>
+            </tr>
+        </table>
     </c:forEach>
 
 </body>
