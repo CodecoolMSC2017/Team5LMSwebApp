@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Main page</title>
+    <title>User Profile</title>
 </head>
 <body>
 
@@ -23,22 +23,24 @@
 
 <!-- ---------- CONTENT START FROM HERE ---------- -->
 
+    <h1>${userProfile.name}</h1>
+
         <table>
             <tr>
                 <td> Your name</td>
-                <td>${login.name}</td>
+                <td>${userProfile.name}</td>
             </tr>
             <tr>
                 <td>E-mail address</td>
-                <td>${login.email}</td>
+                <td>${userProfile.email}</td>
             </tr>
             <tr>
                 <td>Password</td>
-                <td>${login.password}</td>
+                <td>${userProfile.password}</td>
             </tr>
             <tr>
                 <td>Role</td>
-                <td>${login.role}</td>
+                <td>${userProfile.role}</td>
             </tr>
         </table>
 

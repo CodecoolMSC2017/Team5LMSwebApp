@@ -32,4 +32,7 @@ public final class Login {
         return password;
     }
 
+    public String getRole() {
+        return role;
+    }
 }

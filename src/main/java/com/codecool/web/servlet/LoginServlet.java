@@ -24,6 +24,7 @@ public class LoginServlet extends HttpServlet {
 
         if ( user.getMessage().equals("Logged in.") ) {
             req.getRequestDispatcher("/login_success.jsp").include(req, resp);
+            SingletonDataBase.getInstance().newLogin(user);
         }
         else req.getRequestDispatcher("/login_failed.jsp").include(req, resp);
 

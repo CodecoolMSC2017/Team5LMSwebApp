@@ -33,7 +33,7 @@ public class SingletonDataBase implements Storing {
 
     @Override
     public Login getLogin() {
-        return login;
+        return this.login;
     }
 
     @Override
