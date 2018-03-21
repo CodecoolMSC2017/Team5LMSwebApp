@@ -22,8 +22,8 @@ public class RegistrationServlet extends HttpServlet {
         req.setAttribute("registration", newUser);
 
         if ( newUser.getMessage().equals("Your registration was successful.") && SingletonDataBase.getInstance().addRegistration(newUser) == true ) {
-            req.getRequestDispatcher("/redirect_to_login_ok.jsp").include(req, resp);
+            req.getRequestDispatcher("/registration_success.jsp").include(req, resp);
         }
-        else req.getRequestDispatcher("/redirect_to_registration.jsp").include(req, resp);
+        else req.getRequestDispatcher("/registration_failed.jsp").include(req, resp);
     }
 }

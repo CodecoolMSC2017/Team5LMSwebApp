@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
         if ( user.getMessage().equals("Logged in.") ) {
             req.getRequestDispatcher("/main.jsp").include(req, resp);
         }
-        else req.getRequestDispatcher("/redirect_to_login.jsp").include(req, resp);
+        else req.getRequestDispatcher("/login_failed.jsp").include(req, resp);
 
     }
 }
