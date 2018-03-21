@@ -13,7 +13,7 @@ import java.io.IOException;
 public class UserListServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("userlist", SingletonDataBase.getInstance().getAllRegistration());
         req.getRequestDispatcher("/userlist.jsp").forward(req, resp);
     }
