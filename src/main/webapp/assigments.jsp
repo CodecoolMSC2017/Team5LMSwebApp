@@ -9,16 +9,15 @@
 </head>
 <body>
 
-    <div class="menu_on_top">
+    <header>
         <ul>
-          <li><a class="active" href="main.jsp">Home</a></li>
-          <li><a class="active" href="<c:url value='/userlist' />">Userlist</a></li>
-          <li><a class="active" href="curicullum.jsp">Assigments</a></li>
-          <li><a class="active" href="">My Profile</a></li>
-          <li style="float:right"><a class="active" href="index.html">Logout</a></li>
+            <li><a class="active" href="home.jsp">Home</a></li>
+            <li><a class="active" href="<c:url value='/userlist' />">Userlist</a></li>
+            <li><a class="active" href="assigments.jsp">Assigments</a></li>
+            <li><a class="active" href="<c:url value='/userProfileServlet' />">My Profile</a></li>
+            <li style="float:right"><a class="active" href="index.html">Logout</a></li>
         </ul>
-    </div>
-
+    </header>
     <form action="curicullum" method="post">
         <input type="submit" value="Show aasignments" class="send_button">
     </form>
