@@ -12,6 +12,7 @@ public final class LoginService {
         String message = null;
         String name = null;
         String email = null;
+        String role= null;
         List<Registration> registrations = SingletonDataBase.getInstance().getAllRegistration();
 //        List<String> names = SingletonDataBase.getInstance().getNames();
 //        List<String> emails = SingletonDataBase.getInstance().getEmails();
@@ -22,12 +23,14 @@ public final class LoginService {
                 if ( registeredUser.getName().equals(nameOrEmail) && registeredUser.getPassword().equals(password) ) {
                     name = nameOrEmail;
                     email = registeredUser.getEmail();
+                    role = registeredUser.getRole();
                     message = "Logged in.";
                     break;
                 }
                 else if ( registeredUser.getEmail().equals(nameOrEmail) && registeredUser.getPassword().equals(password) ) {
                     name = registeredUser.getName();
                     email = nameOrEmail;
+                    role = registeredUser.getRole();
                     message = "Logged in.";
                     break;
                 }
@@ -37,6 +40,6 @@ public final class LoginService {
             }
         }
 
-        return new Login(name, email, password, message);
+        return new Login(name, email, password, role, message);
     }
 }

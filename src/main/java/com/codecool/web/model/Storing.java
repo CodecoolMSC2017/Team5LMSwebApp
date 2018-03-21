@@ -4,9 +4,18 @@ import java.util.List;
 
 public interface Storing {
 
-    public List<Registration> getAllRegistration();
-    public boolean addRegistration(Registration registration);
-    public Registration getRegistration(String name);
-    public void updateReg(Registration registration);
-    public void deleteReg(Registration registration);
+    void newLogin(Login login);
+    Login getLogin();
+    void delLogin();
+    List<Registration> getAllRegistration();
+    boolean addRegistration(Registration registration);
+    Registration getRegistration(String name);
+    void updateReg(Registration registration);
+    void deleteReg(Registration registration);
+    List<String> getNames();
+    List<String> getEmails();
+    List<String> getPasswords();
+    boolean isMentor(Registration registration);
+    List<Assignment> getAssignmentList();
+
 }
