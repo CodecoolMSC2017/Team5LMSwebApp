@@ -8,7 +8,6 @@ public class SingletonDataBase implements Storing {
     private static final SingletonDataBase Instance = new SingletonDataBase();
 
     private List<Registration> registrations = new ArrayList<>();
-
     private List<Assignment> assignmentList = new ArrayList<>();
 
     public static SingletonDataBase getInstance() {
@@ -62,6 +61,7 @@ public class SingletonDataBase implements Storing {
         }
     }
 
+    @Override
     public List<String> getNames(){
         List<String> names = new ArrayList<>();
         for(Registration registration:registrations){
@@ -70,6 +70,7 @@ public class SingletonDataBase implements Storing {
         return names;
     }
 
+    @Override
     public List<String> getEmails(){
         List<String> emails = new ArrayList<>();
         for(Registration registration:registrations){
@@ -78,6 +79,7 @@ public class SingletonDataBase implements Storing {
         return emails;
     }
 
+    @Override
     public List<String> getPasswords() {
         List<String> passes = new ArrayList<>();
         for (Registration registration : registrations) {
@@ -86,6 +88,7 @@ public class SingletonDataBase implements Storing {
         return passes;
     }
 
+    @Override
     public boolean isMentor(Registration registration) {
         if(registration.getRole().equals("mentor")) {
             return true;
@@ -93,6 +96,7 @@ public class SingletonDataBase implements Storing {
         return false;
     }
 
+    @Override
     public List<Assignment> getAssignmentList() {
         return assignmentList;
     }

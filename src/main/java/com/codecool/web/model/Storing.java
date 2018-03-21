@@ -1,5 +1,6 @@
 package com.codecool.web.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface Storing {
@@ -9,4 +10,10 @@ public interface Storing {
     public Registration getRegistration(String name);
     public void updateReg(Registration registration);
     public void deleteReg(Registration registration);
+    public List<String> getNames();
+    public List<String> getEmails();
+    public List<String> getPasswords();
+    public boolean isMentor(Registration registration);
+    public List<Assignment> getAssignmentList();
+
 }
