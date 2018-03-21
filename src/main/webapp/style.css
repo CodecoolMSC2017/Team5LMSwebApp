@@ -106,8 +106,7 @@ header li a:hover {
 /* ********** USER LIST ********** */
 
 .user_table {
-    width: 450px;
-    border: 2px solid #000;
+    width: 100%;
     border-collapse: collapse;
     line-height: 20px;
     font-size: 1em;
@@ -116,6 +115,7 @@ header li a:hover {
     padding: 5px;
 }
 .user_table .header {
+    border: 1px solid #999;
     background-color: #CCC;
     text-align: center;
     font-weight: bold;
@@ -124,9 +124,11 @@ header li a:hover {
     border-top: 1px dotted #000;
     background-color: #FFF;
 }
+/*
 .user_table .content:nth-child(2) {
     border-top: 2px solid #000;
 }
+*/
 
 /* ********** USER PROFILE ********** */
 

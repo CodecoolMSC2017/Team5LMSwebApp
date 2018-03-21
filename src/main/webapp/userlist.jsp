@@ -21,7 +21,7 @@
     </header>
     <div class="content_frame">
 
-<!-- ---------- CONTENT START FROM HERE ---------- -->
+<!-- ---------- CONTENT START HERE ---------- -->
 
     <table class="user_table" align="center">
         <tr class="header">
@@ -38,7 +38,7 @@
     </c:forEach>
     </table>
 
-<!-- ---------- CONTENT END FROM HERE ---------- -->
+<!-- ---------- CONTENT END HERE ---------- -->
 
     </div>
 

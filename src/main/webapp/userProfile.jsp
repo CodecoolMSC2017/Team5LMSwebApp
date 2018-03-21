@@ -21,7 +21,7 @@
     </header>
     <div class="content_frame">
 
-<!-- ---------- CONTENT START FROM HERE ---------- -->
+<!-- ---------- CONTENT START HERE ---------- -->
 
     <h1>${userProfile.name}</h1>
 
@@ -45,7 +45,7 @@
         </table>
 
 
-<!-- ---------- CONTENT END FROM HERE ---------- -->
+<!-- ---------- CONTENT END HERE ---------- -->
 
     </div>
 
