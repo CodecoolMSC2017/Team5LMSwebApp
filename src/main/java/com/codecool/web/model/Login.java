@@ -5,12 +5,14 @@ public final class Login {
     private String name;
     private String email;
     private String password;
+    private String role;
     private String message;
 
-    public Login(String name, String email, String password, String message) {
+    public Login(String name, String email, String password, String role,  String message) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.role = role;
         this.message = message;
     }
 
