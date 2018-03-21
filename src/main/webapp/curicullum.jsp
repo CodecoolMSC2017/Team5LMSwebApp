@@ -10,13 +10,15 @@
 <body>
 
     <c:forEach items="${assignlist}" var="element">
+        <form action="/action_page.php">
         <table>
             <tr class="content">
-                <td>${element.getNumber()}</td>
-                <td>${element.getTitle()}</td>
-                <td>${element.getDescription()}</td>
+              Change numbers: <input type="number" name="change"><td>${element.getNumber()}</td>
+              <td>${element.getTitle()}</td>
+              <td>${element.getDescription()}</td>
             </tr>
         </table>
+        </form>
     </c:forEach>
 
 </body>
