@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="2; url=main.jsp" />
+    <meta http-equiv="refresh" content="2; url=home.jsp" />
     <title>Registration Test Page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
