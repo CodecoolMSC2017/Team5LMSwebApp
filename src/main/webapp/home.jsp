@@ -13,8 +13,8 @@
     <header>
         <ul>
             <li><a class="active" href="home.jsp">Home</a></li>
-            <li><a class="active" href="<c:url value='/userlist' />">Userlist</a></li>
-            <li><a class="active" href="assigments.jsp">Assigments</a></li>
+            <li><a class="active" href="<c:url value='/userlist' />">User list</a></li>
+            <li><a class="active" href="assignments.jsp">Assignments</a></li>
             <li><a class="active" href="<c:url value='/userProfileServlet' />">My Profile</a></li>
             <li style="float:right"><a class="active" href="index.html">Logout</a></li>
         </ul>

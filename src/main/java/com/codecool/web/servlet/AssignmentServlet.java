@@ -17,7 +17,7 @@ public class AssignmentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.setAttribute("assignlist", SingletonDataBase.getInstance().getAssignmentList());
-        req.getRequestDispatcher("/assigments.jsp").forward(req, resp);
+        req.getRequestDispatcher("/assignments.jsp").forward(req, resp);
 
 
     }
