@@ -16,6 +16,14 @@ public class SingletonDataBase implements Storing {
     }
 
     private SingletonDataBase() {
+        registrations.add(new Registration("ben", "asd@asd.hu", "a", "a", "Student", "Your registration was successful. "));
+        registrations.add(new Registration("ben", "qwe@qwe.hu", "a", "a", "Mentor", "Your registration was successful. "));
+
+        assignmentList.add(new Assignment(1,"Learn Python", "Check Sololearn"));
+        assignmentList.add(new Assignment(2, "Learn Java", "Check Sololern/Java"));
+        assignmentList.add(new Assignment(3, "Learn Html", "Check Sololern/html"));
+        assignmentList.add(new Assignment(4, "Learn Javascript", "Check Sololern/javascript"));
+
     }
 
     @Override

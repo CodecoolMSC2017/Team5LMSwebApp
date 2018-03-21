@@ -11,45 +11,26 @@
     <title>Main page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
-
 <body>
+    <div class="menu_on_top">
+        <ul>
+          <li><a class="active" href="main.jsp">Home</a></li>
+          <li><a class="active" href="<c:url value='/userlist' />">Userlist</a></li>
+          <li><a class="active" href="curicullum.jsp">Assigments</a></li>
+          <li><a class="active" href="">My Profile</a></li>
+          <li style="float:right"><a class="active" href="index.html">Logout</a></li>
+        </ul>
+    </div>
 
-<header>
-    Hello ${login.name}!
-</header>
-
-<div class="site_frame">
-    <div class="site_frame_left_column">
-
-<!-- LEFT COLUMN START HERE -->
-
-        <form action="userlist" method="post">
-            <input type="submit" value="Show user list" class="send_button">
-        </form>
+    <div class="registration_box">
+        <h1>Hello ${login.name}!</h1>
+        OK, you logged in
 
         <form action="userProfileServlet" method="post">
             <input type="submit" value="Edit user profile" class="send_button">
         </form>
-
-        <form action="curicullum" method="post">
-            <input type="submit" value="Show aasignments" class="send_button">
-        </form>
-
-<!-- LEFT COLUMN END HERE -->
-
     </div>
-    <div class="site_frame_right_column">
 
-<!-- CONTENT START HERE -->
-
-
-
-<!-- CONTENT END HERE -->
-
-    </div>
-    <div style="clear:both"></div>
-</div>
 
 </body>
 </html>

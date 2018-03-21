@@ -113,3 +113,34 @@ header {
 .user_table .content:nth-child(2) {
     border-top: 2px solid black;
 }
+
+/* ********** MENU ON TOP ********** */
+
+.menu_on_top ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.menu_on_top li {
+    float: left;
+}
+
+.menu_on_top li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-right: 1px solid #bbb;
+}
+
+.menu_on_top li:last-child {
+    border-right: none;
+}
+
+.menu_on_top li a:hover {
+    background-color: #4CAF50;
+}
