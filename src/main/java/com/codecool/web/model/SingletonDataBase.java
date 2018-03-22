@@ -133,6 +133,15 @@ public class SingletonDataBase implements Storing {
         return assignmentList;
     }
 
+    public Assignment getAssignment(String number){
+        for(Assignment a:assignmentList){
+            if(a.getNumber() == (Integer.parseInt(number))){
+                return a;
+            }
+        }
+        return null;
+    }
+
 
     public void setAssignmentList(List<Assignment> assignmentList) {
         this.assignmentList = assignmentList;

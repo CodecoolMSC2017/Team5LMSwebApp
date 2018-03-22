@@ -36,15 +36,13 @@
             <td>MaxScore</td>
             <td>Question</td>
         </tr>
-        <c:forEach items="${assignlist}" var="element">
+
         <tr class="content">
-            <td>${element.getNumber()}</td>
-            <td>${element.getTitle()}</td>
-            <td>${element.getDescription()}</td>
-            <td>${element.getMaxScore()}</td>
-            <td>${element.getQuestion()}</td>
+            <td>${assignment.number}</td>
+            <td>${assignment.title}</td>
+            <td>${assignment.description}</td>
         </tr>
-        </c:forEach>
+
     </table>
     </form>
 
