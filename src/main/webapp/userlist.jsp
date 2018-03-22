@@ -36,6 +36,7 @@
                 <td>Role</td>
                 <c:if test = "${userProfile.role == 'Mentor'}">
                     <td>Attand.</td>
+                    <td>Attand. %</td>
                 </c:if>
             </tr>
         <c:forEach items="${userlist}" var="element">
@@ -54,6 +55,9 @@
                             </select>
                         </c:if>
                     </td>
+                    <c:if test = "${element.getRole() == 'Student'}">
+                    <td>${element.getAttendance()}</td>
+                    </c:if>
                 </c:if>
             </tr>
         </c:forEach>

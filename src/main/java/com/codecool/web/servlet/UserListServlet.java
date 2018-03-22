@@ -22,4 +22,9 @@ public class UserListServlet extends HttpServlet {
         req.setAttribute("userlist", SingletonDataBase.getInstance().getAllRegistration());
         req.getRequestDispatcher("/userlist.jsp").forward(req, resp);
     }
+
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+
+        doGet(req, resp);
+    }
 }

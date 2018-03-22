@@ -11,16 +11,22 @@ public class SingletonDataBase implements Storing {
     private List<Assignment> assignmentList = new ArrayList<>();
     private List<Quiz> quizList = new ArrayList<>();
     private Login login;
+    private int globalAttendance;
 
     public static SingletonDataBase getInstance() {
         return Instance;
     }
 
     private SingletonDataBase() {
+        globalAttendance = 10;
+
         registrations.add(new Registration("ben","asd@asd.hu", "a", "a", "Student", "Your registration was successful. "));
         registrations.add(new Registration("tib","qwe@qwe.hu", "a", "a", "Mentor", "Your registration was successful. "));
         registrations.add(new Registration("norb","íyx@íyx.hu", "a", "a", "Student", "Your registration was successful. "));
         registrations.add(new Registration("krisz", "ert@ert.hu", "a", "a", "Mentor", "Your registration was successful. "));
+
+        registrations.get(0).setAttendance(9);
+        registrations.get(2).setAttendance(8);
 
         assignmentList.add(new Assignment(1,"Learn Python", "Check Sololearn", 12, "Question comes here?"));
         assignmentList.add(new Assignment(2, "Learn Java", "Check Sololern/Java",3, "Question comes here?"));
@@ -35,6 +41,23 @@ public class SingletonDataBase implements Storing {
         quizList.add(new Quiz("What is the result of this code? 7%(5 // 2)",
             "1", "0", "1", "7",1));
 
+    }
+
+    public List<Registration> getStudents(){
+        List<Registration> temp = new ArrayList<>();
+        for(Registration reg:registrations){
+            if(reg.getRole().equals("Student")){
+                temp.add(reg);
+            }
+        }return temp;
+    }
+
+    public int getGlobalAttandance() {
+        return globalAttendance;
+    }
+
+    public void setGlobalAttandance(int globalAttandance) {
+        this.globalAttendance += globalAttandance;
     }
 
     @Override
