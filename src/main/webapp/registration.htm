@@ -12,8 +12,8 @@
         <form action="registrationServlet" method="post">
             <p>Username: <span class="recommended">*</span><br><input type="text" name="name" value="" class="input_field" required></p>
             <p>E-mail: <span class="recommended">*</span><br><input type="email" name="email" value="" class="input_field" required></p>
-            <p>Password: <span class="recommended">*</span><br><input type="password" name="password" value="" class="input_field" required><br>
-            Confirm password: <span class="recommended">*</span><br><input type="password" name="password_confirm" value="" class="input_field" required><br></p>
+            <p>Password: <span class="recommended">*</span><br><input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_confirm.pattern = this.value;" placeholder="" required><br>
+            Confirm password: <span class="recommended">*</span><br><input id="password_confirm" name="password_confirm" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="" required><br></p>
             <p>Role:
             <select name="role" class="drop_down_button" required>
                 <option value="student">Student</option>

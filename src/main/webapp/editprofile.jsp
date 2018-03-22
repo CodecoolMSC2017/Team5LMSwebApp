@@ -26,7 +26,7 @@
 
     <h1>Edit User Profile</h1>
 
-        <form action="editProfileSaveServlet" method="post">
+        <form action="editProfileSaveServlet" method="post" oninput="result.value=!!password_confirm.value&&(password.value==password_confirm.value)?'Match!':'Nope!'">
         <table class="user_profile_table" align="center">
             <tr class="content">
                 <td class="col-1">Username:</td>
@@ -54,13 +54,14 @@
             </tr>
               <tr class="content">
                 <td class="col-1">Password: <span class="recommended">*</span></td>
-                <td class="col-2"><input type="password" name="password" value="" class="input_field" required></td>
+                <td class="col-2"><input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_confirm.pattern = this.value;" placeholder="" required></td>
             </tr>
             <tr class="content">
                 <td class="col-1">Confirm password: <span class="recommended">*</span></td>
-                <td class="col-2"><input type="password" name="password_confirm" value="" class="input_field" required></td>
+                <td class="col-2"><input id="password_confirm" name="password_confirm" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="" required></td>
             </tr>
         </table>
+
         <br><span class="recommended">* Recommended</span><br>
         <center>
         <input type="submit" value="Save Changes" class="send_button">
