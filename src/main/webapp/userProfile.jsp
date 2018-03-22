@@ -33,11 +33,11 @@
             </tr>
             <tr class="content">
                 <td class="col-1">First name:</td>
-                <td class="col-2"></td>
+                <td class="col-2">${userProfile.firstName}</td>
             </tr>
             <tr class="content">
                 <td class="col-1">Last name:</td>
-                <td class="col-2"></td>
+                <td class="col-2">${userProfile.lastName}</td>
             </tr>
             <tr class="content">
                 <td class="col-1">E-mail address:</td>

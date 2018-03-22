@@ -26,7 +26,7 @@
 
     <h1>Edit User Profile</h1>
 
-        <form action="registrationServlet" method="post">
+        <form action="editProfileSaveServlet" method="post">
         <table class="user_profile_table" align="center">
             <tr class="content">
                 <td class="col-1">Username:</td>
@@ -34,19 +34,19 @@
             </tr>
             <tr class="content">
                 <td class="col-1">First name:</td>
-                <td class="col-2"><input type="text" name="firstname" value="${userProfile.name}" class="input_field"></td>
+                <td class="col-2"><input type="text" name="firstname" value="${userProfile.firstName}" class="input_field"></td>
             </tr>
             <tr class="content">
                 <td class="col-1">Last name:</td>
-                <td class="col-2"><input type="text" name="lastname" value="${userProfile.name}" class="input_field"></td>
+                <td class="col-2"><input type="text" name="lastname" value="${userProfile.lastName}" class="input_field"></td>
             </tr>
             <tr class="content">
                 <td class="col-1">E-mail address: <span class="recommended">*</span></td>
-                <td class="col-2"><input type="email" name="email" value="${userProfile.password}" class="input_field" readonly="readonly"></td>
+                <td class="col-2"><input type="email" name="email" value="${userProfile.email}" class="input_field" readonly="readonly"></td>
             </tr>
             <tr class="content">
                 <td class="col-1">Role:</td>
-                <td class="col-2"><input type="text" name="name" value="${userProfile.role}" class="input_field" readonly="readonly"></td>
+                <td class="col-2"><input type="text" name="role" value="${userProfile.role}" class="input_field" readonly="readonly"></td>
             </tr>
             <tr class="content" valign="top">
                 <td class="col-1">Other:</td>

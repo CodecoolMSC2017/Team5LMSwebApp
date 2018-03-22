@@ -75,4 +75,8 @@ public final class Registration {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
 }
