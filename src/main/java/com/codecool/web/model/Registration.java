@@ -10,7 +10,7 @@ public final class Registration {
     private String confirmPassword;
     private String role;
     private String message;
-    private int attendance = 0;
+    private int attendance;
 
     public Registration(String name, String email, String password, String confirmPassword, String role, String message) {
         this.name = name;
@@ -19,6 +19,7 @@ public final class Registration {
         this.password = password;
         this.confirmPassword = confirmPassword;
         this.message = message;
+        attendance = 10;
     }
 
     public String getMessage() {

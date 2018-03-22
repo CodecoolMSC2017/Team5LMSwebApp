@@ -6,15 +6,15 @@ public class Assignment {
     private String title;
     private String description;
     private int maxScore;
-    private String question;
+    private String task;
     private String answer;
 
-    public Assignment(int number, String title, String description, int maxScore, String question) {
+    public Assignment(int number, String title, String description, int maxScore, String task) {
         this.number = number;
         this.title = title;
         this.description = description;
         this.maxScore = maxScore;
-        this.question = question;
+        this.task = task;
     }
 
     public int getNumber() {
@@ -45,8 +45,8 @@ public class Assignment {
         this.maxScore = maxScore;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setTask(String question) {
+        this.task = question;
     }
 
     public void setAnswer(String answer) {
@@ -58,8 +58,8 @@ public class Assignment {
         return maxScore;
     }
 
-    public String getQuestion() {
-        return question;
+    public String getTask() {
+        return task;
     }
 
     public String getAnswer() {
