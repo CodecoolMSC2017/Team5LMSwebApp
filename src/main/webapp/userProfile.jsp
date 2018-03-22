@@ -17,6 +17,7 @@
             <li><a class="active" href="assignments.jsp">Assignments</a></li>
             <li><a class="active" href="<c:url value='/userProfileServlet' />">My Profile</a></li>
             <li><a class="active" href="credits.jsp">Credits</a></li>
+            <li><a class="active" href="textPage.jsp">Add Text Page</a></li>
             <li style="float:right"><a class="active" href="index.html">Logout</a></li>
         </ul>
     </header>
