@@ -55,11 +55,10 @@
                             </select>
                         </c:if>
                     </td>
-                    <td>
-                        <c:if test = "${element.getRole() == 'Student'}">
-                            55%
-                        </c:if>
-                    </td>
+                    <c:if test = "${element.getRole() == 'Student'}">
+                        <td>${element.getAttendance()}</td>
+                    </c:if>
+>>>>>>> 627eadc72a6bd3ecf06f1753e54df6c8565d0922
                 </c:if>
             </tr>
         </c:forEach>

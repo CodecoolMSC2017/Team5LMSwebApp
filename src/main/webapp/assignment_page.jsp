@@ -41,7 +41,7 @@
         </tr>
         <tr class="content">
             <td style="text-align: justify" colspan="3">
-                ${assignment.description}
+                ${assignment.task}
             </td>
         </tr>
     </table>

@@ -31,7 +31,7 @@
             <td>Nr.</td>
             <td>Title</td>
             <td>Description</td>
-            <td>MaxScore</td>
+            <td>TimeToLearn(hour)</td>
             <td></td>
         </tr>
         <c:forEach items="${assignlist}" var="element">
@@ -43,12 +43,22 @@
                     </td>
                     <td>${element.getTitle()}</td>
                     <td>${element.getDescription()}</td>
-                    <td>${element.getMaxScore()}</td>
+                    <td>${element.getTime()}</td>
                     <td><input type="submit" value="Show" class="send_button"></td>
                 </tr>
             </form>
+
+
+
         </c:forEach>
+
+
+
     </table>
+    <form action="quizservlet" method="post">
+    <h1>Python Quiz</h1>
+        <td><input type="submit" value="Show Quiz" class="send_button"></td>
+    </form>
 
 <!-- ---------- CONTENT END HERE ---------- -->
 
