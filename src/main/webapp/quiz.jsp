@@ -10,14 +10,20 @@
 </head>
 <body>
 
-    <form action="quiz" method="get">
+    <header>
+        <ul>
+            <li><a class="active" href="home.jsp">Home</a></li>
+            <li><a class="active" href="<c:url value='/userlist' />">User list</a></li>
+            <li><a class="active" href="<c:url value='/curriculum' />">Assignments</a></li>
+            <li><a class="active" href="<c:url value='/userProfileServlet' />">My Profile</a></li>
+            <li><a class="active" href="credits.jsp">Credits</a></li>
+            <li style="float:right"><a class="active" href="index.html">Logout</a></li>
+        </ul>
+    </header>
 
-        <h3>Q1. What color is the sky on a sunny day?</h3>
-        <input type="radio" name="answer1" value="blue" checked="checked">blue<br>
-        <input type="radio" name="answer1" value="red">red<br>
-        <input type="radio" name="answer1" value="green">green<br>
-        <input type="submit" value="Login"  class="submit" />
-    </form>
+<div class="content_frame">
+
+    
 
 
 
@@ -34,14 +40,14 @@
                 <input type="radio" name="answer1" value="${element.possibleAnswer1}" checked="checked">${element.possibleAnswer1}<br>
                 <input type="radio" name="answer1" value="${element.possibleAnswer2}" checked="checked">${element.possibleAnswer2}<br>
                 <input type="radio" name="answer1" value="${element.possibleAnswer3}" checked="checked">${element.possibleAnswer3}<br>
+                <input type="submit" value="Login"  class="submit" />
 
 
-                <td>${element.possibleAnswer2}</td>
-                <td>${element.possibleAnswer3}</td>
+
             </tr>
 
         </table>
         </form>
 </c:forEach>
-
+</div>
 </body>
