@@ -154,6 +154,27 @@ header li a:hover {
     font-weight: bold;
 }
 
+/* ********** ASSIGNMENTS LIST ********** */
+
+.assignments_list_table {
+    width: 100%;
+    border-collapse: collapse;
+    line-height: 25px;
+    font-size: 1em;
+}
+.assignments_list_table .header {
+    border: 1px solid #999;
+    background-color: #CCC;
+    text-align: center;
+    font-weight: bold;
+}
+.assignments_list_table .content {
+    border-top: 1px dotted #000;
+    background-color: #FFF;
+    text-align: center;
+    line-height: 35px;
+}
+
 /* **********  ********** */
 
 .recommended {

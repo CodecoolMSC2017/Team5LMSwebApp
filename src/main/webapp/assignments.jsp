@@ -26,26 +26,26 @@
 
     <h1>Assignments</h1>
 
-    <c:forEach items="${assignlist}" var="element">
-        <form>
-        <table class="user_list_table">
-            <tr class="header">
-                <td>Nr.</td>
-                <td>Title</td>
-                <td>Description</td>
-                <td>MaxScore</td>
-                <td>Question</td>
-            </tr>
-            <tr class="content">
-                <td>${element.getNumber()}</td>
-                <td>${element.getTitle()}</td>
-                <td>${element.getDescription()}</td>
-                <td>${element.getMaxScore()}</td>
-                <td>${element.getQuestion()}</td>
-            </tr>
-        </table>
-        </form>
-    </c:forEach>
+    <table class="assignments_list_table">
+        <tr class="header">
+            <td>Nr.</td>
+            <td>Title</td>
+            <td>Description</td>
+            <td>MaxScore</td>
+            <td></td>
+        </tr>
+        <c:forEach items="${assignlist}" var="element">
+     <form action="showAssignmentServlet" method="post">
+        <tr class="content">
+            <td>${element.getNumber()}</td>
+            <td>${element.getTitle()}</td>
+            <td>${element.getDescription()}</td>
+            <td>${element.getMaxScore()}</td>
+            <td><input type="submit" value="Show" class="send_button"></td>
+        </tr>
+    </form>
+        </c:forEach>
+    </table>
 
 <!-- ---------- CONTENT END HERE ---------- -->
 
