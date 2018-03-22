@@ -3,6 +3,8 @@ package com.codecool.web.model;
 public final class Registration {
 
     private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
     private String confirmPassword;
@@ -42,6 +44,14 @@ public final class Registration {
         return role;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -56,5 +66,13 @@ public final class Registration {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
