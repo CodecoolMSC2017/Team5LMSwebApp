@@ -27,8 +27,16 @@
 
         <table class="user_profile_table" align="center">
             <tr class="content">
-                <td class="col-1">Name:</td>
+                <td class="col-1">Username:</td>
                 <td class="col-2">${userProfile.name}</td>
+            </tr>
+            <tr class="content">
+                <td class="col-1">First name:</td>
+                <td class="col-2"></td>
+            </tr>
+            <tr class="content">
+                <td class="col-1">Last name:</td>
+                <td class="col-2"></td>
             </tr>
             <tr class="content">
                 <td class="col-1">E-mail address:</td>
@@ -41,6 +49,10 @@
             <tr class="content">
                 <td class="col-1">Role:</td>
                 <td class="col-2">${userProfile.role}</td>
+            </tr>
+            <tr class="content">
+                <td class="col-1">Other:</td>
+                <td class="col-2"></td>
             </tr>
         </table>
 

@@ -98,7 +98,7 @@ header li a {
 header li:last-child {
     border-right: none;
 }
-header li a:hover {
+header li a:hover, header li a:active {
     background-color: #4CAF50;
 }
 
@@ -148,5 +148,12 @@ header li a:hover {
 }
 .col-1 {
     width: 25%;
+    font-weight: bold;
+}
+
+/* **********  ********** */
+
+.recommended {
+    color: red;
     font-weight: bold;
 }

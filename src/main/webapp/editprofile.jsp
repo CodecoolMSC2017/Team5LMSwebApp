@@ -28,33 +28,45 @@
         <form action="registrationServlet" method="post">
         <table class="user_profile_table" align="center">
             <tr class="content">
-                <td class="col-1">Name:</td>
+                <td class="col-1">Username:</td>
                 <td class="col-2"><input type="text" name="name" value="${userProfile.name}" class="input_field"  readonly="readonly"></td>
             </tr>
             <tr class="content">
-                <td class="col-1">E-mail address:</td>
+                <td class="col-1">First name:</td>
+                <td class="col-2"><input type="text" name="firstname" value="${userProfile.firstname}" class="input_field"></td>
+            </tr>
+            <tr class="content">
+                <td class="col-1">Last name:</td>
+                <td class="col-2"><input type="text" name="lastname" value="${userProfile.lastname}" class="input_field"></td>
+            </tr>
+            <tr class="content">
+                <td class="col-1">E-mail address: <span class="recommended">*</span></td>
                 <td class="col-2"><input type="email" name="email" value="${userProfile.password}" class="input_field" required></td>
             </tr>
             <tr class="content">
                 <td class="col-1">Role:</td>
                 <td class="col-2"><input type="text" name="name" value="${userProfile.role}" class="input_field"  readonly="readonly"></td>
             </tr>
+            <tr class="content" valign="top">
+                <td class="col-1">Other:</td>
+                <td class="col-2"><textarea rows="4" cols="65" name="other" value="${userProfile.other}" class="input_field"></textarea></td>
+            </tr>
             <tr class="content">
-                <td class="col-1">Password:</td>
+                <td class="col-1">Password: <span class="recommended">*</span></td>
                 <td class="col-2"><input type="password" name="password" value="" class="input_field" required></td>
             </tr>
             <tr class="content">
-                <td class="col-1">Confirm password:</td>
+                <td class="col-1">Confirm password: <span class="recommended">*</span></td>
                 <td class="col-2"><input type="password" name="password_confirm" value="" class="input_field" required></td>
             </tr>
         </table>
-        </form>
-
+        <br><span class="recommended">* Recommended</span><br>
         <center>
-        <br>
         <input type="submit" value="Save Changes" class="send_button">
+        <input type="reset" value="Reset" class="send_button">
         <input type="button" value="Cancel" class="send_button" onclick="history.back()">
         </center>
+        </form>
 
 <!-- ---------- CONTENT END HERE ---------- -->
 
