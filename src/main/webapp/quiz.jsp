@@ -19,6 +19,25 @@
         <input type="submit" value="Login"  class="submit" />
     </form>
 
+
+
     <br />
+
+<c:forEach items="${quizlist}" var="element">
+    <form>
+        <table>
+
+
+            <tr class="content">
+                <td>${element.question}</td>
+                <td>${element.possibleAnswer1}</td>
+
+                <td>${element.possibleAnswer2}</td>
+                <td>${element.possibleAnswer3}</td>
+            </tr>
+
+        </table>
+        </form>
+</c:forEach>
 
 </body>

@@ -32,7 +32,8 @@ public class SingletonDataBase implements Storing {
             "A bug", 1));
         quizList.add(new Quiz("Which of these will not be stored as a float?",
             "7.0", "7.0", "2/4", "7",1));
-        
+        quizList.add(new Quiz("What is the result of this code? 7%(5 // 2)",
+            "1", "0", "1", "7",1));
 
     }
 

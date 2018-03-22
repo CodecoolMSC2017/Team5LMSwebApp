@@ -47,7 +47,17 @@
                     <td><input type="submit" value="Show" class="send_button"></td>
                 </tr>
             </form>
+
+
+
         </c:forEach>
+
+        <form action="quizservlet" method="post">
+                        <p>Python Quiz<>
+                            <td><input type="submit" value="Show Quiz" class="send_button"></td>
+                        </tr>
+        </form>
+
     </table>
 
 <!-- ---------- CONTENT END HERE ---------- -->
