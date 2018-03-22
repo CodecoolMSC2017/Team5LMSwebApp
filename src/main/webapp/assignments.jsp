@@ -56,9 +56,8 @@
 
     </table>
     <form action="quizservlet" method="post">
-                            <p>Python Quiz</p>
-                                <td><input type="submit" value="Show Quiz" class="send_button"></td>
-
+    <h1>Python Quiz</h1>
+        <td><input type="submit" value="Show Quiz" class="send_button"></td>
     </form>
 
 <!-- ---------- CONTENT END HERE ---------- -->
