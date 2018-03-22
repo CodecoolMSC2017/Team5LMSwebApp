@@ -16,6 +16,7 @@
             <li><a class="active" href="<c:url value='/userlist' />">User list</a></li>
             <li><a class="active" href="assignments.jsp">Assignments</a></li>
             <li><a class="active" href="<c:url value='/userProfileServlet' />">My Profile</a></li>
+            <li><a class="active" href="credits.jsp">Credits</a></li>
             <li style="float:right"><a class="active" href="index.html">Logout</a></li>
         </ul>
     </header>
@@ -58,9 +59,12 @@
 
         <center>
         <br>
+<!--
         <form action="editprofile.jsp">
-            <input type="submit" value="Edit">
+            <input type="submit" value="Edit" href="<c:url value='/userProfileServlet' />">
         </form>
+-->
+        <a class="active" href="<c:url value='/editProfileServlet' />">My Profile</a>
         </center>
 
 <!-- ---------- CONTENT END HERE ---------- -->

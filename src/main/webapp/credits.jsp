@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Main page</title>
+    <title>Credits</title>
 </head>
 <body>
 
@@ -24,7 +24,7 @@
 
 <!-- ---------- CONTENT START HERE ---------- -->
 
-        <h1>Hi ${userProfile.name}, it's good to see you!</h1>
+        <h1>Credits</h1>
 
         Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
         Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
