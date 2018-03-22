@@ -52,13 +52,14 @@
 
         </c:forEach>
 
-        <form action="quizservlet" method="post">
-                        <p>Python Quiz<>
-                            <td><input type="submit" value="Show Quiz" class="send_button"></td>
-                        </tr>
-        </form>
+
 
     </table>
+    <form action="quizservlet" method="post">
+                            <p>Python Quiz</p>
+                                <td><input type="submit" value="Show Quiz" class="send_button"></td>
+
+    </form>
 
 <!-- ---------- CONTENT END HERE ---------- -->
 
