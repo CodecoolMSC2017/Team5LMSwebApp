@@ -16,9 +16,9 @@ public class SingletonDataBase implements Storing {
     }
 
     private SingletonDataBase() {
-        registrations.add(new Registration("ben", "asd@asd.hu", "a", "a", "Student", "Your registration was successful. "));
-        registrations.add(new Registration("tib", "qwe@qwe.hu", "a", "a", "Mentor", "Your registration was successful. "));
-        registrations.add(new Registration("norb", "íyx@íyx.hu", "a", "a", "Student", "Your registration was successful. "));
+        registrations.add(new Registration("ben","asd@asd.hu", "a", "a", "Student", "Your registration was successful. "));
+        registrations.add(new Registration("tib","qwe@qwe.hu", "a", "a", "Mentor", "Your registration was successful. "));
+        registrations.add(new Registration("norb","íyx@íyx.hu", "a", "a", "Student", "Your registration was successful. "));
         registrations.add(new Registration("krisz", "ert@ert.hu", "a", "a", "Mentor", "Your registration was successful. "));
 
         assignmentList.add(new Assignment(1,"Learn Python", "Check Sololearn"));
