@@ -24,7 +24,7 @@ h1 {
     font-size: 1.0em;
     text-align: center;
     line-height: 1.3em;
-    border-radius: px;
+    border-radius: 8px;
     box-shadow: 0px 0px 25px 1px #666;
 }
 .login_box h1, .registration_box h1, .registration_box_error h1, .registration_box_ok h1 {
