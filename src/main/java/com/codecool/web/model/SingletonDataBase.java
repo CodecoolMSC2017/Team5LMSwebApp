@@ -181,6 +181,11 @@ public class SingletonDataBase implements Storing {
         quizList.add(newQuiz);
     }
 
-    
+    public List<Quiz> getQuizList() {
+        return quizList;
+    }
 
+    public void setQuizList(List<Quiz> quizList) {
+        this.quizList = quizList;
+    }
 }
