@@ -35,7 +35,7 @@
                 <td>E-mail</td>
                 <td>Role</td>
                 <c:if test = "${userProfile.role == 'Mentor'}">
-                    <td>Att.</td>
+                    <td>Attand.</td>
                 </c:if>
             </tr>
         <c:forEach items="${userlist}" var="element">
@@ -44,17 +44,28 @@
                 <td>${element.getFirstName()}</td>
                 <td>${element.getLastName()}</td>
                 <td>${element.getEmail()}</td>
-                <td align="center">${element.getRole()}</td>
+                <td>${element.getRole()}</td>
                 <c:if test = "${userProfile.role == 'Mentor'}">
-                    <td><input type="checkbox" name="attendance"></td>
+                    <td>
+                        <select name="attendance" class="drop_down_button" required>
+                            <option value="0">Out</option>
+                            <option value="1">In</option>
+                        </select>
+                    </td>
                 </c:if>
             </tr>
         </c:forEach>
-        </table>
-
         <c:if test = "${userProfile.role == 'Mentor'}">
-           <div style="text-align: right"><input type="submit" value="Update attance" class="send_button"></div>
+           <tr class="content">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td align="center"><input type="submit" value="Update" class="send_button"></td>
+            </tr>
         </c:if>
+        </table>
     </form>
 
 <!-- ---------- CONTENT END HERE ---------- -->
