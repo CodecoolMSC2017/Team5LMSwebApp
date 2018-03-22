@@ -30,19 +30,20 @@
     <form>
     <table class="assignments_list_table">
         <tr class="header">
-            <td>Nr.</td>
-            <td>Title</td>
-            <td>Description</td>
-            <td>MaxScore</td>
-            <td>Question</td>
+            <td width="10%">Nr.</td>
+            <td width="45%">Title</td>
+            <td width="45%">Description</td>
         </tr>
-
         <tr class="content">
             <td>${assignment.number}</td>
             <td>${assignment.title}</td>
             <td>${assignment.description}</td>
         </tr>
-
+        <tr class="content">
+            <td style="text-align: justify" colspan="3">
+                ${assignment.description}
+            </td>
+        </tr>
     </table>
     </form>
 
