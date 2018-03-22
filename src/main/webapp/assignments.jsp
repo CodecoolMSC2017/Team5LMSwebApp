@@ -35,18 +35,18 @@
             <td></td>
         </tr>
         <c:forEach items="${assignlist}" var="element">
-     <form action="showAssignmentServlet" method="post">
-        <tr class="content">
-            <td>
-                ${element.getNumber()}
-                <input type="hidden" type="text" name="number" value="${element.getNumber()}">
-            </td>
-            <td>${element.getTitle()}</td>
-            <td>${element.getDescription()}</td>
-            <td>${element.getMaxScore()}</td>
-            <td><input type="submit" value="Show" class="send_button"></td>
-        </tr>
-    </form>
+             <form action="showAssignmentServlet" method="post">
+                <tr class="content">
+                    <td>
+                        ${element.getNumber()}
+                        <input type="hidden" type="text" name="number" value="${element.getNumber()}">
+                    </td>
+                    <td>${element.getTitle()}</td>
+                    <td>${element.getDescription()}</td>
+                    <td>${element.getMaxScore()}</td>
+                    <td><input type="submit" value="Show" class="send_button"></td>
+                </tr>
+            </form>
         </c:forEach>
     </table>
 
