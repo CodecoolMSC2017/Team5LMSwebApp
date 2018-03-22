@@ -66,7 +66,7 @@
         <br>
 <!--
         <form action="editprofile.jsp">
-            <input type="submit" value="Edit" href="<c:url value='/editProfileServlet' />">
+            <input type="submit" value="Edit" href="editProfileServlet">
         </form>
 -->
         <a class="active" href="<c:url value='/editProfileServlet' />">My Profile</a>

@@ -37,7 +37,10 @@
         <c:forEach items="${assignlist}" var="element">
      <form action="showAssignmentServlet" method="post">
         <tr class="content">
-            <td>${element.getNumber()}</td>
+            <td>
+                ${element.getNumber()}
+                <input type="hidden" type="text" name="number" value="${element.getNumber()}">
+            </td>
             <td>${element.getTitle()}</td>
             <td>${element.getDescription()}</td>
             <td>${element.getMaxScore()}</td>
