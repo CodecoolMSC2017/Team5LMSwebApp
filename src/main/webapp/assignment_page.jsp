@@ -24,7 +24,7 @@
 
 <!-- ---------- CONTENT START HERE ---------- -->
 
-    <h1>Assignments</h1>
+    <h1>Assignment: ${assignment.title}</h1>
 
 
     <form>
