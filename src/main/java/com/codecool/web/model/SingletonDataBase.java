@@ -27,6 +27,12 @@ public class SingletonDataBase implements Storing {
         assignmentList.add(new Assignment(3, "Learn Html", "Check Sololern/html", 3, "Question comes here?"));
         assignmentList.add(new Assignment(4, "Learn Javascript", "Check Sololern/javascript", 4, "Question comes here?"));
 
+        quizList.add(new Quiz("What is Python", "Programming Lnaguage",
+            "Programming Language", "Library",
+            "A bug", 1));
+        quizList.add(new Quiz("Which of these will not be stored as a float?",
+            "7.0", "7.0", "2/4", "7",1));
+        
 
     }
 
