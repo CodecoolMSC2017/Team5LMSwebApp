@@ -20,34 +20,49 @@
             <li style="float:right"><a class="active" href="index.html">Logout</a></li>
         </ul>
     </header>
-    <div class="content_frame">
+    <br><br><br>
+    <div class="news_on_main">
 
 <!-- ---------- CONTENT START HERE ---------- -->
 
-        <h1>Hi ${userProfile.name}, it's good to see you!</h1>
+        <h1>Some fake News!</h1>
+        <h2>Trump announces $50bn in China tariffs</h2>
+        <p>The US plans to impose tariffs on about $50bn in Chinese goods and limit the countrys investment in the US in retaliation for years of alleged intellectual property theft.</p>
+        <br>
+        <p>The White House said the actions were necessary to counter unfair competition from Chinas state-led economy.</p>
 
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
+
+<!-- ---------- CONTENT END HERE ---------- -->
+
+    </div>
+    <br><br><br>
+    <div class="news_on_main">
+
+<!-- ---------- CONTENT START HERE ---------- -->
+
+        <h1>Everyone failed at PA!!!</h1>
+        <h2>Students at Codecool starts Riot!!!</h2>
+        <p>bla bla bla asdlaskdlask dlkasd asdj k slkd jaskj askjaksdj ajs jasdkj akej qwkejaskdja jk sdaksjd kasj kjasd </p>
+        <br>
+        <p>The asdk asl kdasélj daskfjasklfj asklfjasfljkasfk jasék</p>
+
+
+
+
+<!-- ---------- CONTENT END HERE ---------- -->
+
+    </div>
+    <br><br><br>
+    <div class="news_on_main">
+
+<!-- ---------- CONTENT START HERE ---------- -->
+
+        <h1>Some other fake News!</h1>
+        <h2>Tasdasd asd s ad as </h2>
+        <p>Tfgxdfg f ffgdg df cf fgcfcfc  cfgcxxf gfxcdf  xdxf  dxcfx d xcx d xdfxcx  dxfx  dxdfx xfdxd dxdx dxdfx d xfdx dfx </p>
+        <br>
+        <p>The sd as as das das das das dasd </p>
+
 
 
 <!-- ---------- CONTENT END HERE ---------- -->
