@@ -16,7 +16,6 @@
             <li><a class="active" href="<c:url value='/userlist' />">User list</a></li>
             <li><a class="active" href="assignments.jsp">Assignments</a></li>
             <li><a class="active" href="<c:url value='/userProfileServlet' />">My Profile</a></li>
-            <li><a class="active" href="credits.jsp">Credits</a></li>
             <li style="float:right"><a class="active" href="index.html">Logout</a></li>
         </ul>
     </header>
@@ -26,17 +25,29 @@
 
     <h1>Assignments</h1>
 
-    <form action="curicullum" method="post">
-        <input type="submit" value="Show aasignments" class="send_button">
+    <form action="curriculum" method="post">
+        <input type="submit" value="Show assignments" class="send_button">
     </form>
     <br>
     <c:forEach items="${assignlist}" var="element">
-        <form action="/action_page.php">
         <table>
             <tr class="content">
-              Change numbers: <input type="number" name="change"><td>${element.getNumber()}</td>
+
+              <td>${element.getNumber()}</td>
+                <c:set var="savedNumber" value="${element.getNumber()}" />
               <td>${element.getTitle()}</td>
-              <td>${element.getDescription()}</td>
+
+              <c:forEach items="${assignlist}" var="element">
+
+              <div id="myDIV">
+
+
+                <c:if test = "${element.getNumber() == savedNumber}">
+                  ${element.getDescription()}
+
+                  </c:if>
+               </div>
+                </c:forEach>
             </tr>
         </table>
         </form>
@@ -45,6 +56,14 @@
 <!-- ---------- CONTENT END HERE ---------- -->
 
     </div>
+
+
+<script>
+function myFunction() {
+      var div = document.getElementById("myDIV");
+      div.innerHTML = "AFJASFAS";
+ }
+</script>
 
 </body>
 </html>
