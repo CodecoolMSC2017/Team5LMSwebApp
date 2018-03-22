@@ -6,7 +6,8 @@ public class Quiz {
     private String answer;
     private int maxScore;
 
-    public Quiz(String question, String answer, int maxScore) {
+    public Quiz(String question, String answer,String possibleAnswer1, String possibleAnswer2,
+                String possibleAnswer3, int maxScore) {
         this.question = question;
         this.answer = answer;
         this.maxScore = maxScore;
