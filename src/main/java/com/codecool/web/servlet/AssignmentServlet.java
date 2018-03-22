@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/curicullum")
+@WebServlet("/curriculum")
 public class AssignmentServlet extends HttpServlet {
 
     @Override
