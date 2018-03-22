@@ -49,7 +49,12 @@
             </tr>
             <tr class="content">
                 <td class="col-1">Role:</td>
-                <td class="col-2">${userProfile.role}</td>
+                <td class="col-2">
+                    ${userProfile.role}
+                    <c:if test = "${userProfile.role == 'Mentor'}">
+                        <img src="images/mentor.ico" style="margin-bottom: -4px;">
+                    </c:if>
+                </td>
             </tr>
             <tr class="content">
                 <td class="col-1">Other:</td>
