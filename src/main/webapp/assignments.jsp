@@ -25,30 +25,26 @@
 
     <h1>Assignments</h1>
 
-    <form action="curriculum" method="post">
-        <input type="submit" value="Show assignments" class="send_button">
-    </form>
-    <br>
     <c:forEach items="${assignlist}" var="element">
+        <form>
         <table>
-            <tr class="content">
 
-              <td>${element.getNumber()}</td>
-                <c:set var="savedNumber" value="${element.getNumber()}" />
-              <td>${element.getTitle()}</td>
-
-              <c:forEach items="${assignlist}" var="element">
-
-              <div id="myDIV">
-
-
-                <c:if test = "${element.getNumber() == savedNumber}">
-                  ${element.getDescription()}
-
-                  </c:if>
-               </div>
-                </c:forEach>
+            <tr>
+              <td>Nr.</td>
+              <td>Title</td>
+              <td>Description</td>
+              <td>MaxScore</td>
+              <td>Question</td>
             </tr>
+
+            <tr>
+              <td>${element.getNumber()}</td>
+              <td>${element.getTitle()}</td>
+              <td>${element.getDescription()}</td>
+              <td>${element.getMaxScore()}</td>
+              <td>${element.getQuestion()}</td>
+            </tr>
+
         </table>
         </form>
     </c:forEach>
