@@ -46,7 +46,7 @@
                 <td>${element.getEmail()}</td>
                 <td align="center">${element.getRole()}</td>
                 <c:if test = "${userProfile.role == 'Mentor'}">
-                    <td><input type="checkbox" name="attendance" value="1"></td>
+                    <td><input type="checkbox" name="attendance"></td>
                 </c:if>
             </tr>
         </c:forEach>
