@@ -27,24 +27,21 @@
 
     <c:forEach items="${assignlist}" var="element">
         <form>
-        <table>
-
-            <tr>
-              <td>Nr.</td>
-              <td>Title</td>
-              <td>Description</td>
-              <td>MaxScore</td>
-              <td>Question</td>
+        <table class="user_list_table">
+            <tr class="header">
+                <td>Nr.</td>
+                <td>Title</td>
+                <td>Description</td>
+                <td>MaxScore</td>
+                <td>Question</td>
             </tr>
-
-            <tr>
-              <td>${element.getNumber()}</td>
-              <td>${element.getTitle()}</td>
-              <td>${element.getDescription()}</td>
-              <td>${element.getMaxScore()}</td>
-              <td>${element.getQuestion()}</td>
+            <tr class="content">
+                <td>${element.getNumber()}</td>
+                <td>${element.getTitle()}</td>
+                <td>${element.getDescription()}</td>
+                <td>${element.getMaxScore()}</td>
+                <td>${element.getQuestion()}</td>
             </tr>
-
         </table>
         </form>
     </c:forEach>
