@@ -17,6 +17,7 @@
             <li><a class="active" href="assignments.jsp">Assignments</a></li>
             <li><a class="active" href="<c:url value='/userProfileServlet' />">My Profile</a></li>
             <li><a class="active" href="credits.jsp">Credits</a></li>
+            <li><a class="active" href="textPage.jsp">Add Text Page</a></li>
             <li style="float:right"><a class="active" href="index.html">Logout</a></li>
         </ul>
     </header>
@@ -49,7 +50,12 @@
             </tr>
             <tr class="content">
                 <td class="col-1">Role:</td>
-                <td class="col-2">${userProfile.role}</td>
+                <td class="col-2">
+                    ${userProfile.role}
+                    <c:if test = "${userProfile.role == 'Mentor'}">
+                        <img src="images/mentor.ico" style="margin-bottom: -4px;">
+                    </c:if>
+                </td>
             </tr>
             <tr class="content">
                 <td class="col-1">Other:</td>
