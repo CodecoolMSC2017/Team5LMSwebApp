@@ -9,6 +9,7 @@ public class SingletonDataBase implements Storing {
 
     private List<Registration> registrations = new ArrayList<>();
     private List<Assignment> assignmentList = new ArrayList<>();
+    private List<Quiz> quizList = new ArrayList<>();
     private Login login;
 
     public static SingletonDataBase getInstance() {
@@ -25,6 +26,14 @@ public class SingletonDataBase implements Storing {
         assignmentList.add(new Assignment(2, "Learn Java", "Check Sololern/Java",3, "Question comes here?"));
         assignmentList.add(new Assignment(3, "Learn Html", "Check Sololern/html", 3, "Question comes here?"));
         assignmentList.add(new Assignment(4, "Learn Javascript", "Check Sololern/javascript", 4, "Question comes here?"));
+
+        quizList.add(new Quiz("What is Python", "Programming Lnaguage",
+            "Programming Language", "Library",
+            "A bug", 1));
+        quizList.add(new Quiz("Which of these will not be stored as a float?",
+            "7.0", "7.0", "2/4", "7",1));
+        quizList.add(new Quiz("What is the result of this code? 7%(5 // 2)",
+            "1", "0", "1", "7",1));
 
     }
 
@@ -175,4 +184,15 @@ public class SingletonDataBase implements Storing {
         return assignmentDesriptions;
     }
 
+    public void addQuizList(Quiz newQuiz) {
+        quizList.add(newQuiz);
+    }
+
+    public List<Quiz> getQuizList() {
+        return quizList;
+    }
+
+    public void setQuizList(List<Quiz> quizList) {
+        this.quizList = quizList;
+    }
 }

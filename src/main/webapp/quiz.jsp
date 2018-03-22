@@ -19,6 +19,29 @@
         <input type="submit" value="Login"  class="submit" />
     </form>
 
+
+
     <br />
+
+<c:forEach items="${quizlist}" var="element">
+    <form>
+        <table>
+
+
+            <tr class="content">
+                <h3>${element.question}</h3>
+                <td>${element.possibleAnswer1}</td>
+                <input type="radio" name="answer1" value="${element.possibleAnswer1}" checked="checked">${element.possibleAnswer1}<br>
+                <input type="radio" name="answer1" value="${element.possibleAnswer2}" checked="checked">${element.possibleAnswer2}<br>
+                <input type="radio" name="answer1" value="${element.possibleAnswer3}" checked="checked">${element.possibleAnswer3}<br>
+
+
+                <td>${element.possibleAnswer2}</td>
+                <td>${element.possibleAnswer3}</td>
+            </tr>
+
+        </table>
+        </form>
+</c:forEach>
 
 </body>
