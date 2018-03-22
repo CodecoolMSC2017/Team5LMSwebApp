@@ -11,16 +11,15 @@
 <body>
 
     <header>
-        <ul>
-            <li><a class="active" href="home.jsp">Home</a></li>
-            <li><a class="active" href="<c:url value='/userlist' />">User list</a></li>
-            <li><a class="active" href="assignments.jsp">Assignments</a></li>
-            <li><a class="active" href="<c:url value='/userProfileServlet' />">My Profile</a></li>
-            <li><a class="active" href="credits.jsp">Credits</a></li>
-            <li><a class="active" href="textPage.jsp">Add Text Page</a></li>
-            <li style="float:right"><a class="active" href="index.html">Logout</a></li>
-        </ul>
-    </header>
+         <ul>
+             <li><a class="active" href="home.jsp">Home</a></li>
+             <li><a class="active" href="<c:url value='/userlist' />">User list</a></li>
+             <li><a class="active" href="<c:url value='/curriculum' />">Assignments</a></li>
+             <li><a class="active" href="<c:url value='/userProfileServlet' />">My Profile</a></li>
+             <li><a class="active" href="credits.jsp">Credits</a></li>
+             <li style="float:right"><a class="active" href="index.html">Logout</a></li>
+         </ul>
+     </header>
     <div class="content_frame">
 
 <!-- ---------- CONTENT START HERE ---------- -->
