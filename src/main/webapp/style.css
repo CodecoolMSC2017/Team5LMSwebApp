@@ -85,7 +85,7 @@ header li {
 }
 header li a {
     display: block;
-    padding: 0px 15px 0px 15px;
+    padding: 0px 15px 0px 10px;
     border-right: 1px solid #BBB;
     text-decoration: none;
     text-align: center;
@@ -102,6 +102,12 @@ header li:last-child {
 }
 header li a:hover {
     background-color: #4CAF50;
+}
+header li img {
+    margin-bottom: -10px;
+    padding-right: 10px;
+    height: 30px;
+    width: 30px;
 }
 
 .content_frame {

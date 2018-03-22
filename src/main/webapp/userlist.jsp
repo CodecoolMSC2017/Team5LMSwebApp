@@ -33,9 +33,10 @@
                 <td>Firstname</td>
                 <td>Lastname</td>
                 <td>E-mail</td>
-                <td>Role</td>
+                <td width="70px">Role</td>
                 <c:if test = "${userProfile.role == 'Mentor'}">
-                    <td>Attand.</td>
+                    <td width="60px">Attand.</td>
+                    <td width="40px">%</td>
                 </c:if>
             </tr>
         <c:forEach items="${userlist}" var="element">
@@ -52,6 +53,11 @@
                                 <option value="0">Out</option>
                                 <option value="1">In</option>
                             </select>
+                        </c:if>
+                    </td>
+                    <td>
+                        <c:if test = "${element.getRole() == 'Student'}">
+                            55%
                         </c:if>
                     </td>
                 </c:if>
