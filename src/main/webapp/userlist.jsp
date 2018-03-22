@@ -28,13 +28,17 @@
 
     <table class="user_list_table" align="center">
         <tr class="header">
-            <td>Name</td>
+            <td>Username</td>
+            <td>Firstname</td>
+            <td>Lastname</td>
             <td>E-mail</td>
             <td>Role</td>
         </tr>
     <c:forEach items="${userlist}" var="element">
         <tr class="content">
             <td>${element.getName()}</td>
+            <td>${element.getFirstName()}</td>
+            <td>${element.getLastName()}</td>
             <td>${element.getEmail()}</td>
             <td align="center">${element.getRole()}</td>
         </tr>
