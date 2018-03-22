@@ -16,6 +16,7 @@
             <li><a class="active" href="<c:url value='/userlist' />">User list</a></li>
             <li><a class="active" href="assignments.jsp">Assignments</a></li>
             <li><a class="active" href="<c:url value='/userProfileServlet' />">My Profile</a></li>
+            <li><a class="active" href="credits.jsp">Credits</a></li>
             <li style="float:right"><a class="active" href="index.html">Logout</a></li>
         </ul>
     </header>
@@ -29,29 +30,29 @@
         <table class="user_profile_table" align="center">
             <tr class="content">
                 <td class="col-1">Username:</td>
-                <td class="col-2"><input type="text" name="name" value="${userProfile.name}" class="input_field"  readonly="readonly"></td>
+                <td class="col-2"><input type="text" name="name" value="${userProfile.name}" class="input_field" readonly="readonly"></td>
             </tr>
             <tr class="content">
                 <td class="col-1">First name:</td>
-                <td class="col-2"><input type="text" name="firstname" value="${userProfile.firstname}" class="input_field"></td>
+                <td class="col-2"><input type="text" name="firstname" value="${userProfile.name}" class="input_field"></td>
             </tr>
             <tr class="content">
                 <td class="col-1">Last name:</td>
-                <td class="col-2"><input type="text" name="lastname" value="${userProfile.lastname}" class="input_field"></td>
+                <td class="col-2"><input type="text" name="lastname" value="${userProfile.name}" class="input_field"></td>
             </tr>
             <tr class="content">
                 <td class="col-1">E-mail address: <span class="recommended">*</span></td>
-                <td class="col-2"><input type="email" name="email" value="${userProfile.password}" class="input_field" required></td>
+                <td class="col-2"><input type="email" name="email" value="${userProfile.password}" class="input_field" readonly="readonly"></td>
             </tr>
             <tr class="content">
                 <td class="col-1">Role:</td>
-                <td class="col-2"><input type="text" name="name" value="${userProfile.role}" class="input_field"  readonly="readonly"></td>
+                <td class="col-2"><input type="text" name="name" value="${userProfile.role}" class="input_field" readonly="readonly"></td>
             </tr>
             <tr class="content" valign="top">
                 <td class="col-1">Other:</td>
-                <td class="col-2"><textarea rows="4" cols="65" name="other" value="${userProfile.other}" class="input_field"></textarea></td>
+                <td class="col-2"><textarea rows="4" cols="65" name="other" value="${userProfile.role}" class="input_field"></textarea></td>
             </tr>
-            <tr class="content">
+              <tr class="content">
                 <td class="col-1">Password: <span class="recommended">*</span></td>
                 <td class="col-2"><input type="password" name="password" value="" class="input_field" required></td>
             </tr>
