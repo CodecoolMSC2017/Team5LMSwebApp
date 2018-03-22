@@ -98,7 +98,7 @@ header li a {
 header li:last-child {
     border-right: none;
 }
-header li a:hover, header li a:active {
+header li a:hover {
     background-color: #4CAF50;
 }
 
@@ -129,6 +129,7 @@ header li a:hover, header li a:active {
 .user_list_table .content {
     border-top: 1px dotted #000;
     background-color: #FFF;
+    text-align: center;
 }
 
 /* ********** USER PROFILE ********** */

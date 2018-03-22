@@ -26,24 +26,36 @@
 
     <h1>User list</h1>
 
-    <table class="user_list_table" align="center">
-        <tr class="header">
-            <td>Username</td>
-            <td>Firstname</td>
-            <td>Lastname</td>
-            <td>E-mail</td>
-            <td>Role</td>
-        </tr>
-    <c:forEach items="${userlist}" var="element">
-        <tr class="content">
-            <td>${element.getName()}</td>
-            <td>${element.getFirstName()}</td>
-            <td>${element.getLastName()}</td>
-            <td>${element.getEmail()}</td>
-            <td align="center">${element.getRole()}</td>
-        </tr>
-    </c:forEach>
-    </table>
+    <form action="attendanceServlet" method="post">
+        <table class="user_list_table" align="center">
+            <tr class="header">
+                <td>Username</td>
+                <td>Firstname</td>
+                <td>Lastname</td>
+                <td>E-mail</td>
+                <td>Role</td>
+                <c:if test = "${userProfile.role == 'Mentor'}">
+                    <td>Att.</td>
+                </c:if>
+            </tr>
+        <c:forEach items="${userlist}" var="element">
+            <tr class="content">
+                <td>${element.getName()}</td>
+                <td>${element.getFirstName()}</td>
+                <td>${element.getLastName()}</td>
+                <td>${element.getEmail()}</td>
+                <td align="center">${element.getRole()}</td>
+                <c:if test = "${userProfile.role == 'Mentor'}">
+                    <td><input type="checkbox" name="attendance" value="1"></td>
+                </c:if>
+            </tr>
+        </c:forEach>
+        </table>
+
+        <c:if test = "${userProfile.role == 'Mentor'}">
+           <div style="text-align: right"><input type="submit" value="Update attance" class="send_button"></div>
+        </c:if>
+    </form>
 
 <!-- ---------- CONTENT END HERE ---------- -->
 
