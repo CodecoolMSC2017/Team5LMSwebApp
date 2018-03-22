@@ -23,7 +23,7 @@
 
 <!-- ---------- CONTENT START HERE ---------- -->
 
-        <h1>Hi, it's good to see you!</h1>
+        <h1>Hi ${userProfile.name}, it's good to see you!</h1>
 
         Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
         Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>

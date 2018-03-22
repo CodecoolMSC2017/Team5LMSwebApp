@@ -23,10 +23,12 @@
 
 <!-- ---------- CONTENT START HERE ---------- -->
 
+    <h1>Assignments</h1>
+
     <form action="curicullum" method="post">
         <input type="submit" value="Show aasignments" class="send_button">
     </form>
-
+    <br>
     <c:forEach items="${assignlist}" var="element">
         <form action="/action_page.php">
         <table>

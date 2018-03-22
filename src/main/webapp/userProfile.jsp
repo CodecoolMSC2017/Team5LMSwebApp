@@ -23,27 +23,33 @@
 
 <!-- ---------- CONTENT START HERE ---------- -->
 
-    <h1>${userProfile.name}</h1>
+    <h1>User Profile</h1>
 
-        <table>
-            <tr>
-                <td> Your name</td>
-                <td>${userProfile.name}</td>
+        <table class="user_profile_table" align="center">
+            <tr class="content">
+                <td class="col-1">Name:</td>
+                <td class="col-2">${userProfile.name}</td>
             </tr>
-            <tr>
-                <td>E-mail address</td>
-                <td>${userProfile.email}</td>
+            <tr class="content">
+                <td class="col-1">E-mail address:</td>
+                <td class="col-2">${userProfile.email}</td>
             </tr>
-            <tr>
-                <td>Password</td>
-                <td>${userProfile.password}</td>
+            <tr class="content">
+                <td class="col-1">Password:</td>
+                <td class="col-2">${userProfile.password}</td>
             </tr>
-            <tr>
-                <td>Role</td>
-                <td>${userProfile.role}</td>
+            <tr class="content">
+                <td class="col-1">Role:</td>
+                <td class="col-2">${userProfile.role}</td>
             </tr>
         </table>
 
+        <center>
+        <br>
+        <form action="editprofile.jsp">
+            <input type="submit" value="Edit">
+        </form>
+        </center>
 
 <!-- ---------- CONTENT END HERE ---------- -->
 

@@ -13,7 +13,7 @@
     <header>
         <ul>
             <li><a class="active" href="home.jsp">Home</a></li>
-            <li><a class="active" href="<c:url value='/userlist' />">Users list</a></li>
+            <li><a class="active" href="<c:url value='/userlist' />">User list</a></li>
             <li><a class="active" href="assignments.jsp">Assignments</a></li>
             <li><a class="active" href="<c:url value='/userProfileServlet' />">My Profile</a></li>
             <li style="float:right"><a class="active" href="index.html">Logout</a></li>
@@ -23,7 +23,9 @@
 
 <!-- ---------- CONTENT START HERE ---------- -->
 
-    <table class="user_table" align="center">
+    <h1>User list</h1>
+
+    <table class="user_list_table" align="center">
         <tr class="header">
             <td>Name</td>
             <td>E-mail</td>
