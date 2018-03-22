@@ -24,7 +24,7 @@
 
 <!-- ---------- CONTENT START HERE ---------- -->
 
-    <h1>User list</h1>
+    <h1>User list<c:if test = "${userProfile.role == 'Mentor'}"> / Attendance</c:if></h1>
 
     <form action="attendanceServlet" method="post">
         <table class="user_list_table" align="center">
@@ -47,10 +47,12 @@
                 <td>${element.getRole()}</td>
                 <c:if test = "${userProfile.role == 'Mentor'}">
                     <td>
-                        <select name="attendance" class="drop_down_button" required>
-                            <option value="0">Out</option>
-                            <option value="1">In</option>
-                        </select>
+                        <c:if test = "${element.getRole() == 'Student'}">
+                            <select name="attendance" class="drop_down_button" required>
+                                <option value="0">Out</option>
+                                <option value="1">In</option>
+                            </select>
+                        </c:if>
                     </td>
                 </c:if>
             </tr>
