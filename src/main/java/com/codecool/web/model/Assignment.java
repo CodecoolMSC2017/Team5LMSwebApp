@@ -5,15 +5,15 @@ public class Assignment {
     private int number;
     private String title;
     private String description;
-    private int maxScore;
+    private int time;
     private String task;
     private String answer;
 
-    public Assignment(int number, String title, String description, int maxScore, String task) {
+    public Assignment(int number, String title, String description, int time, String task) {
         this.number = number;
         this.title = title;
         this.description = description;
-        this.maxScore = maxScore;
+        this.time = time;
         this.task = task;
     }
 
@@ -41,8 +41,8 @@ public class Assignment {
         this.description = description;
     }
 
-    public void setMaxScore(int maxScore) {
-        this.maxScore = maxScore;
+    public void setTime(int time) {
+        this.time = time;
     }
 
     public void setTask(String question) {
@@ -53,9 +53,9 @@ public class Assignment {
         this.answer = answer;
     }
 
-    public int getMaxScore() {
+    public int getTime() {
 
-        return maxScore;
+        return time;
     }
 
     public String getTask() {

@@ -33,10 +33,10 @@ public class SingletonDataBase implements Storing {
         registrations.get(0).setAttendance(-1);
         registrations.get(2).setAttendance(-2);
 
-        assignmentList.add(new Assignment(1,"Learn Python", "Check Sololearn", 12, "Your task will be the following:"));
+        assignmentList.add(new Assignment(1,"Learn Python", "Check Sololearn", 1, "Your task will be the following:"));
         assignmentList.add(new Assignment(2, "Learn Java", "Check Sololern/Java",3, "Your task will be the following:"));
         assignmentList.add(new Assignment(3, "Learn Html", "Check Sololern/html", 3, "Your task will be the following:?"));
-        assignmentList.add(new Assignment(4, "Learn Javascript", "Check Sololern/javascript", 4, "Your task will be the following:?"));
+        assignmentList.add(new Assignment(4, "Learn Javascript", "Check Sololern/javascript", 2, "Your task will be the following:?"));
 
         quizList.add(new Quiz("What is Python", "Programming Lnaguage",
             "Programming Language", "Library",
