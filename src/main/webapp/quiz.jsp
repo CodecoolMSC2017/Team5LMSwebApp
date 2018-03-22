@@ -12,18 +12,18 @@
 
     <header>
         <ul>
-            <li><a class="active" href="home.jsp">Home</a></li>
-            <li><a class="active" href="<c:url value='/userlist' />">User list</a></li>
-            <li><a class="active" href="<c:url value='/curriculum' />">Assignments</a></li>
-            <li><a class="active" href="<c:url value='/userProfileServlet' />">My Profile</a></li>
-            <li><a class="active" href="credits.jsp">Credits</a></li>
+            <li><a class="active" href="home.jsp"><img src="images/menu_home.png">Home</a></li>
+            <li><a class="active" href="<c:url value='/userlist' />"><img src="images/menu_userlist.png"">User list</a></li>
+            <li><a class="active" href="<c:url value='/curriculum' />"><img src="images/menu_assignments.png"">Assignments</a></li>
+            <li><a class="active" href="<c:url value='/userProfileServlet' />"><img src="images/menu_profile.png"">My Profile</a></li>
+            <li><a class="active" href="credits.jsp"><img src="images/menu_credits.png"">Credits</a></li>
             <li style="float:right"><a class="active" href="index.html">Logout</a></li>
         </ul>
     </header>
 
 <div class="content_frame">
 
-    
+
 
 
 
