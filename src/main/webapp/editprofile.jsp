@@ -41,7 +41,7 @@
                 <td class="col-2"><input type="text" name="lastname" value="${userProfile.lastName}" class="input_field"></td>
             </tr>
             <tr class="content">
-                <td class="col-1">E-mail address: <span class="recommended">*</span></td>
+                <td class="col-1">E-mail address:</td>
                 <td class="col-2"><input type="email" name="email" value="${userProfile.email}" class="input_field" readonly="readonly"></td>
             </tr>
             <tr class="content">
