@@ -29,19 +29,19 @@
 <center>
 
 <h3>Design</h3>
-<p>Krisztian Kollar</p>
+<p>Krisztián Kollár</p>
 <p>Bence Ambrus</p>
 <p>Norbert Dörner</p>
 <p>Tibor Domokos</p>
 <br>
 <h3>Web Development</h3>
-<p>Krisztian Kollar</p>
+<p>Krisztián Kollár</p>
 <p>Bence Ambrus</p>
 <p>Norbert Dörner</p>
 <p>Tibor Domokos</p>
 <br>
 <h3>Everything else...</h3>
-<p>Krisztian Kollar</p>
+<p>Krisztián Kollár</p>
 <p>Bence Ambrus</p>
 <p>Norbert Dörner</p>
 <p>Tibor Domokos</p>
