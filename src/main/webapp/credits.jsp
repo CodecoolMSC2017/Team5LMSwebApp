@@ -26,29 +26,27 @@
 
         <h1>Credits</h1>
 
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
-        Scroll down... Menu bar stays there :)<br> Scroll down... Menu bar stays there :)<br>
+<center>
 
+<h2>Design</h2>
+<p>Krisztian Kollar</p>
+<p>Bence Ambrus</p>
+<p>Norbert Dörner</p>
+<p>Tibor Domokos</p>
+<br>
+<h2>Web Development</h2>
+<p>Krisztian Kollar</p>
+<p>Bence Ambrus</p>
+<p>Norbert Dörner</p>
+<p>Tibor Domokos</p>
+<br>
+<h2>Everything else...</h2>
+<p>Krisztian Kollar</p>
+<p>Bence Ambrus</p>
+<p>Norbert Dörner</p>
+<p>Tibor Domokos</p>
+
+</center>
 
 <!-- ---------- CONTENT END HERE ---------- -->
 
