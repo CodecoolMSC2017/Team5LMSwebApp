@@ -56,7 +56,7 @@ h1 {
     transition: all 0.4s;
 }
 .login_box a:hover {
-    color: red;
+    color: #F26223;
 }
 .input_field {
     font-size: 1.0em;
@@ -201,3 +201,45 @@ header li img {
     color: red;
     font-weight: bold;
 }
+
+/* ********** SUBMIT BUTTON & SUBMIT DIV ********** */
+
+.submit_div a, .submit {
+    padding: 8px 8px;
+    background-color: #E3F5F5;
+    border: 1px solid #A4B1B9;
+    color: #086A75;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+	border-radius: 6px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.submit_div a:hover, .submit:hover {
+    padding: 8px 8px;
+    background-color: #B9E5E4;
+    border: 1px solid #A4B1B9;
+    color: #086A75;
+    text-decoration: none;
+}
+
+
+
+
+/*
+19384C
+20445A
+086A75
+33AFBB
+79CBD6
+8BE9F3
+B9E5E4
+
+F26223
+DA5A1B
+*/

@@ -68,7 +68,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td align="center"><input type="submit" value="Update" class="send_button"></td>
+                <td align="center"><input type="submit" value="Update" class="submit"></td>
             </tr>
         </c:if>
         </table>

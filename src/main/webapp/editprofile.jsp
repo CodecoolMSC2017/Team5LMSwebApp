@@ -64,9 +64,9 @@
 
         <br><span class="recommended">* Recommended</span><br>
         <center>
-        <input type="submit" value="Save Changes" class="send_button">
-        <input type="reset" value="Reset" class="send_button">
-        <input type="button" value="Cancel" class="send_button" onclick="history.back()">
+        <input type="submit" value="Save Changes" class="submit">
+        <input type="reset" value="Reset" class="submit">
+        <input type="button" value="Cancel" class="submit" onclick="history.back()">
         </center>
         </form>
 

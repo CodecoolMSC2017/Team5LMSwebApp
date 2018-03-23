@@ -38,7 +38,7 @@
         <center>
         <br>
         <form action="textPage.jsp">
-            <input type="submit" value="Save">
+            <input type="submit" value="Save" class"submit">
         </form>
         </center>
     </div>

@@ -69,8 +69,10 @@
             <input type="submit" value="Edit" href="editProfileServlet">
         </form>
 -->
-        <a class="active" href="<c:url value='/editProfileServlet' />">My Profile</a>
+
+        <div class="submit_div"><a href="<c:url value='/editProfileServlet' />">My Profile</a></div>
         </center>
+        <br>
 
 <!-- ---------- CONTENT END HERE ---------- -->
 

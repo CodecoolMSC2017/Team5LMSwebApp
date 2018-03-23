@@ -44,7 +44,7 @@
                     <td>${element.getTitle()}</td>
                     <td>${element.getDescription()}</td>
                     <td>${element.getTime()}</td>
-                    <td><input type="submit" value="Show" class="send_button"></td>
+                    <td><input type="submit" value="Show" class="submit"></td>
                 </tr>
             </form>
 
@@ -57,7 +57,7 @@
     </table>
     <form action="quizservlet" method="post">
     <h1>Python Quiz</h1>
-        <td><input type="submit" value="Show Quiz" class="send_button"></td>
+        <td><input type="submit" value="Show Quiz" class="submit"></td>
     </form>
 
 <!-- ---------- CONTENT END HERE ---------- -->
