@@ -28,19 +28,24 @@
 
 <center>
 
-<h3>Design</h3>
+<h3 style="margin-bottom: -5px">Design</h3>
+<hr style="width:50%">
 <p>Krisztián Kollár</p>
 <p>Bence Ambrus</p>
 <p>Norbert Dörner</p>
 <p>Tibor Domokos</p>
 <br>
-<h3>Web Development</h3>
+<br>
+<h3 style="margin-bottom: -5px">Web Development</h3>
+<hr style="width:50%">
 <p>Krisztián Kollár</p>
 <p>Bence Ambrus</p>
 <p>Norbert Dörner</p>
 <p>Tibor Domokos</p>
 <br>
-<h3>Everything else...</h3>
+<br>
+<h3 style="margin-bottom: -5px">Everything else...</h3>
+<hr style="width:50%">
 <p>Krisztián Kollár</p>
 <p>Bence Ambrus</p>
 <p>Norbert Dörner</p>
