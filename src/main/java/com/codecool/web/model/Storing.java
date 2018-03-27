@@ -4,18 +4,20 @@ import java.util.List;
 
 public interface Storing {
 
+    public List<Student> getStudents();
+    public List<Mentor> getMentors();
     void newLogin(Login login);
     Login getLogin();
     void delLogin();
     List<Registration> getAllRegistration();
     boolean addRegistration(Registration registration);
     Registration getRegistration(String name);
-    void updateReg(Login Login, String name, String fname, String lname, String pass, String confPass);
+    void updateReg(String fname, String lname, String email, String pass);
     void deleteReg(Registration registration);
     List<String> getNames();
     List<String> getEmails();
     List<String> getPasswords();
     boolean isMentor(Registration registration);
-    List<Assignment> getAssignmentList();
+    List<AandQStore> getaQStores();
 
 }

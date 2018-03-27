@@ -1,76 +1,123 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
+<!--
+https://fontawesome.com/v4.7.0/icons/
+-->
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Assignments</title>
-</head>
-<body>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+		<script type="text/javascript" src=""></script>
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="css/menu_vertical.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<script src="#"></script>
+		<title>Assignments</title>
+	</head>
+	<body>
+		<header>
+			<script src="js/header.js"></script>
+		</header>
 
-    <header>
-        <ul>
-            <li><a class="active" href="home.jsp"><img src="images/menu_home.png">Home</a></li>
-            <li><a class="active" href="<c:url value='/userlist' />"><img src="images/menu_userlist.png"">User list</a></li>
-            <li><a class="active" href="<c:url value='/curriculum' />"><img src="images/menu_assignments.png"">Assignments</a></li>
-            <li><a class="active" href="<c:url value='/userProfileServlet' />"><img src="images/menu_profile.png"">My Profile</a></li>
-            <li><a class="active" href="credits.jsp"><img src="images/menu_credits.png"">Credits</a></li>
-            <li style="float:right"><a class="active" href="index.html">Logout</a></li>
-        </ul>
-    </header>
-    <div class="content_frame">
+		<!-- CONTENT START -->
+		<div class="content">
+			<div class="content_title">
+				<div class="text">Assignments</div>
+				<div class="add"><a href="#"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i></a></div>
+			</div>
 
-<!-- ---------- CONTENT START HERE ---------- -->
+		    <div class="assignment_frame">
+                <c:forEach items="${AandQlist}" var="element">
+                    <div class="title">
+                        <div class="text">${element.getTitle()}</div>
+                    </div>
+                    <div class="topic_items">
 
-    <h1>Assignments</h1>
+                        <c:forEach items="${element.assignments}" var="assign">
+                        <div class="topic_item">
+                            <table class="table">
+                                <tr>
+                                    <td class="col-1"><a href="<c:url value="/Assignement"><c:param name="id" value="${assign.getId()}"/></c:url>"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></a></td>
+                                    <td class="col-2"><a href="<c:url value="/Assignement"><c:param name="id" value="${assign.getId()}"/></c:url>"></a>${assign.getTitle()}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        </c:forEach>
 
-    <table class="assignments_list_table">
-        <tr class="header">
-            <td>Nr.</td>
-            <td>Title</td>
-            <td>Description</td>
-            <td>TimeToLearn(hour)</td>
-            <td></td>
-        </tr>
-        <c:forEach items="${assignlist}" var="element">
-             <form action="showAssignmentServlet" method="post">
-                <tr class="content">
-                    <td>
-                        ${element.getNumber()}
-                        <input type="hidden" type="text" name="number" value="${element.getNumber()}">
-                    </td>
-                    <td>${element.getTitle()}</td>
-                    <td>${element.getDescription()}</td>
-                    <td>${element.getTime()}</td>
-                    <td><input type="submit" value="Show" class="submit"></td>
-                </tr>
-            </form>
-
-
-
-        </c:forEach>
-
-
-
-    </table>
-    <form action="quizservlet" method="post">
-    <h1>Python Quiz</h1>
-        <td><input type="submit" value="Show Quiz" class="submit"></td>
-    </form>
-
-<!-- ---------- CONTENT END HERE ---------- -->
-
-    </div>
+                        <c:forEach items="${element.quizzes}" var="quiz">
+                        <div class="topic_item">
+                            <table class="table">
+                                <tr>
+                                    <td class="col-1"><a href="<c:url value="/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>"><i class="fa fa-list-ol fa-lg" aria-hidden="true"></i></a></td>
+                                    <td class="col-2"><a href="<c:url value="/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>">${quiz.getTitle()}</a></td>
+                                    <td class="col-3"><a href="<c:url value="/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>">${quiz.getMaxPoint()} pts</a></td>
+                                    <td class="col-4"><a href="<c:url value="/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>">${quiz.getDate()}</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        </c:forEach>
+                    </div>
+			    <hr>
+                </c:forEach>
 
 
-<script>
-function myFunction() {
-      var div = document.getElementById("myDIV");
-      div.innerHTML = "AFJASFAS";
- }
-</script>
+				<div class="title">
+					<div class="admin">
+						<a href="#"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+					</div>
+					<div class="text">Hardcoded Mentor view</div>
+				</div>
+				<div class="topic_items">
+					<div class="topic_item">
+						<table class="table">
+							<tr>
+								<td class="col-1"><a href="#"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></a></td>
+								<td class="col-2"><a href="#">Page Title 1</a></td>
+								<td class="col-edit">
+									<a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+								</td>
+								<td class="col-del">
+									<a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="topic_item">
+						<table class="table">
+							<tr>
+								<td class="col-1"><a href="#"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></a></td>
+								<td class="col-2"><a href="#">Page Title 2</a></td>
+								<td class="col-edit">
+									<a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+								</td>
+								<td class="col-del">
+									<a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="topic_item">
+						<table class="table">
+							<tr>
+								<td class="col-1"><a href="#"><i class="fa fa-list-ol fa-lg" aria-hidden="true"></i></a></td>
+								<td class="col-2"><a href="#">Quiz Title</a></td>
+								<td class="col-3"><a href="#">14 pts</a></td>
+								<td class="col-4"><a href="#">Oct 20, 2025</a></td>
+								<td class="col-edit">
+									<a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+								</td>
+								<td class="col-del">
+									<a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
 
-</body>
+
+			</div>
+		</div>
+		<!-- CONTENT END  -->
+
+	</body>
 </html>

@@ -1,27 +1,24 @@
 package com.codecool.web.model;
 
-public final class Registration {
-
+public abstract class Registration {
+    //fields
     private String name;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
-    private String confirmPassword;
-    private String role;
     private String message;
-    private int attendance;
 
-    public Registration(String name, String email, String password, String confirmPassword, String role, String message) {
+    //Constructor
+    public Registration(String name, String email, String password, String firstName, String lastName) {
         this.name = name;
         this.email = email;
-        this.role = role;
         this.password = password;
-        this.confirmPassword = confirmPassword;
-        this.message = message;
-        attendance = 10;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
+    //Getters, Setters
     public String getMessage() {
         return message;
     }
@@ -36,14 +33,6 @@ public final class Registration {
 
     public String getPassword() {
         return password;
-    }
-
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public String getRole() {
-        return role;
     }
 
     public String getFirstName() {
@@ -66,10 +55,6 @@ public final class Registration {
         this.password = password;
     }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -78,15 +63,7 @@ public final class Registration {
         this.lastName = lastName;
     }
 
-    public float getAttendance() {
-        return (float)attendance/SingletonDataBase.getInstance().getGlobalAttandance()*100;
-    }
-
-    public void setAttendance(int attendance) {
-        this.attendance += attendance;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

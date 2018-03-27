@@ -1,41 +1,53 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
+<!--
+https://fontawesome.com/v4.7.0/icons/
+-->
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Assignments</title>
-</head>
-<body>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+		<script type="text/javascript" src=""></script>
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="css/menu_vertical.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<script src="#"></script>
+		<title>${quiz.title}</title>
+	</head>
+	<body>
+		<header>
+			<script src="js/header.js"></script>
+		</header>
 
-    <header>
-        <ul>
-            <li><a class="active" href="home.jsp"><img src="images/menu_home.png">Home</a></li>
-            <li><a class="active" href="<c:url value='/userlist' />"><img src="images/menu_userlist.png"">User list</a></li>
-            <li><a class="active" href="<c:url value='/curriculum' />"><img src="images/menu_assignments.png"">Assignments</a></li>
-            <li><a class="active" href="<c:url value='/userProfileServlet' />"><img src="images/menu_profile.png"">My Profile</a></li>
-            <li><a class="active" href="credits.jsp"><img src="images/menu_credits.png"">Credits</a></li>
-            <li style="float:right"><a class="active" href="index.html">Logout</a></li>
-        </ul>
-    </header>
+		<!-- CONTENT START -->
+		<div class="content">
+			<div class="content_title">
+				<div class="text">${quiz.title}</div>
+				<div class="add"><a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></div>
+			</div>
 
-<div class="content_frame">
-    <br />
-<c:forEach items="${quizlist}" var="element">
-    <form>
-        <table>
-            <tr class="content">
-                <h3>${element.question}</h3>
-                <td>${element.possibleAnswer1}</td>
-                <input type="radio" name="answer1" value="${element.possibleAnswer1}" checked="checked">${element.possibleAnswer1}<br>
-                <input type="radio" name="answer1" value="${element.possibleAnswer2}" checked="checked">${element.possibleAnswer2}<br>
-                <input type="radio" name="answer1" value="${element.possibleAnswer3}" checked="checked">${element.possibleAnswer3}<br>
-                <input type="submit" value="Submit"  class="submit" />
-            </tr>
-        </table>
-        </form>
-</c:forEach>
-</div>
-</body>
+			<h1>${quiz.description}</h1>
+			<p>Date: ${quiz.date}, Maximum points: ${quiz.maxPoint} </p>
+
+			<form action="" method="post">
+			<c:forEach items="${quiz.getQuestions()}" var="question" varStatus="loop">
+				<div class="quiz_frame">
+					<div class="title">
+						<div class="points">${question.point} pt</div>
+						<div class="question_no">Question ${loop.index}</div>
+					</div>
+					<div class="question">
+						<div class="text">${question.description}</div>
+						<c:forEach items="${question.getAnswers()}" var="answers">
+							<div class="answer"><input type="radio" name="answer" value="${answers.getName()}">${answers.name}</div>
+						</c:forEach>
+					</div>
+				</div>
+				<div class="quiz_button"><input type="submit" class="submit" value="Submit"></div>
+			</c:forEach>
+			</form>
+
+
+		</div>
+		<!-- CONTENT END  -->
+
+	</body>
+</html>

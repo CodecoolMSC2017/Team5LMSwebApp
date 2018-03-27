@@ -2,6 +2,7 @@ package com.codecool.web.servlet;
 
 import com.codecool.web.model.Registration;
 import com.codecool.web.model.SingletonDataBase;
+import com.codecool.web.model.Student;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,9 +18,8 @@ public class AttendanceServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
         String[] attendances = req.getParameterValues("attendance");
-        List<Registration> students = SingletonDataBase.getInstance().getStudents();
+        List<Student> students = SingletonDataBase.getInstance().getStudents();
 
         for (int i = 0; i <students.size() ; i++) {
             students.get(i).setAttendance(Integer.parseInt(attendances[i]));
@@ -27,7 +27,14 @@ public class AttendanceServlet extends HttpServlet {
 
         SingletonDataBase.getInstance().setGlobalAttandance(1);
 
-        req.getRequestDispatcher("/userlist").forward(req, resp);
+        req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents());
+        req.getRequestDispatcher("attendance.jsp").forward(req, resp);
+    }
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents());
+        req.getRequestDispatcher("attendance.jsp").forward(req, resp);
     }
 }

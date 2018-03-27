@@ -3,6 +3,7 @@ package com.codecool.web.servlet;
 import com.codecool.web.model.Registration;
 import com.codecool.web.model.SingletonDataBase;
 import com.codecool.web.service.RegistrationService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,12 +19,26 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Registration newUser = service.getRegistration(req.getParameter("name"), req.getParameter("email"), req.getParameter("password"), req.getParameter("password_confirm"), req.getParameter("role"));
-        req.setAttribute("registration", newUser);
 
-        if ( newUser.getMessage().equals("Your registration was successful.") && SingletonDataBase.getInstance().addRegistration(newUser) == true ) {
-            req.getRequestDispatcher("/registration_success.jsp").include(req, resp);
+        //String role = req.getParameter("role");
+        String role = "Student";
+        Registration newUser;
+
+        if (role.equals("Mentor")) {
+            newUser = service.getMentor(req.getParameter("name"), req.getParameter("email"), req.getParameter("password"), req.getParameter("first_name"), req.getParameter("last_name"));
+            req.setAttribute("registration", newUser);
+        } else {
+            newUser = service.getStudent(req.getParameter("name"), req.getParameter("email"), req.getParameter("password"), req.getParameter("first_name"), req.getParameter("last_name"));
+            req.setAttribute("registration", newUser);
         }
-        else req.getRequestDispatcher("/registration_failed.jsp").include(req, resp);
+
+
+        if (SingletonDataBase.getInstance().addRegistration(newUser)) {
+            req.setAttribute("message", "Registration succesfull");
+            req.getRequestDispatcher("/index.jsp").include(req, resp);
+        } else {
+            req.setAttribute("message", "This name or email already registered");
+            req.getRequestDispatcher("/index.jsp").include(req, resp);
+        }
     }
 }

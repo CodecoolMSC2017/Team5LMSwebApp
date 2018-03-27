@@ -1,61 +1,90 @@
 package com.codecool.web.model;
 
+import com.codecool.web.servlet.Answer;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class SingletonDataBase implements Storing {
 
+    //fields
     private static final SingletonDataBase Instance = new SingletonDataBase();
-
     private List<Registration> registrations = new ArrayList<>();
-    private List<Assignment> assignmentList = new ArrayList<>();
-    private List<Quiz> quizList = new ArrayList<>();
+    private List<Mentor> mentors;
+    private List<Student> students;
+    private List<AandQStore> aQStores = new ArrayList<>();
     private Login login;
     private int globalAttendance;
+
+
 
     public static SingletonDataBase getInstance() {
         return Instance;
     }
 
+    //Constructor
     private SingletonDataBase() {
+        //Hardcoded things
+
+        //Hardcoded users
         globalAttendance = 10;
+        registrations.add(new Mentor("Robi", "asd@asd.com", "a", "Róbert", "Kohányi"));
+        registrations.add(new Mentor("Pako", "qwe@qwe.com", "a", "Pál", "Monoczki"));
+        registrations.add(new Student("Ben", "wer@wer.hu", "a", "Bence",""));
+        registrations.add(new Student("Tib", "eoirt@wer.hu", "a", "",""));
+        registrations.add(new Student("Norb", "klydjasid@wer.hu", "a", "",""));
+        registrations.add(new Student("krisz", "yxcas@wer.hu", "a", "","" ));
+        registrations.add(new Student("Moki", "moki@wer.hu", "a","Fóka","Mokácska" ));
+        Student stu = (Student) registrations.get(6);
+        stu.setAttendance(-2);
 
-        registrations.add(new Registration("ben","asd@asd.hu", "a", "a", "Student", "Your registration was successful. "));
-        registrations.add(new Registration("tib","qwe@qwe.hu", "a", "a", "Mentor", "Your registration was successful. "));
-        registrations.add(new Registration("norb","íyx@íyx.hu", "a", "a", "Student", "Your registration was successful. "));
-        registrations.add(new Registration("krisz", "ert@ert.hu", "a", "a", "Mentor", "Your registration was successful. "));
-        registrations.add(new Registration("bla","bla@íyx.hu", "a", "a", "Student", "Your registration was successful. "));
-        registrations.add(new Registration("zuzu","qwerqw@íyx.hu", "a", "a", "Student", "Your registration was successful. "));
-        registrations.add(new Registration("Mokafóka","fóka@íyx.hu", "a", "a", "Student", "Your registration was successful. "));
-        registrations.add(new Registration("kaki","kaki@íyx.hu", "a", "a", "Student", "Your registration was successful. "));
-        registrations.add(new Registration("tesla","tesla@íyx.hu", "a", "a", "Student", "Your registration was successful. "));
+        //Hardcoded aAndQStore with assignment and quiz+questions
+        AandQStore store = new AandQStore("Try  Not Hardcoded Student View");
+        store.getAssignments().add(new Assignment( "TryName", "Try short description", 2, "Try long description"));
+        store.getAssignments().add(new Assignment( "TryName 2", "Try short description 2", 1, "Try long description 2"));
+        store.getQuizzes().add(new Quiz( "TryNameQ", "Try short description Q", 4));
+        store.getQuizzes().get(0).getQuestions().add(new Question("Try short description/question", 1, new ArrayList<>(), "kutya"));
+        store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Cica"));
+        store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Kutya"));
+        store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("MokaFóka"));
+        store.getQuizzes().get(0).getQuestions().add(new Question("Mi a fasz van ?", 3, new ArrayList<>(), "semmi"));
+        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("apád anyád hátán"));
+        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Büdös"));
+        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Semmi"));
+        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Mondom semmi"));
+        aQStores.add(store);
 
-        registrations.get(0).setAttendance(-1);
-        registrations.get(2).setAttendance(-2);
-
-        assignmentList.add(new Assignment(1,"Learn Python", "Check Sololearn", 1, "Your task will be the following:"));
-        assignmentList.add(new Assignment(2, "Learn Java", "Check Sololern/Java",3, "Your task will be the following:"));
-        assignmentList.add(new Assignment(3, "Learn Html", "Check Sololern/html", 3, "Your task will be the following:?"));
-        assignmentList.add(new Assignment(4, "Learn Javascript", "Check Sololern/javascript", 2, "Your task will be the following:?"));
-
-        quizList.add(new Quiz("What is Python", "Programming Lnaguage",
-            "Programming Language", "Library",
-            "A bug", 1));
-        quizList.add(new Quiz("Which of these will not be stored as a float?",
-            "7.0", "7.0", "2/4", "7",1));
-        quizList.add(new Quiz("What is the result of this code? 7%(5 // 2)",
-            "1", "0", "1", "7",1));
-
+        AandQStore store2 = new AandQStore("Try 2 Not Hardcoded Student View");
+        store2.getAssignments().add(new Assignment( "TryName", "Try short description", 2, "Try long description"));
+        store2.getAssignments().add(new Assignment( "TryName 2", "Try short description 2", 1, "Try long description 2"));
+        store2.getQuizzes().add(new Quiz( "TryNameQ", "Try short description Q", 4));
+        store2.getQuizzes().get(0).getQuestions().add(new Question("Try short description/question", 1, new ArrayList<>(), "kutya"));
+        store2.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Cica"));
+        store2.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Kutya"));
+        store2.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("MokaBálna"));
+        aQStores.add(store2);
     }
 
-    public List<Registration> getStudents(){
-        List<Registration> temp = new ArrayList<>();
-        for(Registration reg:registrations){
-            if(reg.getRole().equals("Student")){
-                temp.add(reg);
+    @Override
+    public List<Student> getStudents() {
+        students = new ArrayList<>();
+        for (Registration reg : registrations) {
+            if (reg instanceof Student) {
+                students.add((Student) reg);
             }
-        }return temp;
+        }return students;
     }
+
+    @Override
+    public List<Mentor> getMentors() {
+        mentors = new ArrayList<>();
+        for (Registration reg : registrations) {
+            if (reg instanceof Mentor) {
+                mentors.add((Mentor) reg);
+            }
+        }return mentors;
+    }
+
 
     public int getGlobalAttandance() {
         return globalAttendance;
@@ -95,20 +124,15 @@ public class SingletonDataBase implements Storing {
     }
 
     @Override
-    public void updateReg(Login login, String name, String fname, String lname, String pass, String confPass) {
-        for (Registration reg:registrations){
-            if(pass.equals(confPass)) {
-                if (reg.getName().equals(login.getName())) {
-                    reg.setName(name);
-                    reg.setFirstName(fname);
-                    reg.setLastName(lname);
-                    reg.setPassword(pass);
-                    reg.setConfirmPassword(pass);
-                    login.setName(name);
-                    login.setFirstName(fname);
-                    login.setLastName(lname);
-                    login.setPassword(pass);
-                }
+    public void updateReg(String fname, String lname, String email, String pass) {
+        Registration loginReg = SingletonDataBase.getInstance().getLogin().getReg();
+        for(Registration reg:registrations){
+            if (reg.equals(loginReg)){
+                reg.setFirstName(fname);
+                reg.setLastName(lname);
+                reg.setEmail(email);
+                reg.setPassword(pass);
+                SingletonDataBase.getInstance().getLogin().setReg(reg);
             }
         }
     }
@@ -118,11 +142,11 @@ public class SingletonDataBase implements Storing {
         registrations.remove(registration);
     }
 
+
     @Override
     public boolean addRegistration(Registration registration) {
 
         if(getNames().contains(registration.getName()) || getEmails().contains(registration.getEmail())){
-            registration.setMessage("The name/password already exist, create a new one");
             return false;
         }else{
             registrations.add(registration);
@@ -143,7 +167,7 @@ public class SingletonDataBase implements Storing {
     public List<String> getEmails(){
         List<String> emails = new ArrayList<>();
         for(Registration registration:registrations){
-            emails.add(registration.getName());
+            emails.add(registration.getEmail());
         }
         return emails;
     }
@@ -159,68 +183,11 @@ public class SingletonDataBase implements Storing {
 
     @Override
     public boolean isMentor(Registration registration) {
-        if(registration.getRole().equals("mentor")) {
-            return true;
-        }
-        return false;
+        return true;
     }
 
     @Override
-    public List<Assignment> getAssignmentList() {
-        return assignmentList;
-    }
-
-    public Assignment getAssignment(String number){
-        for(Assignment a:assignmentList){
-            if(a.getNumber() == (Integer.parseInt(number))){
-                return a;
-            }
-        }
-        return null;
-    }
-
-
-    public void setAssignmentList(List<Assignment> assignmentList) {
-        this.assignmentList = assignmentList;
-    }
-
-    public void addAssingmentList(Assignment newAssgnment) {
-        assignmentList.add(newAssgnment);
-    }
-
-    public List<Integer> getAssignmentnumber() {
-        List<Integer> assignmentNumbers = new ArrayList<>();
-        for(Assignment assignment: getAssignmentList()) {
-            assignmentNumbers.add(assignment.getNumber());
-        }
-        return assignmentNumbers;
-    }
-
-    public List<String> getAssignmentTitle() {
-        List<String> assignmentTitles = new ArrayList<>();
-        for(Assignment assignment: getAssignmentList()) {
-            assignmentTitles.add(assignment.getTitle());
-        }
-        return assignmentTitles;
-    }
-
-    public List<String> getAssignmentDescription() {
-        List<String> assignmentDesriptions = new ArrayList<>();
-        for(Assignment assignment: getAssignmentList()) {
-            assignmentDesriptions.add(assignment.getDescription());
-        }
-        return assignmentDesriptions;
-    }
-
-    public void addQuizList(Quiz newQuiz) {
-        quizList.add(newQuiz);
-    }
-
-    public List<Quiz> getQuizList() {
-        return quizList;
-    }
-
-    public void setQuizList(List<Quiz> quizList) {
-        this.quizList = quizList;
+    public List<AandQStore> getaQStores() {
+        return aQStores;
     }
 }
