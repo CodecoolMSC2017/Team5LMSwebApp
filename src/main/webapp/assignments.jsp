@@ -36,7 +36,7 @@ https://fontawesome.com/v4.7.0/icons/
                             <table class="table">
                                 <tr>
                                     <td class="col-1"><a href="<c:url value="/Assignement"><c:param name="id" value="${assign.getId()}"/></c:url>"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></a></td>
-                                    <td class="col-2"><a href="<c:url value="/Assignement"><c:param name="id" value="${assign.getId()}"/></c:url>"></a>${assign.getTitle()}</td>
+                                    <td class="col-2"><a href="<c:url value="/Assignement"><c:param name="id" value="${assign.getId()}"/></c:url>">${assign.getTitle()}</a></td>
                                 </tr>
                             </table>
                         </div>
