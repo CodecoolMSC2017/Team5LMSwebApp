@@ -27,6 +27,7 @@ public class UserProfileServlet extends HttpServlet{
         }
 
         req.getRequestDispatcher("/profile.jsp").include(req, resp);
+        req.getRequestDispatcher("/header.js").include(req, resp);
 
 
     }
