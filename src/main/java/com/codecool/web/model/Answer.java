@@ -1,4 +1,4 @@
-package com.codecool.web.servlet;
+package com.codecool.web.model;
 
 public class Answer {
     //filed

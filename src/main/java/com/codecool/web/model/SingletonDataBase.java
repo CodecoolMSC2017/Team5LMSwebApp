@@ -1,7 +1,5 @@
 package com.codecool.web.model;
 
-import com.codecool.web.servlet.Answer;
-
 import java.util.ArrayList;
 import java.util.List;
 
