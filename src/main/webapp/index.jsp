@@ -16,6 +16,7 @@ https://fontawesome.com/v4.7.0/icons/
 		<!-- CONTENT START -->
 		<div class="login_frame">
 			<div class="like_content">
+				<div class="logo"></div>
 				<div class="title">LMS</div>
 				<div class="form">
 					<form action="loginServlet" method="post">
