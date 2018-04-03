@@ -54,7 +54,7 @@ https://fontawesome.com/v4.7.0/icons/
 					</table>
 					<center>
 						<input type="submit" class="submit" value="Submit">
-						<a href="userProfileSaveServlet"><div class="submit">Cancel</div></a>
+						<a href="userProfileServlet"><div class="submit">Cancel</div></a>
 					</center>
 				</form>
 			</div>

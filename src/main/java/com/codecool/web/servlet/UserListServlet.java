@@ -22,7 +22,6 @@ public class UserListServlet extends HttpServlet {
 
         req.getRequestDispatcher("/users.jsp").include(req, resp);
         req.getRequestDispatcher("/importUserProfile.jsp").include(req, resp);
-        req.getRequestDispatcher("/header.js").include(req, resp);
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
