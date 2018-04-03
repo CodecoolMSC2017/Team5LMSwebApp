@@ -170,7 +170,12 @@ public class SingletonDataBase implements Storing {
 
     @Override
     public List<Registration> getStudents() {
-        return null;
+        List<Registration> temp= new ArrayList<>();
+        for(Registration reg:registrations){
+            if(reg.getRole().equals("Student")){
+                temp.add(reg);
+            }
+        }return temp;
     }
 
     @Override

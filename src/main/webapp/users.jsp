@@ -27,18 +27,18 @@ https://fontawesome.com/v4.7.0/icons/
 						<td class="email">E-mail address</td>
 						<td class="role">Role</td>
 					</tr>
-					<c:forEach items="${users}" var="element">
+					<c:forEach items="${mentorlist}" var="element">
 					<tr>
 						<td>${element.getName()}</td>
 						<td>${element.getEmail()}</td>
-						<td>${element.getRole()</td>
+						<td>${element.getRole()}</td>
 					</tr>
 					</c:forEach>
 					<c:forEach items="${studentlist}" var="element">
                     <tr>
                         <td>${element.getName()}</td>
                         <td>${element.getEmail()}</td>
-                        <td>Student</td>
+                        <td>${element.getRole()}</td>
                     </tr>
                     </c:forEach>
 				</table>
