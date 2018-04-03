@@ -24,27 +24,27 @@ https://fontawesome.com/v4.7.0/icons/
 				<table class="table">
 					<tr>
 						<td class="title">User Name:</td>
-						<td class="info">${userProfile.name}</td>
+						<td class="info">${profile.name}</td>
 					</tr>
 					<tr>
 						<td class="title">First name:</td>
-						<td class="info">${userProfile.firstName}</td>
+						<td class="info">${profile.firstName}</td>
 					</tr>
 					<tr>
 						<td class="title">Last name:</td>
-						<td class="info">${userProfile.lastName}</td>
+						<td class="info">${profile.lastName}</td>
 					</tr>
 					<tr>
 						<td class="title">E-mail address:</td>
-						<td class="info">${userProfile.email}</td>
+						<td class="info">${profile.email}</td>
 					</tr>
 					<tr>
 						<td class="title">Role:</td>
-						<td class="info">${userProfile.role}</td>
+						<td class="info">${profile.role}</td>
 					</tr>
 					<tr>
 						<td class="title">Password:</td>
-						<td class="info">${userProfile.password}</td>
+						<td class="info">${profile.password}</td>
 					</tr>
 					<tr>
 						<td class="title">Introduction:</td>
