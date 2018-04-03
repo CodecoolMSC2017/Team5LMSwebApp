@@ -29,16 +29,16 @@ https://fontawesome.com/v4.7.0/icons/
 					</tr>
 					<c:forEach items="${mentorlist}" var="element">
 					<tr>
-						<td>${element.getName()}</td>
+						<td>${element.getName()}</a></td>
 						<td>${element.getEmail()}</td>
 						<td>${element.getRole()}</td>
 					</tr>
 					</c:forEach>
 					<c:forEach items="${studentlist}" var="element">
                     <tr>
-                        <td>${element.getName()}</td>
-                        <td>${element.getEmail()}</td>
-                        <td>${element.getRole()}</td>
+                        <td><a href="<c:url value="/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getName()}</a></td>
+                        <td><a href="<c:url value="/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getEmail()}</a></td>
+                        <td><a href="<c:url value="/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getRole()}</a></td>
                     </tr>
                     </c:forEach>
 				</table>

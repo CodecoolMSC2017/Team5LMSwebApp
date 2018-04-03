@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/userlist")
+@WebServlet("/userListServlet")
 public class UserListServlet extends HttpServlet {
 
     @Override
