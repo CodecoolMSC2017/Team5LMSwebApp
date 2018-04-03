@@ -9,13 +9,14 @@ https://fontawesome.com/v4.7.0/icons/
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 		<link rel="stylesheet" type="text/css" href="css/menu_vertical.css">
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-		<script src="#"></script>
+		<script src="js/import_html.js"></script>
 		<title>${assignment.title}</title>
 	</head>
 	<body>
-		<header>
-			<script src="js/header.js"></script>
-		</header>
+        <div importNavBar="importNavBar.jsp"></div>
+        <script>importNavBar();</script>
+        <div importUserProfile="importUserProfile.jsp"></div>
+        <script>importUserProfile();</script>
 
 		<!-- CONTENT START -->
 		<div class="content">
