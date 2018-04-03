@@ -170,7 +170,7 @@ public class SingletonDataBase implements Storing {
 
     @Override
     public List<Registration> getStudents() {
-        List<Registration> temp= new ArrayList<>();
+        List<Registration> temp = new ArrayList<>();
         for(Registration reg:registrations){
             if(reg.getRole().equals("Student")){
                 temp.add(reg);
@@ -180,11 +180,11 @@ public class SingletonDataBase implements Storing {
 
     @Override
     public List<Registration> getMentors() {
-        List<Registration> passes = new ArrayList<>();
-        for (Registration registration : registrations) {
-            if((registration.getRole()).equals("mentor"))
-            passes.add(registration);
-        }
-        return passes;
+        List<Registration> temp = new ArrayList<>();
+        for(Registration reg:registrations){
+            if(reg.getRole().equals("Mentor")){
+                temp.add(reg);
+            }
+        }return temp;
     }
 }
