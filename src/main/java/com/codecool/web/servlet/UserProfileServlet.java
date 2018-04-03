@@ -19,7 +19,9 @@ public class UserProfileServlet extends HttpServlet{
 //        int id = Integer.parseInt(req.getParameter("id"));
         String id = req.getParameter("id");
         RegistrationService service = new RegistrationService();
-        req.setAttribute("profile", service.getProfile(id));
+
+        if (id.equals("")) req.setAttribute("profile", SingletonDataBase.getInstance().getLogin().getReg());
+        else req.setAttribute("profile", service.getProfile(id));
 
         req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
 
