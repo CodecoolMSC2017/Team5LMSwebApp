@@ -26,6 +26,7 @@ public class AttendanceServlet extends HttpServlet {
 
         SingletonDataBase.getInstance().setGlobalAttandance(1);
 
+        req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
         req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents());
         req.getRequestDispatcher("attendance.jsp").forward(req, resp);
     }
@@ -33,6 +34,7 @@ public class AttendanceServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
         req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents());
         req.getRequestDispatcher("attendance.jsp").forward(req, resp);
     }
