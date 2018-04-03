@@ -26,10 +26,6 @@ public class UserProfileServlet extends HttpServlet{
             req.setAttribute("userProfile", student);
         }
 
-        req.getRequestDispatcher("/profile.jsp").include(req, resp);
-        req.getRequestDispatcher("/importUserProfile.jsp").include(req, resp);
-        req.getRequestDispatcher("/header.js").include(req, resp);
-
-
+        req.getRequestDispatcher("/profile.jsp").forward(req, resp);
     }
 }

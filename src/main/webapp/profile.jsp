@@ -5,18 +5,14 @@ https://fontawesome.com/v4.7.0/icons/
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
-		<script type="text/javascript" src=""></script>
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 		<link rel="stylesheet" type="text/css" href="css/menu_vertical.css">
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-		<script src="js/import_html.js"></script>
 		<title>Profile</title>
 	</head>
 	<body>
-        <div importNavBar="importNavBar.jsp"></div>
-        <script>importNavBar();</script>
-        <div importUserProfile="importUserProfile.jsp"></div>
-        <script>importUserProfile();</script>
+        <jsp:include page="importNavBar.jsp"/>
+        <jsp:include page="importUserProfile.jsp"/>
 
 		<!-- CONTENT START -->
 		<div class="content">

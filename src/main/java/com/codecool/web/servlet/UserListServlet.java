@@ -15,7 +15,6 @@ public class UserListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         Mentor mentor;
         Student student;
         Registration registration = SingletonDataBase.getInstance().getLogin().getReg();
