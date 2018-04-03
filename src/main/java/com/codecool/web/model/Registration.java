@@ -1,6 +1,6 @@
 package com.codecool.web.model;
 
-public abstract class Registration {
+public class Registration {
     //fields
     private String name;
     private String firstName;
@@ -8,6 +8,8 @@ public abstract class Registration {
     private String email;
     private String password;
     private String message;
+    private String role;
+    private int attendance;
 
     //Constructor
     public Registration(String name, String email, String password, String firstName, String lastName) {
@@ -16,6 +18,9 @@ public abstract class Registration {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.attendance = 10;
+        this.role = "Student";
+
     }
 
     //Getters, Setters
@@ -43,6 +48,10 @@ public abstract class Registration {
         return lastName;
     }
 
+    public String getRole(){
+        return role;
+    }
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -65,5 +74,17 @@ public abstract class Registration {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAttendance() {
+        return String.format("%.2f", (float)attendance/SingletonDataBase.getInstance().getGlobalAttandance()*100);
+    }
+
+    public void setAttendance(int attendance) {
+        this.attendance += attendance;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

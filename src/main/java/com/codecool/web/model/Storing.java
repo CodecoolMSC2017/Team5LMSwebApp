@@ -4,8 +4,6 @@ import java.util.List;
 
 public interface Storing {
 
-    public List<Student> getStudents();
-    public List<Mentor> getMentors();
     void newLogin(Login login);
     Login getLogin();
     void delLogin();
@@ -19,5 +17,7 @@ public interface Storing {
     List<String> getPasswords();
     boolean isMentor(Registration registration);
     List<AandQStore> getaQStores();
+    List<Registration> getStudents();
+    List<Registration> getMentors();
 
 }

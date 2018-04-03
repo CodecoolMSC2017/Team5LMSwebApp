@@ -2,7 +2,6 @@ package com.codecool.web.servlet;
 
 import com.codecool.web.model.Registration;
 import com.codecool.web.model.SingletonDataBase;
-import com.codecool.web.model.Student;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +18,7 @@ public class AttendanceServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String[] attendances = req.getParameterValues("attendance");
-        List<Student> students = SingletonDataBase.getInstance().getStudents();
+        List<Registration> students = SingletonDataBase.getInstance().getStudents();
 
         for (int i = 0; i <students.size() ; i++) {
             students.get(i).setAttendance(Integer.parseInt(attendances[i]));

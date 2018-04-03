@@ -44,7 +44,7 @@ https://fontawesome.com/v4.7.0/icons/
 					</tr>
 					<tr>
 						<td class="title">Role:</td>
-						<td class="info">${role}</td>
+						<td class="info">${userProfile.role}</td>
 					</tr>
 					<tr>
 						<td class="title">Password:</td>

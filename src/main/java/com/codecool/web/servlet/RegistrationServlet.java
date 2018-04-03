@@ -20,18 +20,9 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //String role = req.getParameter("role");
-        String role = "Student";
-        Registration newUser;
-
-        if (role.equals("Mentor")) {
-            newUser = service.getMentor(req.getParameter("name"), req.getParameter("email"), req.getParameter("password"), req.getParameter("first_name"), req.getParameter("last_name"));
+            Registration newUser;
+            newUser = service.getReg(req.getParameter("name"), req.getParameter("email"), req.getParameter("password"), req.getParameter("first_name"), req.getParameter("last_name"));
             req.setAttribute("registration", newUser);
-        } else {
-            newUser = service.getStudent(req.getParameter("name"), req.getParameter("email"), req.getParameter("password"), req.getParameter("first_name"), req.getParameter("last_name"));
-            req.setAttribute("registration", newUser);
-        }
-
 
         if (SingletonDataBase.getInstance().addRegistration(newUser)) {
             req.setAttribute("message", "Registration succesfull");

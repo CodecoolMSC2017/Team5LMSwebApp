@@ -8,8 +8,6 @@ public class SingletonDataBase implements Storing {
     //fields
     private static final SingletonDataBase Instance = new SingletonDataBase();
     private List<Registration> registrations = new ArrayList<>();
-    private List<Mentor> mentors;
-    private List<Student> students;
     private List<AandQStore> aQStores = new ArrayList<>();
     private Login login;
     private int globalAttendance;
@@ -26,15 +24,16 @@ public class SingletonDataBase implements Storing {
 
         //Hardcoded users
         globalAttendance = 10;
-        registrations.add(new Mentor("Robi", "asd@asd.com", "a", "Róbert", "Kohányi"));
-        registrations.add(new Mentor("Pako", "qwe@qwe.com", "a", "Pál", "Monoczki"));
-        registrations.add(new Student("Ben", "wer@wer.hu", "a", "Bence",""));
-        registrations.add(new Student("Tib", "eoirt@wer.hu", "a", "",""));
-        registrations.add(new Student("Norb", "klydjasid@wer.hu", "a", "",""));
-        registrations.add(new Student("krisz", "yxcas@wer.hu", "a", "","" ));
-        registrations.add(new Student("Moki", "moki@wer.hu", "a","Fóka","Mokácska" ));
-        Student stu = (Student) registrations.get(6);
-        stu.setAttendance(-2);
+        registrations.add(new Registration("Robi", "asd@asd.com", "a", "Róbert", "Kohányi"));
+        registrations.add(new Registration("Pako", "qwe@qwe.com", "a", "Pál", "Monoczki"));
+        registrations.add(new Registration("Ben", "wer@wer.hu", "a", "Bence",""));
+        registrations.add(new Registration("Tib", "eoirt@wer.hu", "a", "",""));
+        registrations.add(new Registration("Norb", "klydjasid@wer.hu", "a", "",""));
+        registrations.add(new Registration("krisz", "yxcas@wer.hu", "a", "","" ));
+        registrations.add(new Registration("Moki", "moki@wer.hu", "a","Fóka","Mokácska" ));
+        registrations.get(6).setAttendance(-2);
+        registrations.get(0).setRole("Mentor");
+        registrations.get(1).setRole("Mentor");
 
         //Hardcoded aAndQStore with assignment and quiz+questions
         AandQStore store = new AandQStore("Try  Not Hardcoded Student View");
@@ -61,26 +60,6 @@ public class SingletonDataBase implements Storing {
         store2.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Kutya"));
         store2.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("MokaBálna"));
         aQStores.add(store2);
-    }
-
-    @Override
-    public List<Student> getStudents() {
-        students = new ArrayList<>();
-        for (Registration reg : registrations) {
-            if (reg instanceof Student) {
-                students.add((Student) reg);
-            }
-        }return students;
-    }
-
-    @Override
-    public List<Mentor> getMentors() {
-        mentors = new ArrayList<>();
-        for (Registration reg : registrations) {
-            if (reg instanceof Mentor) {
-                mentors.add((Mentor) reg);
-            }
-        }return mentors;
     }
 
 
@@ -187,5 +166,15 @@ public class SingletonDataBase implements Storing {
     @Override
     public List<AandQStore> getaQStores() {
         return aQStores;
+    }
+
+    @Override
+    public List<Registration> getStudents() {
+        return null;
+    }
+
+    @Override
+    public List<Registration> getMentors() {
+        return null;
     }
 }
