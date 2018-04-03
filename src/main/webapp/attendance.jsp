@@ -42,14 +42,9 @@ https://fontawesome.com/v4.7.0/icons/
 						</td>
 					</tr>
                     </c:forEach>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td align="center"><input type="submit" value="Update" class="submit"></td>
-                    </tr>
 				</table>
 			</div>
+            <div class="button_right"><input type="submit" class="submit" value="Submit"></div>
 			</form>
 
 		</div>
