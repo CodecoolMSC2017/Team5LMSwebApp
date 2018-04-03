@@ -18,13 +18,22 @@ https://fontawesome.com/v4.7.0/icons/
 		<div class="content">
 			<div class="content_title">
 				<div class="text">Assignments</div>
+				<c:if test="${userProfile.role == 'Mentor'}">
 				<div class="add"><a href="#"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i></a></div>
+				</c:if>
 			</div>
 
 		    <div class="assignment_frame">
                 <c:forEach items="${AandQlist}" var="element">
                     <div class="title">
                         <div class="text">${element.getTitle()}</div>
+                        <c:if test = "${userProfile.role == 'Mentor'}">
+                        <div class="admin">
+                        	<a href="#"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i></a>
+                        	<a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+                        	<a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+                        </div>
+                        </c:if>
                     </div>
                     <div class="topic_items">
 
@@ -57,11 +66,13 @@ https://fontawesome.com/v4.7.0/icons/
 
 
 				<div class="title">
+				    <c:if test = "${userProfile.role == 'Mentor'}">
 					<div class="admin">
 						<a href="#"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i></a>
 						<a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
 						<a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
 					</div>
+					</c:if>
 					<div class="text">Hardcoded Mentor view</div>
 				</div>
 				<div class="topic_items">
