@@ -16,6 +16,20 @@ public class UserListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        Mentor mentor;
+        Student student;
+        Registration registration = SingletonDataBase.getInstance().getLogin().getReg();
+        if (registration instanceof Mentor){
+            mentor = (Mentor) registration;
+            req.setAttribute("role", "Mentor");
+            req.setAttribute("userProfile", mentor);
+        } else {
+            student = (Student) registration;
+            req.setAttribute("role", "Student");
+            req.setAttribute("userProfile", student);
+        }
+
+
         req.setAttribute("mentorlist", SingletonDataBase.getInstance().getMentors());
         req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents());
         req.getRequestDispatcher("/users.jsp").forward(req, resp);
