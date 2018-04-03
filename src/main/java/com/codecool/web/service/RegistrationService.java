@@ -14,20 +14,15 @@ public final class RegistrationService {
 
 //    public Registration getProfile(int id) {
     public Registration getProfile(String id) {
-        if (id.equals(null)) {
-            return SingletonDataBase.getInstance().getLogin().getReg();
-        }
-        else {
-            Registration reg;
-            List<Registration> registrations = SingletonDataBase.getInstance().getAllRegistration();
-            for (Registration r : registrations) {
-                if (id.equals(r.getName())) {
-                    reg = r;
-                    return reg;
-                }
+        Registration reg;
+        List<Registration> registrations = SingletonDataBase.getInstance().getAllRegistration();
+        for (Registration r : registrations) {
+            if (id.equals(r.getName())) {
+                reg = r;
+                return reg;
             }
-            return null;
         }
+        return null;
     }
 
 }
