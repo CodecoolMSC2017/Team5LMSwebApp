@@ -22,7 +22,6 @@ public class AssignmentServlet extends HttpServlet{
         int id = Integer.parseInt(req.getParameter("id"));
         AssignmentService service = new AssignmentService();
         req.setAttribute("assignment", service.getAssignment(id));
-
         req.getRequestDispatcher("/assignpage.jsp").forward(req, resp);
     }
 
