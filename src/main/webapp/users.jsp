@@ -26,14 +26,18 @@ https://fontawesome.com/v4.7.0/icons/
 						<td class="name">Name</td>
 						<td class="email">E-mail address</td>
 						<td class="role">Role</td>
+
 					</tr>
+					<c:if test="${userProfile.role == 'Mentor'}">
 					<c:forEach items="${mentorlist}" var="element">
 					<tr>
 						<td>${element.getName()}</a></td>
 						<td>${element.getEmail()}</td>
 						<td>${element.getRole()}</td>
 					</tr>
+
 					</c:forEach>
+					</c:if>
 					<c:forEach items="${studentlist}" var="element">
                     <tr>
                         <td><a href="<c:url value="/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getName()}</a></td>

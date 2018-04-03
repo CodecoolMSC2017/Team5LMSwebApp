@@ -22,6 +22,8 @@ public class AssignmentServlet extends HttpServlet{
         int id = Integer.parseInt(req.getParameter("id"));
         AssignmentService service = new AssignmentService();
         req.setAttribute("assignment", service.getAssignment(id));
+        req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
+
         req.getRequestDispatcher("/assignpage.jsp").forward(req, resp);
     }
 
