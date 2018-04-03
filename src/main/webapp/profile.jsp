@@ -13,12 +13,6 @@ https://fontawesome.com/v4.7.0/icons/
 		<title>Profile</title>
 	</head>
 	<body>
-	<!--
-		<header>
-			<script src="js/header.js"></script>
-		</header>
-	-->
-
         <div importNavBar="importNavBar.jsp"></div>
         <script>importNavBar();</script>
         <div importUserProfile="importUserProfile.jsp"></div>
