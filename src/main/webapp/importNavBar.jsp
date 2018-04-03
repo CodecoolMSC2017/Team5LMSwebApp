@@ -8,18 +8,25 @@
             <div class="menu_option">
                 <button class="menu_button"><a href="AandQStoreServlet">Assignments</a></button>
             </div>
+
+            <c:if test="${userProfile.getRole() == 'Student'}">
             <div class="menu_option">
-                <button class="menu_button"><a href="#">Grades (S)</a></button>
+                <button class="menu_button"><a href="#">Grades</a></button>
             </div>
-            <div class="menu_option">
-                <button class="menu_button"><a href="#">Stats (M)</a></button>
-                <div class="sub_menu">
-                    <a href="attendanceServlet">Attendance</a>
-                    <a href="#">Assignment Status</a>
-                    <a href="#">User Grades</a>
-                    <a href="#">Charts</a>
+            </c:if>
+
+            <c:if test="${userProfile.getRole() == 'Mentor'}">
+                <div class="menu_option">
+                    <button class="menu_button"><a href="#">Stats</a></button>
+                    <div class="sub_menu">
+                        <a href="attendanceServlet">Attendance</a>
+                        <a href="#">Assignment Status</a>
+                        <a href="#">User Grades</a>
+                        <a href="#">Charts</a>
+                    </div>
                 </div>
-            </div>
+            </c:if>
+
             <div class="menu_option">
                 <button class="menu_button"><a href="userListServlet">Users</a></button>
             </div>
