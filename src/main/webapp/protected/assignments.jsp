@@ -41,8 +41,8 @@ https://fontawesome.com/v4.7.0/icons/
                             <div class="topic_item">
                                 <table class="table">
                                     <tr>
-                                        <td class="col-1"><a href="<c:url value="/Assignement"><c:param name="id" value="${assign.getId()}"/></c:url>"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></a></td>
-                                        <td class="col-2"><a href="<c:url value="/Assignement"><c:param name="id" value="${assign.getId()}"/></c:url>">${assign.getTitle()}</a></td>
+                                        <td class="col-1"><a href="<c:url value="/protected/Assignement"><c:param name="id" value="${assign.getId()}"/></c:url>"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></a></td>
+                                        <td class="col-2"><a href="<c:url value="/protected/Assignement"><c:param name="id" value="${assign.getId()}"/></c:url>">${assign.getTitle()}</a></td>
                                         <c:if test="${userProfile.role == 'Mentor'}">
                                             <td class="col-edit">
                                                 <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
@@ -59,10 +59,10 @@ https://fontawesome.com/v4.7.0/icons/
                             <div class="topic_item">
                                 <table class="table">
                                     <tr>
-                                        <td class="col-1"><a href="<c:url value="/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>"><i class="fa fa-list-ol fa-lg" aria-hidden="true"></i></a></td>
-                                        <td class="col-2"><a href="<c:url value="/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>">${quiz.getTitle()}</a></td>
-                                        <td class="col-3"><a href="<c:url value="/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>">${quiz.getMaxPoint()} pts</a></td>
-                                        <td class="col-4"><a href="<c:url value="/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>">${quiz.getDate()}</a></td>
+                                        <td class="col-1"><a href="<c:url value="/protected/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>"><i class="fa fa-list-ol fa-lg" aria-hidden="true"></i></a></td>
+                                        <td class="col-2"><a href="<c:url value="/protected/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>">${quiz.getTitle()}</a></td>
+                                        <td class="col-3"><a href="<c:url value="/protected/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>">${quiz.getMaxPoint()} pts</a></td>
+                                        <td class="col-4"><a href="<c:url value="/protected/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>">${quiz.getDate()}</a></td>
                                         <c:if test="${userProfile.role == 'Mentor'}">
                                             <td class="col-edit">
                                                 <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
