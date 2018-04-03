@@ -43,7 +43,17 @@ https://fontawesome.com/v4.7.0/icons/
                                 <tr>
                                     <td class="col-1"><a href="<c:url value="/Assignement"><c:param name="id" value="${assign.getId()}"/></c:url>"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></a></td>
                                     <td class="col-2"><a href="<c:url value="/Assignement"><c:param name="id" value="${assign.getId()}"/></c:url>">${assign.getTitle()}</a></td>
+
+                                <c:if test="${userProfile.role == 'Mentor'}">
+                                    <td class="col-edit">
+                                    <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+                                    </td>
+                                    <td class="col-del">
+                                    <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+                                    </td>
+                                </c:if>
                                 </tr>
+
                             </table>
                         </div>
                         </c:forEach>
@@ -66,13 +76,15 @@ https://fontawesome.com/v4.7.0/icons/
 
 
 				<div class="title">
-				    <c:if test = "${userProfile.role == 'Mentor'}">
+				    <c:if test="${userProfile.role == 'Mentor'}">
 					<div class="admin">
 						<a href="#"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i></a>
 						<a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
 						<a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
 					</div>
 					</c:if>
+
+
 					<div class="text">Hardcoded Mentor view</div>
 				</div>
 				<div class="topic_items">
@@ -81,11 +93,13 @@ https://fontawesome.com/v4.7.0/icons/
 							<tr>
 								<td class="col-1"><a href="#"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></a></td>
 								<td class="col-2"><a href="#">Page Title 1</a></td>
-								<td class="col-edit">
-									<a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
-								</td>
-								<td class="col-del">
-									<a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+								<c:if test="${userProfile.role == 'Mentor'}">
+                                    <td class="col-edit">
+                                        <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+                                    </td>
+                                    <td class="col-del">
+                                        <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+								</c:if>
 								</td>
 							</tr>
 						</table>
@@ -95,11 +109,13 @@ https://fontawesome.com/v4.7.0/icons/
 							<tr>
 								<td class="col-1"><a href="#"><i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i></a></td>
 								<td class="col-2"><a href="#">Page Title 2</a></td>
-								<td class="col-edit">
-									<a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
-								</td>
-								<td class="col-del">
-									<a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+								<c:if test="${userProfile.role == 'Mentor'}">
+                                    <td class="col-edit">
+                                        <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+                                    </td>
+                                    <td class="col-del">
+                                        <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+								</c:if>
 								</td>
 							</tr>
 						</table>
@@ -111,11 +127,13 @@ https://fontawesome.com/v4.7.0/icons/
 								<td class="col-2"><a href="#">Quiz Title</a></td>
 								<td class="col-3"><a href="#">14 pts</a></td>
 								<td class="col-4"><a href="#">Oct 20, 2025</a></td>
-								<td class="col-edit">
-									<a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
-								</td>
-								<td class="col-del">
-									<a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+                                <c:if test="${userProfile.role == 'Mentor'}">
+                                    <td class="col-edit">
+                                        <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+                                    </td>
+                                    <td class="col-del">
+                                        <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+								</c:if>
 								</td>
 							</tr>
 						</table>
