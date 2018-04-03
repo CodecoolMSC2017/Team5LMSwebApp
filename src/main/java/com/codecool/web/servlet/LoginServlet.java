@@ -23,10 +23,10 @@ public class LoginServlet extends HttpServlet {
         req.setAttribute("login", user);
 
         if ( user.getMessage().equals("Logged in.") ) {
-            req.getRequestDispatcher("AandQStoreServlet").include(req, resp);
             SingletonDataBase.getInstance().newLogin(user);
+            req.getRequestDispatcher("AandQStoreServlet").forward(req, resp);
         }
-        else req.getRequestDispatcher("/index.jsp").include(req, resp);
+        else req.getRequestDispatcher("/index.jsp").forward(req, resp);
 
     }
 }

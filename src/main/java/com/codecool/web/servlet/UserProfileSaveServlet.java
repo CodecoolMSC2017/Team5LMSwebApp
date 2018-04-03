@@ -25,6 +25,7 @@ public class UserProfileSaveServlet extends HttpServlet{
 
 
         req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
-        req.getRequestDispatcher("/profile.jsp").include(req, resp);
+
+        req.getRequestDispatcher("/profile.jsp").forward(req, resp);
     }
 }

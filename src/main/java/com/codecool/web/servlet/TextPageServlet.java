@@ -18,6 +18,6 @@ public class TextPageServlet extends HttpServlet{
         Login user = SingletonDataBase.getInstance().getLogin();
 
         req.setAttribute("textProfile", user);
-        req.getRequestDispatcher("/textProfile.jsp").include(req, resp);
+        req.getRequestDispatcher("/textProfile.jsp").forward(req, resp);
     }
 }

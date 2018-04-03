@@ -26,10 +26,10 @@ public class RegistrationServlet extends HttpServlet {
 
         if (SingletonDataBase.getInstance().addRegistration(newUser)) {
             req.setAttribute("message", "Registration succesfull");
-            req.getRequestDispatcher("/index.jsp").include(req, resp);
+            req.getRequestDispatcher("/index.jsp").forward(req, resp);
         } else {
             req.setAttribute("message", "This name or email already registered");
-            req.getRequestDispatcher("/index.jsp").include(req, resp);
+            req.getRequestDispatcher("/index.jsp").forward(req, resp);
         }
     }
 }

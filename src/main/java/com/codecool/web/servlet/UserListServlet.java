@@ -20,7 +20,7 @@ public class UserListServlet extends HttpServlet {
         req.setAttribute("mentorlist", SingletonDataBase.getInstance().getMentors());
         req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents());
 
-        req.getRequestDispatcher("/users.jsp").forward(req, resp);
+        req.getRequestDispatcher("/users.jsp").include(req, resp);
         req.getRequestDispatcher("/importUserProfile.jsp").include(req, resp);
         req.getRequestDispatcher("/header.js").include(req, resp);
     }

@@ -19,7 +19,7 @@ public class AandQStoreServlet extends HttpServlet{
 
         req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
 
-        req.getRequestDispatcher("/assignments.jsp").forward(req, resp);
+        req.getRequestDispatcher("/assignments.jsp").include(req, resp);
         req.getRequestDispatcher("/importUserProfile.jsp").include(req, resp);
         req.getRequestDispatcher("/header.js").include(req, resp);
     }
