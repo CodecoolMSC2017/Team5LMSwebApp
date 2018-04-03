@@ -60,7 +60,8 @@ public class SingletonDataBase implements Storing {
         store2.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Kutya"));
         store2.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("MokaBálna"));
         aQStores.add(store2);
-    }
+
+        }
 
 
     public int getGlobalAttandance() {

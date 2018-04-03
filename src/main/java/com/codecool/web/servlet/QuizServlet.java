@@ -23,6 +23,8 @@ public class QuizServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
         QuizService service = new QuizService();
         req.setAttribute("quiz", service.getQuiz(id));
+        req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
+
         req.getRequestDispatcher("/quiz.jsp").forward(req, resp);
     }
 

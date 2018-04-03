@@ -20,7 +20,6 @@ public class AandQStoreServlet extends HttpServlet{
         req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
 
         req.getRequestDispatcher("/assignments.jsp").include(req, resp);
-        req.getRequestDispatcher("/importUserProfile.jsp").include(req, resp);
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
