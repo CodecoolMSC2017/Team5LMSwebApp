@@ -15,6 +15,7 @@ https://fontawesome.com/v4.7.0/icons/
         <jsp:include page="importUserProfile.jsp"/>
 
 		<!-- CONTENT START -->
+
 		<div class="content">
 			<div class="content_title">
 				<div class="text">Assignments</div>
@@ -35,7 +36,6 @@ https://fontawesome.com/v4.7.0/icons/
                         </c:if>
                         <div class="text">${element.getTitle()}</div>
                     </div>
-
                     <div class="topic_items">
                         <c:forEach items="${element.assignments}" var="assign">
                             <div class="topic_item">
@@ -78,9 +78,9 @@ https://fontawesome.com/v4.7.0/icons/
                     </div>
 			        <hr>
                 </c:forEach>
-
 			</div>
 		</div>
+
 		<!-- CONTENT END  -->
 
 	</body>
