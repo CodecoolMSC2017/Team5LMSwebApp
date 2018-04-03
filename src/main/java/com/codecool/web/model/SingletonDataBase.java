@@ -9,7 +9,6 @@ public class SingletonDataBase implements Storing {
     private static final SingletonDataBase Instance = new SingletonDataBase();
     private List<Registration> registrations = new ArrayList<>();
     private List<AandQStore> aQStores = new ArrayList<>();
-    private Login login;
     private int globalAttendance;
 
 
@@ -73,37 +72,24 @@ public class SingletonDataBase implements Storing {
     }
 
     @Override
-    public void newLogin(Login login) {
-        this.login = login;
-    }
-
-    @Override
-    public Login getLogin() {
-        return this.login;
-    }
-
-    @Override
-    public void delLogin(){
-        this.login = null;
-    }
-
-    @Override
     public List<Registration> getAllRegistration() {
         return registrations;
     }
 
     @Override
-    public Registration getRegistration(String name) {
+    public Registration getRegistration(String nameOrEmail) {
         for (Registration registration : registrations) {
-            if (registration.getName().equals(name)) ;
-            return registration;
+            if (registration.getName().equals(nameOrEmail) || registration.getEmail().equals(nameOrEmail)){
+                return registration;
+            }
         }
         return null;
     }
 
     @Override
     public void updateReg(String fname, String lname, String email, String pass) {
-        Registration loginReg = SingletonDataBase.getInstance().getLogin().getReg();
+    /*
+        Registration loginReg = reg;
         for(Registration reg:registrations){
             if (reg.equals(loginReg)){
                 reg.setFirstName(fname);
@@ -113,6 +99,7 @@ public class SingletonDataBase implements Storing {
                 SingletonDataBase.getInstance().getLogin().setReg(reg);
             }
         }
+    */
     }
 
     @Override
@@ -157,11 +144,6 @@ public class SingletonDataBase implements Storing {
             passes.add(registration.getName());
         }
         return passes;
-    }
-
-    @Override
-    public boolean isMentor(Registration registration) {
-        return true;
     }
 
     @Override

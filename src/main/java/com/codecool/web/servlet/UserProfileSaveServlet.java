@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet ("/userProfileSaveServlet")
+@WebServlet ("/protected/userProfileSaveServlet")
 public class UserProfileSaveServlet extends HttpServlet{
 
     @Override
@@ -24,8 +24,9 @@ public class UserProfileSaveServlet extends HttpServlet{
         SingletonDataBase.getInstance().updateReg(fname, lname, email, password);
 
 
-        req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
+        Registration reg = (Registration) req.getSession().getAttribute("user");
+        req.setAttribute("userProfile", reg);
 
-        req.getRequestDispatcher("/profile.jsp").forward(req, resp);
+        req.getRequestDispatcher("profile.jsp").include(req, resp);
     }
 }

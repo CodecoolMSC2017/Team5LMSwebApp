@@ -26,7 +26,7 @@ https://fontawesome.com/v4.7.0/icons/
 					</form>
 				</div>
 			</div>
-		    <div class="error">${login.message}</div>
+		    <div class="error">${error}</div>
 		</div>
 		<div class="content">
 			<div class="registration_frame">

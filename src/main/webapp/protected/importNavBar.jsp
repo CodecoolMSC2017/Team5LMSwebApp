@@ -37,7 +37,7 @@
                 <button class="menu_button"><a href="#">Help</a></button>
             </div>
             <div class="menu_option" style="position: absolute; bottom: 0;">
-                <button class="menu_button"><a href="#">Logout</a></button>
+                <button class="menu_button"><a href="logoutServlet">Logout</a></button>
             </div>
         </div>
     </body>

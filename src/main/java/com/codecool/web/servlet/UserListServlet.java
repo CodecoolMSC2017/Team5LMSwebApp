@@ -10,18 +10,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/userListServlet")
+@WebServlet("/protected/userListServlet")
 public class UserListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
+        Registration reg = (Registration) req.getSession().getAttribute("user");
+        req.setAttribute("userProfile", reg);
+
         req.setAttribute("mentorlist", SingletonDataBase.getInstance().getMentors());
         req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents());
 
-        req.getRequestDispatcher("/users.jsp").include(req, resp);
-        req.getRequestDispatcher("/importUserProfile.jsp").include(req, resp);
+        req.getRequestDispatcher("users.jsp").include(req, resp);
+
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{

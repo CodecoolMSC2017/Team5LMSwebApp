@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/attendanceServlet")
+@WebServlet("/protected/attendanceServlet")
 public class AttendanceServlet extends HttpServlet {
 
     @Override
@@ -26,16 +26,20 @@ public class AttendanceServlet extends HttpServlet {
 
         SingletonDataBase.getInstance().setGlobalAttandance(1);
 
-        req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
+        Registration reg = (Registration) req.getSession().getAttribute("user");
+        req.setAttribute("userProfile", reg);
+
         req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents());
-        req.getRequestDispatcher("attendance.jsp").forward(req, resp);
+        req.getRequestDispatcher("attendance.jsp").include(req, resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
+        Registration reg = (Registration) req.getSession().getAttribute("user");
+        req.setAttribute("userProfile", reg);
+
         req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents());
-        req.getRequestDispatcher("attendance.jsp").forward(req, resp);
+        req.getRequestDispatcher("attendance.jsp").include(req, resp);
     }
 }

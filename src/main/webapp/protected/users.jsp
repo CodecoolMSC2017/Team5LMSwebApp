@@ -39,9 +39,9 @@ https://fontawesome.com/v4.7.0/icons/
 					</c:if>
 					<c:forEach items="${studentlist}" var="element">
                         <tr>
-                            <td><a href="<c:url value="/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getName()}</a></td>
-                            <td><a href="<c:url value="/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getEmail()}</a></td>
-                            <td><a href="<c:url value="/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getRole()}</a></td>
+                            <td><a href="<c:url value="/protected/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getName()}</a></td>
+                            <td><a href="<c:url value="/protected/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getEmail()}</a></td>
+                            <td><a href="<c:url value="/protected/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getRole()}</a></td>
                         </tr>
                     </c:forEach>
 				</table>

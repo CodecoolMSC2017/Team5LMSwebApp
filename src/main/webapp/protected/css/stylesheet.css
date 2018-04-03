@@ -1,0 +1,375 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+h1 {
+	margin: 15px 20px;
+	padding-bottom: 10px;
+	font-size: 1.6em;
+}
+
+.button_right {
+	margin-top: -25px;
+	margin-right: 18px;
+    text-align: right;
+}
+
+.content {
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 800px;
+	height: auto;
+}
+.content p {
+	margin: 10px 20px;
+	font-size: 1.3em;
+}
+.content_title {
+	margin: 0px 20px;
+	padding-bottom: 10px;
+	height: 30px;
+	border-bottom: 2px solid #A5AFB5;
+}
+.content_title .text {
+	float: left;
+	width: auto;
+	height: 30px;
+	font-size: 1.8em;
+	font-weight: bold;
+	line-height: 30px;
+}
+.content_title .add {
+	float: right;
+	padding-top: 10px;
+	width: auto;
+	height: 20px;
+	font-size: 1.3em;
+	line-height: 30px;
+}
+.content_title:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.content_title .add a {
+	text-decoration: none;
+	color: black;
+}
+
+.submit {
+    display: inline-block;
+    margin: 4px 2px;
+	padding: 10px 12px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    border: 0px;
+    font-size: 1.2em;
+	font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.submit:hover {
+    background-color: #3E8E41;
+}
+.submit a {
+	text-decoration: none;
+	color: white;
+}
+
+/* ********** LOGIN & REG START ********** */
+.login_frame {
+	height: 90px;
+	background-color: #CCC;
+	line-height: 70px;
+	color: #373737;
+}
+.like_content {
+	margin: 0 auto;
+	width: 800px;
+	height: 90px;
+}
+.login_frame .logo {
+	float: left;
+	margin-top: 10px;
+	width: 70px;
+	height: 70px;
+	background: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-size: 70px 70px;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-animation-name: rotation;
+    animation-name: rotation;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+}
+@-webkit-keyframes rotation {
+    0% {-webkit-transform: rotate(0deg);}
+    20% {-webkit-transform: rotate(359deg);}
+    100% {-webkit-transform: rotate(359deg);}
+
+}
+.login_frame .title {
+	float: left;
+	margin-top: 10px;
+	height: 70px;
+	padding-left: 20px;
+	font-size: 3.0em;
+	font-weight: bold;
+	line-height: 70px;
+}
+.login_frame .form {
+	float: right;
+	margin-top: 10px;
+	height: 70px;
+	font-size: 1.5em;
+	line-height: 70px;
+	text-align: right;
+}
+.login_frame .error {
+	float: right;
+	margin-top: 10px;
+	width: 260px;
+	height: 20px;
+	font-size: 1.0em;
+	font-weight: bold;
+	line-height: 70px;
+	text-align: center;
+	color: #ff0000;
+}
+.login_frame .submit {
+	padding: 5px 6px;
+	font-size: 1.0em;
+}
+.registration_frame {
+	float: right;
+	width: 420px;
+	color: #373737;
+	font-size: 1.25em;
+}
+.registration_frame h1 {
+	margin-top: 30px;
+	margin-bottom: -20px;
+	font-size: 1.8em;
+}
+.registration_frame .field {
+	padding: 5px;
+	height: 30px;
+	border: 1px solid grey;
+	border-radius: 3px;
+}
+.registration_frame .submit {
+	font-size: 1.0em;
+}
+/* ********** LOGIN & REG END ********** */
+
+/* ********** ASSIGNMENT START ********** */
+.assignment_frame {
+	margin: 20px;
+	width: auto;
+	height: auto;
+	background-color: #F5F5F5;
+	border: 1px solid #A5AFB5;
+}
+.assignment_frame .title {
+	margin: 15px 20px;
+}
+.assignment_frame .title .text {
+	font-size: 1.3em;
+	font-weight: bold;
+}
+.assignment_frame .title .admin {
+	float: right;
+	font-size: 1.0em;
+}
+.assignment_frame .title .admin a {
+	text-decoration: none;
+	color: black;
+}
+.assignment_frame .topic_items {
+	margin: 15px;
+	width: auto;
+	height: auto;
+	background-color: white;
+	border: 1px solid #A5AFB5;
+	border-radius: 5px;
+}
+.assignment_frame .topic_item {
+	width: auto;
+	height: 35px;
+	border-bottom: 1px dashed #A5AFB5;
+	line-height: 35px;
+}
+.assignment_frame .topic_item a {
+	display: block;
+	text-decoration: none;
+	color: black;
+}
+.assignment_frame .topic_item:hover {
+	background-color: lightblue;
+}
+.assignment_frame .topic_item .table {
+	height: 35px;
+	width: 100%;
+	font-size: 1.0em;
+}
+.assignment_frame .topic_item .col-1 {
+	width: 30px;
+	text-align: center;
+}
+.assignment_frame .topic_item .col-2 {
+	padding-left: 0px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.assignment_frame .topic_item .col-3 {
+	width: 50px;
+	border-left: 1px dashed #A5AFB5;
+	text-align: center;
+}
+.assignment_frame .topic_item .col-4 {
+	width: 100px;
+	border-left: 1px dashed #A5AFB5;
+	text-align: center;
+}
+.assignment_frame .topic_item .col-edit {
+	width: 25px;
+	border-left: 1px dashed #A5AFB5;
+	text-align: right;
+}
+.assignment_frame .topic_item .col-del {
+	width: 25px;
+	text-align: center;
+}
+/* ********** ASSIGNMENT END ********** */
+
+/* ********** QUIZ START ********** */
+.quiz_frame {
+	margin: 20px;
+	width: auto;
+	height: auto;
+	border: 1px solid #A5AFB5;
+}
+.quiz_frame .title {
+	background-color: #F5F5F5;
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	border-bottom: 1px solid #A5AFB5;
+}
+.quiz_frame .title .question_no {
+	padding-left: 15px;
+	font-size: 1.5em;
+}
+.quiz_frame .title .points {
+	float: right;
+	padding-right: 15px;
+	font-size: 1.5em;
+}
+.quiz_frame .question {
+	margin: 20px;
+}
+.quiz_frame .question .text {
+	margin: 20px 0px;
+	font-size: 1.3em;
+}
+.quiz_frame .question .answer {
+	padding: 10px 0px;
+	font-size: 1.3em;
+	border-top: 1px dashed #A5AFB5;
+}
+.quiz_button {
+	margin-top: -25px;
+	margin-right: 18px;
+    text-align: right;
+}
+/* ********** QUIZ END ********** */
+
+/* ********** USERS & ATTENDANCE START ********** */
+.users_frame,
+.attendance_frame {
+	margin: 20px;
+	width: auto;
+	height: auto;
+	border: 0px solid #A5AFB5;
+}
+.users_frame .users_table,
+.attendance_frame .users_table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+}
+.users_frame .users_table tr,
+.attendance_frame .users_table tr {
+	height: 40px;
+	border-bottom: 1px solid #A5AFB5;
+}
+.users_frame .users_table tr:nth-child(even),
+.attendance_frame .users_table tr:nth-child(even) {
+	background: #F5F5F5;
+}
+.users_frame .users_table tr:nth-child(odd),
+.attendance_frame .users_table tr:nth-child(odd) {
+}
+.users_frame .users_table .title,
+.attendance_frame .users_table .title {
+	border-bottom: 2px solid #A5AFB5;
+	font-weight: bold;
+}
+.users_frame .users_table .name {
+	width: 45%;
+}
+.attendance_frame .users_table .name {
+	width: 40%;
+}
+.users_frame .users_table .email {
+	width: 45%;
+}
+.attendance_frame .users_table .email {
+	width: 40%;
+}
+.users_frame .users_table .role,
+.attendance_frame .users_table .presence {
+	width: 10%;
+}
+/* ********** USERS & ATTENDANCE END ********** */
+
+/* ********** PROFILE START ********** */
+.profile_frame {
+	margin: 20px;
+	width: auto;
+	height: auto;
+	border: 0px solid #A5AFB5;
+}
+.profile_frame .table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+}
+.profile_frame .table tr {
+	height: 40px;
+	border-bottom: 1px solid #A5AFB5;
+}
+.profile_frame .table tr:nth-child(even) {
+	background: #F5F5F5;
+}
+.profile_frame .table tr:nth-child(odd) {
+}
+.profile_frame .table .title {
+	padding-left: 10px;
+	width: 150px;
+	font-weight: bold;
+}
+.profile_frame .table .info {
+}

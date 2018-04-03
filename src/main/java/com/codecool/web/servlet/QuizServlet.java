@@ -1,9 +1,6 @@
 package com.codecool.web.servlet;
 
-import com.codecool.web.model.AandQStore;
-import com.codecool.web.model.Assignment;
-import com.codecool.web.model.Quiz;
-import com.codecool.web.model.SingletonDataBase;
+import com.codecool.web.model.*;
 import com.codecool.web.service.QuizService;
 
 import javax.servlet.ServletException;
@@ -14,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/Quiz")
+@WebServlet("/protected/Quiz")
 public class QuizServlet extends HttpServlet {
 
     @Override
@@ -23,9 +20,10 @@ public class QuizServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
         QuizService service = new QuizService();
         req.setAttribute("quiz", service.getQuiz(id));
-        req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
+        Registration reg = (Registration) req.getSession().getAttribute("user");
+        req.setAttribute("userProfile", reg);
 
-        req.getRequestDispatcher("/quiz.jsp").forward(req, resp);
+        req.getRequestDispatcher("quiz.jsp").include(req, resp);
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{

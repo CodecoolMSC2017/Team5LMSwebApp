@@ -1,0 +1,129 @@
+.menu_bar {
+	position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+	background-color: #CCC;
+	text-align: center;
+}
+
+.menu_button {
+	margin: 0px;
+	padding: 16px 0px;
+	width: 130px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 1.25em;
+    cursor: pointer;
+}
+
+.menu_option {
+    position: relative;
+	width: 130px;
+	border-bottom: 1px solid #CCC;
+}
+
+.menu_option a {
+	text-decoration: none;
+	color: white;
+}
+
+.sub_menu {
+    display: none;
+    position: absolute;
+	margin-top: -50px;
+    min-width: 250px;
+    background-color: #f9f9f9;
+    z-index: -1;
+	font-size: 1.1em;
+	text-align: left;
+	border: 1px solid #4CAF50;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.sub_menu a {
+    display: block;
+	margin-left: 130px;
+    padding: 12px 16px;
+	width: 150px;
+    color: black;
+    text-decoration: none;
+}
+
+.sub_menu a:hover {
+	background-color: #f1f1f1
+}
+
+.menu_option:hover .sub_menu {
+    display: block;
+}
+
+.menu_option:hover .menu_button {
+    background-color: #3e8e41;
+}
+
+/* ********** ********** LOGGED IN MENU ********** ********** */
+
+.logged_in {
+       position: fixed;
+       top: 0;
+       right: 0;
+       padding: 10px;
+       width: 180px;
+       height: 80px;
+       background-color: #4CAF50;
+       color: white;
+       border-left: 2px solid #CCC;
+       border-bottom: 2px solid #CCC;
+}
+img {
+       float: left;
+       margin-right: 10px;
+       width: 50px;
+       border-radius: 50%;
+       border: 2px solid #CCC;
+}
+.logged_in .message {
+       font-size: 1.0em;
+       margin-bottom: 10px;
+       font-size: 1.25em;
+       font-weight: bold;
+}
+.logged_in .name {
+       height: 24px;
+       line-height: 24px;
+       font-size: 1.25em;
+       font-weight: bold;
+}
+.logged_in .role {
+       height: 15px;
+       line-height: 15px;
+}
+.logged_in .role {
+       height: 15px;
+       line-height: 15px;
+}
+.logged_in .else {
+       height: 15px;
+       line-height: 15px;
+}
+
+/* ********** ********** USAGE ********** **********
+
+<div class="menu_option">
+  <button class="menu_button">Menu 1</button>
+  <div class="sub_menu">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<div class="menu_option">
+  <button class="menu_button"><a href="#">Menu 1</a></button>
+</div>
+<div class="menu_option" style="float: right">
+  <button class="menu_button"><a href="#">Logout</a></button>
+</div>
+
+  ********** ********** ***** ********** ********** */

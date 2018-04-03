@@ -1,6 +1,6 @@
 package com.codecool.web.servlet;
 
-import com.codecool.web.model.SingletonDataBase;
+import com.codecool.web.model.Registration;
 import com.codecool.web.service.RegistrationService;
 
 import javax.servlet.ServletException;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/userProfileServlet")
+@WebServlet("/protected/userProfileServlet")
 public class UserProfileServlet extends HttpServlet{
 
     @Override
@@ -20,11 +20,12 @@ public class UserProfileServlet extends HttpServlet{
         String id = req.getParameter("id");
         RegistrationService service = new RegistrationService();
 
-        if (id.equals("")) req.setAttribute("profile", SingletonDataBase.getInstance().getLogin().getReg());
+        if (id.equals("")) req.setAttribute("profile", req.getSession().getAttribute("user"));
         else req.setAttribute("profile", service.getProfile(id));
 
-        req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
+        Registration reg = (Registration) req.getSession().getAttribute("user");
+        req.setAttribute("userProfile", reg);
 
-        req.getRequestDispatcher("/profile.jsp").forward(req, resp);
+        req.getRequestDispatcher("profile.jsp").forward(req, resp);
     }
 }

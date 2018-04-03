@@ -1,5 +1,6 @@
 package com.codecool.web.servlet;
 
+import com.codecool.web.model.Registration;
 import com.codecool.web.model.SingletonDataBase;
 
 import javax.servlet.ServletException;
@@ -9,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/AandQStoreServlet")
+@WebServlet("/protected/AandQStoreServlet")
 public class AandQStoreServlet extends HttpServlet{
 
     @Override
@@ -17,9 +18,10 @@ public class AandQStoreServlet extends HttpServlet{
 
         req.setAttribute("AandQlist", SingletonDataBase.getInstance().getaQStores());
 
-        req.setAttribute("userProfile", SingletonDataBase.getInstance().getLogin().getReg());
+        Registration reg = (Registration) req.getSession().getAttribute("user");
+        req.setAttribute("userProfile", reg);
 
-        req.getRequestDispatcher("/assignments.jsp").include(req, resp);
+        req.getRequestDispatcher("assignments.jsp").include(req, resp);
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{

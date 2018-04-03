@@ -1,0 +1,74 @@
+header {
+	position: fixed;
+    top: 0;
+    width: 100%;
+	background-color: #CCC;
+	font-size: 1.0em;
+}
+
+.menu_button {
+    height: 50px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+.menu_option {
+    position: relative;
+    display: inline-block;
+}
+
+.menu_option a {
+	text-decoration: none;
+	color: white;
+}
+
+.sub_menu {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    background-color: #f9f9f9;
+	font-size: 1.3em;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.sub_menu a {
+    display: block;
+    padding: 12px 16px;
+    color: black;
+    text-decoration: none;
+}
+
+.sub_menu a:hover {
+	background-color: #f1f1f1
+}
+
+.menu_option:hover .sub_menu {
+    display: block;
+}
+
+.menu_option:hover .menu_button {
+    background-color: #3e8e41;
+}
+
+/* ********** ********** USAGE ********** **********
+
+<div class="menu_option">
+  <button class="menu_button">Menu 1</button>
+  <div class="sub_menu">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<div class="menu_option">
+  <button class="menu_button"><a href="#">Menu 1</a></button>
+</div>
+<div class="menu_option" style="float: right">
+  <button class="menu_button"><a href="#">Logout</a></button>
+</div>
+
+  ********** ********** ***** ********** ********** */

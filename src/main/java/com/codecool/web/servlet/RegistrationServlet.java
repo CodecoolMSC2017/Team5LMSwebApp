@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;;
 import java.io.IOException;
 
 
-@WebServlet("/registrationServlet")
+@WebServlet("/protected/registrationServlet")
 public class RegistrationServlet extends HttpServlet {
 
     private final RegistrationService service = new RegistrationService();
@@ -26,7 +26,7 @@ public class RegistrationServlet extends HttpServlet {
 
         if (SingletonDataBase.getInstance().addRegistration(newUser)) {
             req.setAttribute("message", "Registration succesfull");
-            req.getRequestDispatcher("/index.jsp").forward(req, resp);
+            req.getRequestDispatcher("/index.jsp").include(req, resp);
         } else {
             req.setAttribute("message", "This name or email already registered");
             req.getRequestDispatcher("/index.jsp").forward(req, resp);
