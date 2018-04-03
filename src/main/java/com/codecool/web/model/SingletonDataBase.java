@@ -36,7 +36,7 @@ public class SingletonDataBase implements Storing {
         registrations.get(1).setRole("Mentor");
 
         //Hardcoded aAndQStore with assignment and quiz+questions
-        AandQStore store = new AandQStore("Try  Not Hardcoded Student View");
+        AandQStore store = new AandQStore("Try  Not Hardcoded View");
         store.getAssignments().add(new Assignment( "TryName", "Try short description", 2, "Try long description"));
         store.getAssignments().add(new Assignment( "TryName 2", "Try short description 2", 1, "Try long description 2"));
         store.getQuizzes().add(new Quiz( "TryNameQ", "Try short description Q", 4));
@@ -51,7 +51,7 @@ public class SingletonDataBase implements Storing {
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Mondom semmi"));
         aQStores.add(store);
 
-        AandQStore store2 = new AandQStore("Try 2 Not Hardcoded Student View");
+        AandQStore store2 = new AandQStore("Try 2 Not Hardcoded View");
         store2.getAssignments().add(new Assignment( "TryName", "Try short description", 2, "Try long description"));
         store2.getAssignments().add(new Assignment( "TryName 2", "Try short description 2", 1, "Try long description 2"));
         store2.getQuizzes().add(new Quiz( "TryNameQ", "Try short description Q", 4));
