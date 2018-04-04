@@ -15,6 +15,12 @@ public class AandQStore {
         this.title = title;
     }
 
+    public AandQStore(AandQStore original) {
+        this.title = original.title;
+        this.assignments = new ArrayList<>(original.assignments);
+        this.quizzes = new ArrayList<>(original.quizzes);
+    }
+
     //Setters/Getters
 
     public String getTitle() {

@@ -150,26 +150,29 @@ public class SingletonDataBase implements Storing {
     }
 
     public List<AandQStore> getAQStoresPublished(){
-        List<AandQStore> tempStore = new ArrayList<>();
-
+        List<AandQStore> tempStores = new ArrayList<>();
+        AandQStore tempStore;
+        Assignment assign;
+        Quiz quiz;
         for (AandQStore store:aQStores){
             List<Assignment>tempa = new ArrayList<>();
             List<Quiz>tempq = new ArrayList<>();
-            for (Assignment a:store.getAssignments()){
+            tempStore = new AandQStore(store);
+            for (Assignment a:tempStore.getAssignments()){
                 if (a.isPublished()){
                     tempa.add(a);
                 }
             }
-            store.setAssignments(tempa);
-            for (Quiz q:store.getQuizzes()){
+            tempStore.setAssignments(tempa);
+            for (Quiz q:tempStore.getQuizzes()){
                 if(q.isPublished()){
                     tempq.add(q);
                 }
             }
-            store.setQuizzes(tempq);
-            tempStore.add(store);
+            tempStore.setQuizzes(tempq);
+            tempStores.add(tempStore);
         }
-        return tempStore;
+        return tempStores;
     }
 
     @Override

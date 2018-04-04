@@ -1,9 +1,6 @@
 package com.codecool.web.servlet;
 
-import com.codecool.web.model.AandQStore;
-import com.codecool.web.model.Assignment;
-import com.codecool.web.model.Quiz;
-import com.codecool.web.model.SingletonDataBase;
+import com.codecool.web.model.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,6 +28,7 @@ public class publishQuizServlet extends HttpServlet{
                 }
             }
         }
+
         resp.sendRedirect("AandQStoreServlet");
     }
 }

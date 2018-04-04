@@ -16,7 +16,7 @@ public abstract class Task {
         this.id = rnd.nextInt(9999) + 1000;
         this.title = title;
         this.description = description;
-        this.isPublished = true;
+        this.isPublished = false;
     }
 
     //Setters/Getters

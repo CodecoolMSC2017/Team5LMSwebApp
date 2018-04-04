@@ -2,6 +2,7 @@ package com.codecool.web.servlet;
 
 import com.codecool.web.model.AandQStore;
 import com.codecool.web.model.Assignment;
+import com.codecool.web.model.Registration;
 import com.codecool.web.model.SingletonDataBase;
 
 import javax.servlet.ServletException;
@@ -30,6 +31,7 @@ public class publishAssignmentServlet extends HttpServlet{
                 }
             }
         }
+
         resp.sendRedirect("AandQStoreServlet");
     }
 }
