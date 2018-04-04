@@ -15,7 +15,11 @@ import java.util.List;
 public class EvaluationServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String[] answer = req.getParameterValues("answers.getName()");
+
+        req.setAttribute("answer", answer);
 
         req.getRequestDispatcher("quizResult.jsp").include(req, resp);
     }
