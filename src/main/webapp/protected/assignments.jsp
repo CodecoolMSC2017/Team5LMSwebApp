@@ -51,12 +51,15 @@ https://fontawesome.com/v4.7.0/icons/
                                                 <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
                                             </td>
                                             <td class="col-published">
-                                                <c:if test="${assign.isPublished() == true}">
-                                                    <input type="checkbox" onclick="this.form.submit();" checked>
-                                                </c:if>
-                                                <c:if test="${assign.isPublished() == false}">
-                                                    <input type="checkbox" onclick="this.form.submit();">
-                                                </c:if>
+                                                <form action="publishAssignmentServlet" method="post">
+                                                    <input type="hidden" name="id" value=${assign.getId()}>
+                                                    <c:if test="${assign.isPublished() == true}">
+                                                            <input type="checkbox" onclick="this.form.submit();" checked>
+                                                    </c:if>
+                                                    <c:if test="${assign.isPublished() == false}">
+                                                            <input type="checkbox" onclick="this.form.submit();">
+                                                    </c:if>
+                                                </form>
                                             </td>
                                         </c:if>
                                     </tr>
@@ -79,12 +82,15 @@ https://fontawesome.com/v4.7.0/icons/
                                                 <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
                                             </td>
                                             <td class="col-published">
-                                                <c:if test="${quiz.isPublished() == true}">
-                                                    <input type="checkbox" onclick="this.form.submit();" checked>
-                                                </c:if>
-                                                <c:if test="${quiz.isPublished() == false}">
-                                                    <input type="checkbox" onclick="this.form.submit();">
-                                                </c:if>
+                                                <form action="publishAssignmentServlet" method="post">
+                                                    <input type="hidden" name="id" value=${assign.getId()}>
+                                                    <c:if test="${quiz.isPublished() == true}">
+                                                            <input type="checkbox" onclick="this.form.submit();" checked>
+                                                    </c:if>
+                                                    <c:if test="${quiz.isPublished() == false}">
+                                                            <input type="checkbox" onclick="this.form.submit();">
+                                                    </c:if>
+                                                </form>
                                             </td>
                                         </c:if>
                                     </tr>
