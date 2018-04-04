@@ -50,6 +50,14 @@ https://fontawesome.com/v4.7.0/icons/
                                             <td class="col-del">
                                                 <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
                                             </td>
+                                            <td class="col-published">
+                                                <c:if test="${assign.isPublished == true}">
+                                                    <input type="checkbox" onclick="this.form.submit();" checked>
+                                                </c:if>
+                                                <c:if test="${assign.isPublished == false}">
+                                                    <input type="checkbox" onclick="this.form.submit();">
+                                                </c:if>
+                                            </td>
                                         </c:if>
                                     </tr>
                                 </table>
@@ -69,6 +77,14 @@ https://fontawesome.com/v4.7.0/icons/
                                             </td>
                                             <td class="col-del">
                                                 <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+                                            </td>
+                                            <td class="col-published">
+                                                <c:if test="${assign.isPublished == true}">
+                                                    <input type="checkbox" onclick="this.form.submit();" checked>
+                                                </c:if>
+                                                <c:if test="${assign.isPublished == false}">
+                                                    <input type="checkbox" onclick="this.form.submit();">
+                                                </c:if>
                                             </td>
                                         </c:if>
                                     </tr>
