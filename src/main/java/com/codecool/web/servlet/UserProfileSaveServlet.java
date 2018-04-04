@@ -17,16 +17,16 @@ public class UserProfileSaveServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        Registration reg = (Registration) req.getSession().getAttribute("user");
         String fname = req.getParameter("first_name");
         String lname = req.getParameter("last_name");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-        SingletonDataBase.getInstance().updateReg(fname, lname, email, password);
+        Registration registration = SingletonDataBase.getInstance().updateReg(reg, fname, lname, email, password);
 
+        req.setAttribute("profile", req.getSession().getAttribute("user"));
+        req.setAttribute("userProfile", req.getSession().getAttribute("user"));
 
-        Registration reg = (Registration) req.getSession().getAttribute("user");
-        req.setAttribute("userProfile", reg);
-
-        req.getRequestDispatcher("profile.jsp").include(req, resp);
+        req.getRequestDispatcher("profile.jsp").forward(req, resp);
     }
 }

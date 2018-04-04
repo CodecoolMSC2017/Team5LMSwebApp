@@ -252,6 +252,10 @@ h1 {
 	width: 25px;
 	text-align: center;
 }
+.assignment_frame .topic_item .col-published {
+	width: 25px;
+	text-align: center;
+}
 /* ********** ASSIGNMENT END ********** */
 
 /* ********** QUIZ START ********** */

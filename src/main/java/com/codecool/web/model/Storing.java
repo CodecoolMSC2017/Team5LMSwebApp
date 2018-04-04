@@ -7,7 +7,7 @@ public interface Storing {
     List<Registration> getAllRegistration();
     boolean addRegistration(Registration registration);
     Registration getRegistration(String name);
-    void updateReg(String fname, String lname, String email, String pass);
+    Registration updateReg(Registration reg, String fname, String lname, String email, String pass);
     void deleteReg(Registration registration);
     List<String> getNames();
     List<String> getEmails();
