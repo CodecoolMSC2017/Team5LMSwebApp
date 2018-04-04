@@ -20,7 +20,7 @@ https://fontawesome.com/v4.7.0/icons/
 			<div class="content_title">
 				<div class="text">Assignments</div>
 				<c:if test="${userProfile.role == 'Mentor'}">
-				    <div class="add"><a href="#"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i></a></div>
+				    <div class="add"><a href="#"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true" title="Add"></i></a></div>
 				</c:if>
 			</div>
 
@@ -29,9 +29,9 @@ https://fontawesome.com/v4.7.0/icons/
                     <div class="title">
                         <c:if test="${userProfile.role == 'Mentor'}">
                             <div class="admin">
-                                <a href="#"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true" title="Add"></i></a>
+                                <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
+                                <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
                             </div>
                         </c:if>
                         <div class="text">${element.getTitle()}</div>
@@ -45,19 +45,19 @@ https://fontawesome.com/v4.7.0/icons/
                                         <td class="col-2"><a href="<c:url value="/protected/Assignement"><c:param name="id" value="${assign.getId()}"/></c:url>">${assign.getTitle()}</a></td>
                                         <c:if test="${userProfile.role == 'Mentor'}">
                                             <td class="col-edit">
-                                                <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" alt="Edit"></i></a>
+                                                <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
                                             </td>
                                             <td class="col-del">
-                                                <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true" alt="Delete"></i></a>
+                                                <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
                                             </td>
                                             <td class="col-published">
                                                 <form action="publishAssignmentServlet" method="post">
                                                     <input type="hidden" name="id" value=${assign.getId()}>
                                                     <c:if test="${assign.isPublished() == true}">
-                                                            <input type="checkbox" onclick="this.form.submit();" alt="Publish" checked>
+                                                            <input type="checkbox" onclick="this.form.submit();" title="Publish" checked>
                                                     </c:if>
                                                     <c:if test="${assign.isPublished() == false}">
-                                                            <input type="checkbox" onclick="this.form.submit();" alt="Publish">
+                                                            <input type="checkbox" onclick="this.form.submit();" title="Publish">
                                                     </c:if>
                                                 </form>
                                             </td>
@@ -76,10 +76,10 @@ https://fontawesome.com/v4.7.0/icons/
                                         <td class="col-4"><a href="<c:url value="/protected/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>">${quiz.getDate()}</a></td>
                                         <c:if test="${userProfile.role == 'Mentor'}">
                                             <td class="col-edit">
-                                                <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" alt="Edit"></i></a>
+                                                <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
                                             </td>
                                             <td class="col-del">
-                                                <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true" alt="Delete"></i></a>
+                                                <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
                                             </td>
                                             <td class="col-published">
 
@@ -87,10 +87,10 @@ https://fontawesome.com/v4.7.0/icons/
 
                                                     <input type="hidden" name="id" value=${quiz.getId()}>
                                                     <c:if test="${quiz.isPublished() == true}">
-                                                            <input type="checkbox" onclick="this.form.submit();" alt="Publish" checked>
+                                                            <input type="checkbox" onclick="this.form.submit();" title="Publish" checked>
                                                     </c:if>
                                                     <c:if test="${quiz.isPublished() == false}">
-                                                            <input type="checkbox" onclick="this.form.submit();" alt="Publish">
+                                                            <input type="checkbox" onclick="this.form.submit();" title="Publish">
                                                     </c:if>
                                                 </form>
                                             </td>
