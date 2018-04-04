@@ -51,9 +51,11 @@ https://fontawesome.com/v4.7.0/icons/
 						<td class="info"></td>
 					</tr>
 				</table>
-				<center>
-					<a href="userProfileEdit"><div class="submit">Edit Profile</div></a>
-				</center>
+				<c:if test="${userProfile.name == profile.name || userProfile.role == 'Mentor'}">
+                    <center>
+                        <a href="userProfileEdit"><div class="submit">Edit Profile</div></a>
+                    </center>
+                </c:if>
 			</div>
 
 		</div>
