@@ -256,6 +256,9 @@ h1 {
 	width: 25px;
 	text-align: center;
 }
+.assignment_frame .topic_item .col-published input[type="checkbox"] {
+    margin-bottom: -12px;
+}
 /* ********** ASSIGNMENT END ********** */
 
 /* ********** QUIZ START ********** */

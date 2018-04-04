@@ -36,4 +36,8 @@ public abstract class Task {
     public boolean isPublished() {
         return isPublished;
     }
+
+    public void setPublished(boolean published) {
+        isPublished = published;
+    }
 }
