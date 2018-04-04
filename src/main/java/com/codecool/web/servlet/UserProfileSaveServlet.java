@@ -22,8 +22,10 @@ public class UserProfileSaveServlet extends HttpServlet{
         String lname = req.getParameter("last_name");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+        Registration registration = SingletonDataBase.getInstance().updateReg(reg, fname, lname, email, password);
 
-        req.setAttribute("userProfile", SingletonDataBase.getInstance().updateReg(reg, fname, lname, email, password));
+        req.setAttribute("profile", req.getSession().getAttribute("user"));
+        req.setAttribute("userProfile", req.getSession().getAttribute("user"));
 
         req.getRequestDispatcher("profile.jsp").forward(req, resp);
     }
