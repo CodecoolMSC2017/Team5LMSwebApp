@@ -343,6 +343,20 @@ h1 {
 .attendance_frame .users_table .presence {
 	width: 10%;
 }
+.users_frame .users_table a {
+	text-decoration: none;
+	color: #000;
+}
+.users_frame .users_table tr:hover {
+    background-color: lightblue;
+}
+.users_frame .users_table tr:first-child:hover {
+    background-color: #FFF;
+}
+.users_frame .users_table td a {
+  display: inline-block;
+  width: 100%;
+}
 /* ********** USERS & ATTENDANCE END ********** */
 
 /* ********** PROFILE START ********** */

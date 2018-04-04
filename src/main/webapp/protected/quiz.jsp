@@ -38,7 +38,7 @@ https://fontawesome.com/v4.7.0/icons/
 						</c:forEach>
 					</div>
 				</div>
-				<div class="quiz_button"><input type="submit" class="submit" value="Submit"></div>
+				<a href= "quizSubmit"><div class="quiz_button"><input type="submit" class="submit" value="Submit"></div></a>
 			</c:forEach>
 			</form>
 
