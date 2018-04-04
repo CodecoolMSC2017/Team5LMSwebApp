@@ -51,10 +51,10 @@ https://fontawesome.com/v4.7.0/icons/
                                                 <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
                                             </td>
                                             <td class="col-published">
-                                                <c:if test="${assign.isPublished == true}">
+                                                <c:if test="${assign.isPublished() == true}">
                                                     <input type="checkbox" onclick="this.form.submit();" checked>
                                                 </c:if>
-                                                <c:if test="${assign.isPublished == false}">
+                                                <c:if test="${assign.isPublished() == false}">
                                                     <input type="checkbox" onclick="this.form.submit();">
                                                 </c:if>
                                             </td>
@@ -79,10 +79,10 @@ https://fontawesome.com/v4.7.0/icons/
                                                 <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
                                             </td>
                                             <td class="col-published">
-                                                <c:if test="${assign.isPublished == true}">
+                                                <c:if test="${quiz.isPublished() == true}">
                                                     <input type="checkbox" onclick="this.form.submit();" checked>
                                                 </c:if>
-                                                <c:if test="${assign.isPublished == false}">
+                                                <c:if test="${quiz.isPublished() == false}">
                                                     <input type="checkbox" onclick="this.form.submit();">
                                                 </c:if>
                                             </td>

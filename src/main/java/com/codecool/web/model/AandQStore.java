@@ -28,4 +28,12 @@ public class AandQStore {
     public List<Quiz> getQuizzes() {
         return quizzes;
     }
+
+    public void setAssignments(List<Assignment> assignments) {
+        this.assignments = assignments;
+    }
+
+    public void setQuizzes(List<Quiz> quizzes) {
+        this.quizzes = quizzes;
+    }
 }

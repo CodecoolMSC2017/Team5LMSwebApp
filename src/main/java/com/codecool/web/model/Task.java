@@ -8,6 +8,7 @@ public abstract class Task {
     private String title;
     private String description;
     private int id;
+    private boolean isPublished;
 
     //Constructor
     public Task( String title, String description){
@@ -15,6 +16,7 @@ public abstract class Task {
         this.id = rnd.nextInt(9999) + 1000;
         this.title = title;
         this.description = description;
+        this.isPublished = true;
     }
 
     //Setters/Getters
@@ -29,5 +31,9 @@ public abstract class Task {
 
     public int getId() {
         return id;
+    }
+
+    public boolean isPublished() {
+        return isPublished;
     }
 }

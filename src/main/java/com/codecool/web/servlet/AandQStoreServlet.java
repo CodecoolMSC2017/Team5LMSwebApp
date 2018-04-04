@@ -16,10 +16,14 @@ public class AandQStoreServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.setAttribute("AandQlist", SingletonDataBase.getInstance().getaQStores());
-
         Registration reg = (Registration) req.getSession().getAttribute("user");
         req.setAttribute("userProfile", reg);
+
+        if (reg.getRole().equals("Mentor")) {
+            req.setAttribute("AandQlist", SingletonDataBase.getInstance().getaQStores());
+        }else{
+            req.setAttribute("AandQlist", SingletonDataBase.getInstance().getAQStoresPublished());
+        }
 
         req.getRequestDispatcher("assignments.jsp").include(req, resp);
     }
