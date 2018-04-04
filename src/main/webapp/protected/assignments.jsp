@@ -82,8 +82,8 @@ https://fontawesome.com/v4.7.0/icons/
                                                 <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
                                             </td>
                                             <td class="col-published">
-                                                <form action="publishAssignmentServlet" method="post">
-                                                    <input type="hidden" name="id" value=${assign.getId()}>
+                                                <form action="publishQuizServlet" method="post">
+                                                    <input type="hidden" name="id" value=${quiz.getId()}>
                                                     <c:if test="${quiz.isPublished() == true}">
                                                             <input type="checkbox" onclick="this.form.submit();" checked>
                                                     </c:if>
