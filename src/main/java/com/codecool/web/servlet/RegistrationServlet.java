@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;;
 import java.io.IOException;
 
 
-@WebServlet("/protected/registrationServlet")
+@WebServlet("/registrationServlet")
 public class RegistrationServlet extends HttpServlet {
 
     private final RegistrationService service = new RegistrationService();
@@ -22,14 +22,19 @@ public class RegistrationServlet extends HttpServlet {
 
             Registration newUser;
             newUser = service.getReg(req.getParameter("name"), req.getParameter("email"), req.getParameter("password"), req.getParameter("first_name"), req.getParameter("last_name"));
-            req.setAttribute("registration", newUser);
 
         if (SingletonDataBase.getInstance().addRegistration(newUser)) {
             req.setAttribute("message", "Registration succesfull");
-            req.getRequestDispatcher("/index.jsp").include(req, resp);
+            req.getRequestDispatcher("/index.jsp").forward(req, resp);
         } else {
             req.setAttribute("message", "This name or email already registered");
             req.getRequestDispatcher("/index.jsp").forward(req, resp);
         }
     }
+
+    /*@Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+
+        doPost(req, resp);
+    }*/
 }
