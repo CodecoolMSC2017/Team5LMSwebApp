@@ -40,7 +40,12 @@ https://fontawesome.com/v4.7.0/icons/
 					</tr>
 					<tr>
 						<td class="title">Role:</td>
-						<td class="info">${profile.role}</td>
+						<td class="info">
+						    ${profile.role}
+                            <c:if test="${profile.role != 'Mentor' && userProfile.role == 'Mentor'}">
+                                <a href="<c:url value="/protected/UserPromoteServlet"><c:param name="id" value="${profile.name}"/></c:url>"><div class="submit"><i class="fa fa-graduation-cap fa-lg" aria-hidden="true" title="Promote to Mentor"></i> Promote to Mentor</div></a>
+                            </c:if>
+                        </td>
 					</tr>
 					<tr>
 						<td class="title">Password:</td>

@@ -394,3 +394,38 @@ h1 {
 }
 .profile_frame .table .info {
 }
+.profile_frame .table .promote {
+    float: right;
+    margin: 0px;
+    padding: 0px 10px;
+    height: 40px;
+    border-left: 1px dashed gray;
+    line-height: 40px;
+}
+.profile_frame .table .submit {
+    float: right;
+    display: inline-block;
+    margin: 0px;
+	padding: 7px 9px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    border: 0px;
+    font-size: 1.0em;
+	font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.profile_frame .table .submit:hover {
+    background-color: #3E8E41;
+}
+.profile_frame .table .submit a {
+	text-decoration: none;
+	color: white;
+}
+
