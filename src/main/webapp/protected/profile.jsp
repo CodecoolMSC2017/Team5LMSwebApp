@@ -44,7 +44,14 @@ https://fontawesome.com/v4.7.0/icons/
 					</tr>
 					<tr>
 						<td class="title">Password:</td>
-						<td class="info">${profile.password}</td>
+						<td class="info">
+						    <c:if test="${userProfile.name == profile.name}">
+                                ${profile.password}
+                            </c:if>
+						    <c:if test="${userProfile.name != profile.name}">
+						        ******
+                            </c:if>
+                        </td>
 					</tr>
 					<tr>
 						<td class="title">Introduction:</td>
