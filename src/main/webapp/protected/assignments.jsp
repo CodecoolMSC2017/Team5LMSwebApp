@@ -24,8 +24,8 @@ https://fontawesome.com/v4.7.0/icons/
 				</c:if>
 			</div>
 
-		    <div class="assignment_frame">
-                <c:forEach items="${AandQlist}" var="element">
+            <c:forEach items="${AandQlist}" var="element">
+		        <div class="assignment_frame">
                     <div class="title">
                         <c:if test="${userProfile.role == 'Mentor'}">
                             <div class="admin">
@@ -100,9 +100,8 @@ https://fontawesome.com/v4.7.0/icons/
                             </div>
                         </c:forEach>
                     </div>
-			        <hr>
-                </c:forEach>
-			</div>
+			    </div>
+            </c:forEach>
 		</div>
 
 		<!-- CONTENT END  -->

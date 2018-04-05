@@ -26,7 +26,7 @@ h1 {
 	font-size: 1.3em;
 }
 .content_title {
-	margin: 0px 20px;
+	margin: 0px 20px 20px 20px;
 	padding-bottom: 10px;
 	height: 30px;
 	border-bottom: 2px solid #A5AFB5;
@@ -176,7 +176,7 @@ h1 {
 
 /* ********** ASSIGNMENT START ********** */
 .assignment_frame {
-	margin: 20px;
+	margin: 0px 20px;
 	width: auto;
 	height: auto;
 	background-color: #F5F5F5;
@@ -263,7 +263,7 @@ h1 {
 
 /* ********** QUIZ START ********** */
 .quiz_frame {
-	margin: 20px;
+	margin: 0px 20px;
 	width: auto;
 	height: auto;
 	border: 1px solid #A5AFB5;
@@ -306,7 +306,7 @@ h1 {
 /* ********** USERS & ATTENDANCE START ********** */
 .users_frame,
 .attendance_frame {
-	margin: 20px;
+	margin: 0px 20px;
 	width: auto;
 	height: auto;
 	border: 0px solid #A5AFB5;
@@ -368,7 +368,7 @@ h1 {
 
 /* ********** PROFILE START ********** */
 .profile_frame {
-	margin: 20px;
+	margin: 0px 20px;
 	width: auto;
 	height: auto;
 	border: 0px solid #A5AFB5;
@@ -393,6 +393,7 @@ h1 {
 	font-weight: bold;
 }
 .profile_frame .table .info {
+    line-height: 40px;
 }
 .profile_frame .table .promote {
     float: right;
@@ -406,7 +407,7 @@ h1 {
     float: right;
     display: inline-block;
     margin: 0px;
-	padding: 7px 9px;
+	padding: 0px 9px;
     text-decoration: none;
     background-color: #4CAF50;
     color: white;
