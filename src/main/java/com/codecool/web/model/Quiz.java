@@ -11,17 +11,15 @@ public class Quiz extends Task{
     private String date;
     private int maxPoint;
     private List<Question> questions = new ArrayList<>();
-    private int id;
+
 
     //Constructor
-    public Quiz(String title, String description, int maxPoint, int id) {
+    public Quiz(String title, String description, int maxPoint) {
         super(title, description);
         java.util.Date date = new Date( );
         SimpleDateFormat sdf = new SimpleDateFormat ("yyyy.MM.dd");
         this.date = sdf.format(date);
         this.maxPoint = maxPoint;
-        this.id = id;
-
     }
 
     //Getters/SEtters
@@ -39,12 +37,4 @@ public class Quiz extends Task{
         return questions;
     }
 
-    @Override
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 }

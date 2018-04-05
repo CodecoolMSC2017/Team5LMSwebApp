@@ -39,7 +39,7 @@ public class SingletonDataBase implements Storing {
         AandQStore store = new AandQStore("Try  Not Hardcoded View");
         store.getAssignments().add(new Assignment( "TryName", "Try short description", 2, "Try long description"));
         store.getAssignments().add(new Assignment( "TryName 2", "Try short description 2", 1, "Try long description 2"));
-        store.getQuizzes().add(new Quiz( "TryNameQ", "Try short description Q", 4, 1));
+        store.getQuizzes().add(new Quiz( "TryNameQ", "Try short description Q", 4));
         store.getQuizzes().get(0).getQuestions().add(new Question("Try short description/question", 1, new ArrayList<>(), "Kutya"));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Cica"));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Kutya"));
@@ -54,7 +54,7 @@ public class SingletonDataBase implements Storing {
         AandQStore store2 = new AandQStore("Try 2 Not Hardcoded View");
         store2.getAssignments().add(new Assignment( "TryName", "Try short description", 2, "Try long description"));
         store2.getAssignments().add(new Assignment( "TryName 2", "Try short description 2", 1, "Try long description 2"));
-        store2.getQuizzes().add(new Quiz( "TryNameQ", "Try short description Q", 4, 2));
+        store2.getQuizzes().add(new Quiz( "TryNameQ", "Try short description Q", 4));
         store2.getQuizzes().get(0).getQuestions().add(new Question("Try short description/question", 1, new ArrayList<>(), "kutya"));
         store2.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Cica"));
         store2.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Kutya"));
