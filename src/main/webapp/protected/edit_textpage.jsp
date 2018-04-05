@@ -18,17 +18,16 @@ https://fontawesome.com/v4.7.0/icons/
 
 		<div class="content">
 		    <form action="EditTextPageServlet" method="post">
-
                 <div class="content_title">
-                    <div class="text">Edit Text Page : ${assignment.title}</div>
+                    <div class="text">Title: <input type="text" name="title" value="${assignment.title}"></div>
                 </div>
-
-                <h1>${assignment.description}</h1>
-                <p>Estimated time: ${assignment.time}</p>
-
-                <h1>Full description:</h1>
-                <p>${assignment.fullDescription}</p>
-
+                <div class="text">
+                    <p><h1>Short description:</h1></p>
+                    <p><textarea rows="4" cols="50" name="description">${assignment.description}</textarea></p>
+                    <p><b>Estimated time:</b> <input type="number" name="estimatedtime" value="${assignment.time}"> minutes</p>
+                    <p><h1>Full description:</h1></p>
+                    <p><textarea rows="15" cols="50" name="fulldescription">${assignment.fullDescription}</textarea></p>
+                </div>
                 <center>
                     <input type="hidden" name="id" value="">
                     <input type="submit" class="submit" value="Submit">

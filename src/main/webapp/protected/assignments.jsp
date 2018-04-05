@@ -45,7 +45,7 @@ https://fontawesome.com/v4.7.0/icons/
                                         <td class="col-2"><a href="<c:url value="/protected/Assignement"><c:param name="id" value="${assign.getId()}"/></c:url>">${assign.getTitle()}</a></td>
                                         <c:if test="${userProfile.role == 'Mentor'}">
                                             <td class="col-edit">
-                                                <a href="edit_textpage.jsp"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
+                                                <a href="<c:url value="/protected/TextPageEditServlet"><c:param name="id" value="${assign.getId()}"/></c:url>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
                                             </td>
                                             <td class="col-del">
                                                 <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
