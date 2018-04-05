@@ -21,7 +21,7 @@
                     <div class="sub_menu">
                         <a href="attendanceServlet">Attendance</a>
 
-                        <a href="attendanceHistory.jsp">Attendance History</a>
+                        <a href="AttendanceHistoryServlet">Attendance History</a>
                         <a href="#">Assignment Status</a>
                         <a href="#">User Grades</a>
                         <a href="#">Charts</a>

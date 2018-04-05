@@ -13,8 +13,30 @@
 
 		<!-- CONTENT START -->
 
+		<div class="content">
+			<div class="content_title">
+				<div class="text">Attendance History</div>
+			</div>
 
+			<div class="text">
+                <center>
+                    <form action="AttendanceHistoryServlet" method="post">
+                        <select name="title">
+                            <c:forEach items="${attendanceHistory}" var="element">
+                              <option value="${element.getTitle()}">${element.getTitle()}</option>
+                            </c:forEach>
+                        </select>
+                        <input type="submit" class="submit" value="Submit">
+                    </form>
 
+                    <h1>${title}</h1>
+                    <c:forEach items="${students}" var="element">
+                        <p>${element.getName()}</p>
+                    </c:forEach>
+
+                </center>
+		    </div>
+        </div>
 
 		<!-- CONTENT END  -->
 

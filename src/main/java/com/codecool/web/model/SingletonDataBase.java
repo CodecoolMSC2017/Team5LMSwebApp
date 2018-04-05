@@ -63,9 +63,9 @@ public class SingletonDataBase implements Storing {
 
 
         Attendance attendance1 = new Attendance(getStudents());
-        attendance1.setTitle("2018-04-04");
-        Attendance attendance2 = new Attendance(getStudents());
         attendance1.setTitle("2018-04-03");
+        Attendance attendance2 = new Attendance(getStudents());
+        attendance2.setTitle("2018-04-04");
         attendanceList.add(attendance1);
         attendanceList.add(attendance2);
         }
@@ -212,5 +212,13 @@ public class SingletonDataBase implements Storing {
             }
         }
         return studentsAttendance;
+    }
+
+    public List<String> getAttendancesTitle() {
+        List<String> names = new ArrayList<>();
+        for(Attendance a: attendanceList){
+            names.add(a.getTitle());
+        }
+        return names;
     }
 }
