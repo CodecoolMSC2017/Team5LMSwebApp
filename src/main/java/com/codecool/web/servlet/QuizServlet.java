@@ -2,6 +2,7 @@ package com.codecool.web.servlet;
 
 import com.codecool.web.model.*;
 import com.codecool.web.service.QuizService;
+import com.codecool.web.service.RegistrationService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,6 +23,12 @@ public class QuizServlet extends HttpServlet {
         req.setAttribute("quiz", service.getQuiz(id));
         Registration reg = (Registration) req.getSession().getAttribute("user");
         req.setAttribute("userProfile", reg);
+
+        RegistrationService registrationService =  new RegistrationService();
+
+        int points = registrationService.getProfile(req.getParameter("id")).getPoints();
+
+        req.setAttribute("points", points);
 
         req.getRequestDispatcher("quiz.jsp").include(req, resp);
     }

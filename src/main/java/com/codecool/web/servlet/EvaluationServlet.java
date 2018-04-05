@@ -6,6 +6,8 @@ import com.codecool.web.model.Quiz;
 import com.codecool.web.model.Question;
 import com.codecool.web.model.SingletonDataBase;
 import com.codecool.web.model.AandQStore;
+import com.codecool.web.model.Registration;
+import com.codecool.web.service.RegistrationService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,6 +43,10 @@ public class EvaluationServlet extends HttpServlet {
                 points += quiz.getQuestions().get(i).getPoint();
             }
         }
+
+        RegistrationService registrationService =  new RegistrationService();
+
+        registrationService.getProfile(req.getParameter("id")).setPoints(points);
 
         req.setAttribute("quiz", service.getQuiz(id));
 
