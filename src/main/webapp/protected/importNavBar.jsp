@@ -31,7 +31,7 @@
                 <button class="menu_button"><a href="userListServlet">Users</a></button>
             </div>
             <div class="menu_option">
-                <button class="menu_button"><a href="userProfileServlet?id=">Pofile</a></button>
+                <button class="menu_button"><a href="userProfileServlet?id=${userProfile.name}">Profile</a></button>
             </div>
             <div class="menu_option">
                 <button class="menu_button"><a href="#">Help</a></button>
