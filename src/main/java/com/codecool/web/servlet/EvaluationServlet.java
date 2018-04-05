@@ -46,7 +46,7 @@ public class EvaluationServlet extends HttpServlet {
 
         RegistrationService registrationService =  new RegistrationService();
 
-        registrationService.getProfile(req.getParameter("id")).setPoints(points);
+
 
         req.setAttribute("quiz", service.getQuiz(id));
 

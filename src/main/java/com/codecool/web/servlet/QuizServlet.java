@@ -26,9 +26,7 @@ public class QuizServlet extends HttpServlet {
 
         RegistrationService registrationService =  new RegistrationService();
 
-        int points = registrationService.getProfile(req.getParameter("id")).getPoints();
 
-        req.setAttribute("points", points);
 
         req.getRequestDispatcher("quiz.jsp").include(req, resp);
     }

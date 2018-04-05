@@ -20,6 +20,7 @@ public class Registration {
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = "Student";
+
     }
 
     //Getters, Setters
