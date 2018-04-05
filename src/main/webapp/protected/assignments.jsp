@@ -76,7 +76,7 @@ https://fontawesome.com/v4.7.0/icons/
                                         <td class="col-4"><a href="<c:url value="/protected/Quiz"><c:param name="id" value="${quiz.getId()}"/></c:url>">${quiz.getDate()}</a></td>
                                         <c:if test="${userProfile.role == 'Mentor'}">
                                             <td class="col-edit">
-                                                <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
+                                                <a href="<c:url value="/protected/QuizEditServlet"><c:param name="id" value="${quiz.getId()}"/></c:url>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
                                             </td>
                                             <td class="col-del">
                                                 <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
