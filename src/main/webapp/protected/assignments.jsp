@@ -20,7 +20,7 @@ https://fontawesome.com/v4.7.0/icons/
 			<div class="content_title">
 				<div class="text">Assignments</div>
 				<c:if test="${userProfile.role == 'Mentor'}">
-				    <div class="add"><a href="#"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true" title="Add"></i></a></div>
+				    <div class="add"><a href="AandQStoreCreateServlet"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true" title="Add"></i></a></div>
 				</c:if>
 			</div>
 
@@ -29,7 +29,7 @@ https://fontawesome.com/v4.7.0/icons/
                     <div class="title">
                         <c:if test="${userProfile.role == 'Mentor'}">
                             <div class="admin">
-                                <a href="#"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true" title="Add"></i></a>
+                                <a href="<c:url value="/protected/AssignmentCreateServlet"><c:param name="id" value="${element.getTitle()}"/></c:url>"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true" title="Add"></i></a>
                                 <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
                                 <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
                             </div>
