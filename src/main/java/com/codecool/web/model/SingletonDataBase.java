@@ -1,7 +1,9 @@
 package com.codecool.web.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SingletonDataBase implements Storing {
 
@@ -9,6 +11,7 @@ public class SingletonDataBase implements Storing {
     private static final SingletonDataBase Instance = new SingletonDataBase();
     private List<Registration> registrations = new ArrayList<>();
     private List<AandQStore> aQStores = new ArrayList<>();
+    private List<Attendance> attendanceList = new ArrayList<>();
     private int globalAttendance;
 
 
@@ -22,7 +25,6 @@ public class SingletonDataBase implements Storing {
         //Hardcoded things
 
         //Hardcoded users
-        globalAttendance = 10;
         registrations.add(new Registration("Robi", "asd@asd.com", "a", "Róbert", "Kohányi"));
         registrations.add(new Registration("Pako", "qwe@qwe.com", "a", "Pál", "Monoczki"));
         registrations.add(new Registration("Ben", "wer@wer.hu", "a", "Bence",""));
@@ -30,7 +32,6 @@ public class SingletonDataBase implements Storing {
         registrations.add(new Registration("Norb", "klydjasid@wer.hu", "a", "",""));
         registrations.add(new Registration("krisz", "yxcas@wer.hu", "a", "","" ));
         registrations.add(new Registration("Moki", "moki@wer.hu", "a","Fóka","Mokácska" ));
-        registrations.get(6).setAttendance(-2);
         registrations.get(0).setRole("Mentor");
         registrations.get(1).setRole("Mentor");
 
@@ -39,11 +40,11 @@ public class SingletonDataBase implements Storing {
         store.getAssignments().add(new Assignment( "TryName", "Try short description", 2, "Try long description"));
         store.getAssignments().add(new Assignment( "TryName 2", "Try short description 2", 1, "Try long description 2"));
         store.getQuizzes().add(new Quiz( "TryNameQ", "Try short description Q", 4, 1));
-        store.getQuizzes().get(0).getQuestions().add(new Question("Try short description/question", 1, new ArrayList<>(), "kutya"));
+        store.getQuizzes().get(0).getQuestions().add(new Question("Try short description/question", 1, new ArrayList<>(), "Kutya"));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Cica"));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Kutya"));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("MokaFóka"));
-        store.getQuizzes().get(0).getQuestions().add(new Question("Mi a fasz van ?", 3, new ArrayList<>(), "semmi"));
+        store.getQuizzes().get(0).getQuestions().add(new Question("Mi a fasz van ?", 3, new ArrayList<>(), "Semmi"));
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("apád anyád hátán"));
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Büdös"));
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Semmi"));
@@ -60,16 +61,16 @@ public class SingletonDataBase implements Storing {
         store2.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("MokaBálna"));
         aQStores.add(store2);
 
+
+        Attendance attendance1 = new Attendance(getStudents());
+        attendance1.setTitle("2018-04-03");
+        Attendance attendance2 = new Attendance(getStudents());
+        attendance2.setTitle("2018-04-04");
+        attendanceList.add(attendance1);
+        attendanceList.add(attendance2);
         }
 
 
-    public int getGlobalAttandance() {
-        return globalAttendance;
-    }
-
-    public void setGlobalAttandance(int globalAttandance) {
-        this.globalAttendance += globalAttandance;
-    }
 
     @Override
     public List<Registration> getAllRegistration() {
@@ -193,5 +194,31 @@ public class SingletonDataBase implements Storing {
                 temp.add(reg);
             }
         }return temp;
+    }
+
+    public List<Attendance> getAttendanceList() {
+        return attendanceList;
+    }
+
+    public Map<Registration, Integer> getStudentsAttendance(){
+        Map<Registration, Integer> studentsAttendance = new HashMap<>();
+        for (Attendance a:attendanceList){
+            for(Registration reg:a.getCurrentStudents()){
+                if(studentsAttendance.containsKey(reg)){
+                    studentsAttendance.put(reg, studentsAttendance.get(reg) + 1);
+                }else{
+                    studentsAttendance.put(reg, 1);
+                }
+            }
+        }
+        return studentsAttendance;
+    }
+
+    public List<String> getAttendancesTitle() {
+        List<String> names = new ArrayList<>();
+        for(Attendance a: attendanceList){
+            names.add(a.getTitle());
+        }
+        return names;
     }
 }

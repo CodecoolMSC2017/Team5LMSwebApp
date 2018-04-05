@@ -35,12 +35,12 @@ https://fontawesome.com/v4.7.0/icons/
                         <td>${element.getEmail()}</td>
                         <td>${element.getAttendance()}</td>
 						<td>
-                            <input type="hidden" name="attendance" value="0">
-                            <input type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value">
+                            <input type="hidden" name="attendance" value="0"><input type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value">
 						</td>
 					</tr>
                     </c:forEach>
 				</table>
+				<h1>${error}</h1>
 			</div>
             <div class="button_right"><input type="submit" class="submit" value="Submit"></div>
 			</form>

@@ -9,7 +9,7 @@ public class Registration {
     private String password;
     private String message;
     private String role;
-    private int attendance;
+    private float attendance;
 
     //Constructor
     public Registration(String name, String email, String password, String firstName, String lastName) {
@@ -18,7 +18,6 @@ public class Registration {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.attendance = 10;
         this.role = "Student";
 
     }
@@ -76,15 +75,15 @@ public class Registration {
         this.email = email;
     }
 
-    public String getAttendance() {
-        return String.format("%.2f", (float)attendance/SingletonDataBase.getInstance().getGlobalAttandance()*100);
-    }
-
-    public void setAttendance(int attendance) {
-        this.attendance += attendance;
-    }
-
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public float getAttendance() {
+        return attendance;
+    }
+
+    public void setAttendance(float attendance) {
+        this.attendance = attendance;
     }
 }

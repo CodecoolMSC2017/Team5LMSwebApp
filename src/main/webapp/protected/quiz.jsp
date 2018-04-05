@@ -25,6 +25,7 @@ https://fontawesome.com/v4.7.0/icons/
 			<p>Date: ${quiz.date}, Maximum points: ${quiz.maxPoint} </p>
 
 			<form action="quizSubmit" method="post">
+			    <input type="hidden" name="id" value="${quiz.id}">
 			<c:forEach items="${quiz.getQuestions()}" var="question" varStatus="loop">
 				<div class="quiz_frame">
 					<div class="title">
@@ -34,14 +35,16 @@ https://fontawesome.com/v4.7.0/icons/
 					<div class="question">
 						<div class="text">${question.description}</div>
 						<c:forEach items="${question.getAnswers()}" var="answers">
-							<div class="answer"><input type="radio" name="question${loop.index}answer" value="${answers.getName()}">${answers.name}</div>
+							<div class="answer">
+							    <input type="radio" name="question${loop.index}" value="${answers.getName()}">${answers.name}
 
+                            </div>
 						</c:forEach>
 					</div>
 				</div>
-				<div class="quiz_button"><input type="submit" class="submit" value="Submit"></div>
-			</c:forEach>
 
+			</c:forEach>
+            <div class="quiz_button"><input type="submit" class="submit" value="Submit"></div>
 			</form>
 
 

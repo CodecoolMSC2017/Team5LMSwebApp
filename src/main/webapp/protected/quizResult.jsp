@@ -12,5 +12,9 @@ https://fontawesome.com/v4.7.0/icons/
 	</head>
 	<body>
 	<h3>Quiz Result: You are a BladeRunner</h3>
-	<h1><%=(String)request.getAttribute("answer")%></h1>
+	<div>
+
+                <p>${points}</p>
+
+        </div>
 	</body>
