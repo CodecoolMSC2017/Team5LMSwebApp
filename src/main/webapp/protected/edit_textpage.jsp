@@ -17,21 +17,21 @@ https://fontawesome.com/v4.7.0/icons/
 		<!-- CONTENT START -->
 
 		<div class="content">
-		    <form action="TextPageEditServlet" method="post">
+		    <form action="TextPageSaveServlet" method="post">
                 <div class="content_title">
-                    <div class="text">Title: <input type="text" name="title" value="${assignment.title}"></div>
+                    <div class="text">Title: <input type="text" name="title" value="${assignment.getTitle()}"></div>
                 </div>
                 <div class="text">
                     <p><h1>Short description:</h1></p>
-                    <p><textarea rows="4" cols="50" name="description">${assignment.description}</textarea></p>
-                    <p><b>Estimated time:</b> <input type="number" name="estimatedtime" value="${assignment.time}"> minutes</p>
+                    <p><textarea rows="4" cols="50" name="description" value="${assignment.getDescription()}">${assignment.description}</textarea></p>
+                    <p><b>Estimated time:</b> <input type="number" name="estimatedtime" value="${assignment.getTime()}"> minutes</p>
                     <p><h1>Full description:</h1></p>
-                    <p><textarea rows="15" cols="50" name="fulldescription">${assignment.fullDescription}</textarea></p>
+                    <p><textarea rows="15" cols="50" name="fulldescription" value="${assignment.getFullDescription()}">${assignment.fullDescription}</textarea></p>
                 </div>
                 <center>
-                    <input type="hidden" name="id" value="">
+                    <input type="hidden" name="id" value="${assignment.getId()}">
                     <input type="submit" class="submit" value="Submit">
-                    <a href="AandQStoreServlet"><div class="submit">Cancel</div></a>
+                    <a href="TextPageSaveServlet"><div class="submit">Cancel</div></a>
                 </center>
             </form>
 		</div>

@@ -21,4 +21,12 @@ public class Assignment extends Task{
     public String getFullDescription() {
         return fullDescription;
     }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public void setFullDescription(String fullDescription) {
+        this.fullDescription = fullDescription;
+    }
 }
