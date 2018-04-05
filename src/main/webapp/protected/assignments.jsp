@@ -42,7 +42,7 @@ https://fontawesome.com/v4.7.0/icons/
                                     </span>
                                 </a>
                                 <a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
-                                <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
+                                <a href="<c:url value="/protected/AandQStoreDelServlet"><c:param name="id" value="${element.getTitle()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
                             </div>
                         </c:if>
                         <div class="text">${element.getTitle()}</div>
@@ -59,7 +59,7 @@ https://fontawesome.com/v4.7.0/icons/
                                                 <a href="<c:url value="/protected/TextPageEditServlet"><c:param name="id" value="${assign.getId()}"/></c:url>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
                                             </td>
                                             <td class="col-del">
-                                                <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
+                                                <a href="<c:url value="/protected/AssignmentDelServlet"><c:param name="id" value="${assign.getId()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
                                             </td>
                                             <td class="col-published">
                                                 <form action="publishAssignmentServlet" method="post">
