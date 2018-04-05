@@ -17,7 +17,7 @@ https://fontawesome.com/v4.7.0/icons/
 		<!-- CONTENT START -->
 
 		<div class="content">
-		    <form action="EditTextPageServlet" method="post">
+		    <form action="TextPageEditServlet" method="post">
                 <div class="content_title">
                     <div class="text">Title: <input type="text" name="title" value="${assignment.title}"></div>
                 </div>
