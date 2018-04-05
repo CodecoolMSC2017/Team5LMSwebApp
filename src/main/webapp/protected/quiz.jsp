@@ -15,6 +15,7 @@ https://fontawesome.com/v4.7.0/icons/
         <jsp:include page="importUserProfile.jsp"/>
 
 		<!-- CONTENT START -->
+
 		<div class="content">
 			<div class="content_title">
 				<div class="text">${quiz.title}</div>
@@ -27,31 +28,28 @@ https://fontawesome.com/v4.7.0/icons/
             <p>Your total point:</p><p>${points}</p>
 			<form action="quizSubmit" method="post">
 			    <input type="hidden" name="id" value="${quiz.id}">
-			<c:forEach items="${quiz.getQuestions()}" var="question" varStatus="loop">
-				<div class="quiz_frame">
-					<div class="title">
-						<div class="points">${question.point} pt</div>
-						<div class="question_no">Question ${loop.index}</div>
-					</div>
-					<div class="question">
-						<div class="text">${question.description}</div>
-						<c:forEach items="${question.getAnswers()}" var="answers">
-							<div class="answer">
-							    <input type="radio" name="question${loop.index}" value="${answers.getName()}">${answers.name}
-
-                            </div>
-						</c:forEach>
-					</div>
-				</div>
-
-			</c:forEach>
-			<c:if test="${empty points}">
-            <div class="quiz_button"><input type="submit" class="submit" value="Submit"></div>
-            </c:if>
+                <c:forEach items="${quiz.getQuestions()}" var="question" varStatus="loop">
+                    <div class="quiz_frame">
+                        <div class="title">
+                            <div class="points">${question.point} pt</div>
+                            <div class="question_no">Question ${loop.index}</div>
+                        </div>
+                        <div class="question">
+                            <div class="text">${question.description}</div>
+                            <c:forEach items="${question.getAnswers()}" var="answers">
+                                <div class="answer">
+                                    <input type="radio" name="question${loop.index}" value="${answers.getName()}">${answers.name}
+                                </div>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </c:forEach>
+                <c:if test="${empty points}">
+                    <div class="quiz_button"><input type="submit" class="submit" value="Submit"></div>
+                </c:if>
 			</form>
-
-
 		</div>
+
 		<!-- CONTENT END  -->
 
 	</body>

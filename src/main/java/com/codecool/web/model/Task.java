@@ -40,4 +40,12 @@ public abstract class Task {
     public void setPublished(boolean published) {
         isPublished = published;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

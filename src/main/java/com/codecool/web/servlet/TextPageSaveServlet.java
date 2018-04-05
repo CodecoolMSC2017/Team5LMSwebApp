@@ -1,7 +1,9 @@
 package com.codecool.web.servlet;
 
+import com.codecool.web.model.Assignment;
 import com.codecool.web.model.Registration;
 import com.codecool.web.model.SingletonDataBase;
+import com.codecool.web.service.AssignmentService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,21 +17,22 @@ public class TextPageSaveServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
 
-//        int id = Integer.parseInt(req.getParameter("id"));
-        String id = req.getParameter("id");
-        for ( Registration reg : SingletonDataBase.getInstance().getAllRegistration() ) {
-            if ( id.equals(reg.getName()) ) {
-                String fname = req.getParameter("first_name");
-                String lname = req.getParameter("last_name");
-                String email = req.getParameter("email");
-                String password = req.getParameter("password");
-                Registration registration = SingletonDataBase.getInstance().updateReg(reg, fname, lname, email, password);
+        AssignmentService service = new AssignmentService();
+        Assignment ass = service.getAssignment(id);
 
-                req.setAttribute("profile", req.getSession().getAttribute("user"));
-                req.setAttribute("userProfile", req.getSession().getAttribute("user"));
-            }
-        }
+        String title = req.getParameter("title");
+        String description = req.getParameter("description");
+        String estimatedtime = req.getParameter("estimatedtime");
+        String fulldescription = req.getParameter("fulldescription");
+
+        service.update(ass, title, estimatedtime, description, fulldescription);
+
+        req.setAttribute("profile", req.getSession().getAttribute("user"));
+        req.setAttribute("userProfile", req.getSession().getAttribute("user"));
+
+
         req.getRequestDispatcher("AandQStoreServlet").forward(req, resp);
     }
 }

@@ -24,4 +24,11 @@ public class AssignmentService {
         }
         return null;
     }
+
+    public void update(Assignment ass, String title, String time, String shortDesc, String fullDisc){
+        ass.setTitle(title);
+        ass.setTime(Integer.parseInt(time));
+        ass.setDescription(shortDesc);
+        ass.setFullDescription(fullDisc);
+    }
 }
