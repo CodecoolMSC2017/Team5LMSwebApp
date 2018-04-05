@@ -8,7 +8,7 @@ https://fontawesome.com/v4.7.0/icons/
 		<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 		<link rel="stylesheet" type="text/css" href="../css/menu_vertical.css">
 		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
-		<title>Attendance</title>
+		<title>Edit Quiz</title>
 	</head>
 	<body>
         <jsp:include page="importNavBar.jsp"/>
@@ -17,7 +17,7 @@ https://fontawesome.com/v4.7.0/icons/
 		<!-- CONTENT START -->
 		<div class="content">
 			<div class="content_title">
-				<div class="text">Student Attendance</div>
+				<div class="text">Edit Quiz : ...</div>
 			</div>
 
             <form action="attendanceServlet" method="post">
@@ -35,8 +35,10 @@ https://fontawesome.com/v4.7.0/icons/
                         <td>${element.getEmail()}</td>
                         <td>${element.getAttendance()}</td>
 						<td>
-                            <input type="hidden" name="attendance" value="0">
-                            <input type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value">
+							<select name="attendance">
+								<option value="0">Out</option>
+								<option value="1">In</option>
+							</select>
 						</td>
 					</tr>
                     </c:forEach>

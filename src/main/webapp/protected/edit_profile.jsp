@@ -25,27 +25,27 @@ https://fontawesome.com/v4.7.0/icons/
 					<table class="table">
 						<tr>
 							<td class="title">User Name:</td>
-							<td class="info"><input type="text" name="user_name" value="${userProfile.getName()}" readonly></td>
+							<td class="info"><input type="text" name="user_name" value="${profile.getName()}" readonly></td>
 						</tr>
 						<tr>
 							<td class="title">First name:</td>
-							<td class="info"><input type="text" name="first_name" value="${userProfile.getFirstName()}"></td>
+							<td class="info"><input type="text" name="first_name" value="${profile.getFirstName()}"></td>
 						</tr>
 						<tr>
 							<td class="title"> Last name:</td>
-							<td class="info"><input type="text" name="last_name" value="${userProfile.getLastName()}"></td>
+							<td class="info"><input type="text" name="last_name" value="${profile.getLastName()}"></td>
 						</tr>
 						<tr>
 							<td class="title">E-mail address:</td>
-							<td class="info"><input type="email" name="email" value="${userProfile.getEmail()}"></td>
+							<td class="info"><input type="email" name="email" value="${profile.getEmail()}"></td>
 						</tr>
 						<tr>
 							<td class="title">Role:</td>
-							<td class="info"><input type="text" name="role" value="${role}" readonly></td>
+							<td class="info"><input type="text" name="role" value="${profile.getRole()}" readonly></td>
 						</tr>
 						<tr>
 							<td class="title">Password:</td>
-							<td class="info"><input type="text" name="password" value="${userProfile.getPassword()}"></td>
+							<td class="info"><input type="text" name="password" value="${profile.getPassword()}"></td>
 						</tr>
 						<tr>
 							<td class="title">Introduction:</td>
@@ -53,6 +53,7 @@ https://fontawesome.com/v4.7.0/icons/
 						</tr>
 					</table>
 					<center>
+					    <input type="hidden" name="id" value="${profile.getName()}">
 						<input type="submit" class="submit" value="Submit">
 						<a href="userProfileServlet?id="><div class="submit">Cancel</div></a>
 					</center>

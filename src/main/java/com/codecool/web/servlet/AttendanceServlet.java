@@ -1,5 +1,6 @@
 package com.codecool.web.servlet;
 
+import com.codecool.web.model.Attendance;
 import com.codecool.web.model.Registration;
 import com.codecool.web.model.SingletonDataBase;
 
@@ -9,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet("/protected/attendanceServlet")
 public class AttendanceServlet extends HttpServlet {
@@ -19,18 +22,33 @@ public class AttendanceServlet extends HttpServlet {
 
         String[] attendances = req.getParameterValues("attendance");
         List<Registration> students = SingletonDataBase.getInstance().getStudents();
+        List<Registration> currentStudents = new ArrayList<>();
 
         for (int i = 0; i <students.size() ; i++) {
-            students.get(i).setAttendance(Integer.parseInt(attendances[i]));
+            if (attendances[i].equals("1")){
+                currentStudents.add(students.get(i));
+            }
         }
 
-        SingletonDataBase.getInstance().setGlobalAttandance(1);
+        Attendance attendance = new Attendance(currentStudents);
+        SingletonDataBase.getInstance().getAttendanceList().add(attendance);
+        Map<Registration, Integer> studentsAttendance = SingletonDataBase.getInstance().getStudentsAttendance();
+        int days = SingletonDataBase.getInstance().getAttendanceList().size();
+
+        for (Registration reg: SingletonDataBase.getInstance().getStudents()){
+            int temp = studentsAttendance.get(reg);
+            float att = (float) temp/days*100;
+            reg.setAttendance(att);
+        }
+
 
         Registration reg = (Registration) req.getSession().getAttribute("user");
         req.setAttribute("userProfile", reg);
 
-        req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents());
+        req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents() );
         req.getRequestDispatcher("attendance.jsp").include(req, resp);
+
+
     }
 
     @Override
@@ -39,6 +57,18 @@ public class AttendanceServlet extends HttpServlet {
         Registration reg = (Registration) req.getSession().getAttribute("user");
         req.setAttribute("userProfile", reg);
 
+        Map<Registration, Integer> studentsAttendance = SingletonDataBase.getInstance().getStudentsAttendance();
+        int days = SingletonDataBase.getInstance().getAttendanceList().size();
+
+        for (Registration reg1: SingletonDataBase.getInstance().getStudents()){
+            try {
+                int temp = studentsAttendance.get(reg1);
+                float att = (float) temp / days * 100;
+                reg1.setAttendance(att);
+            }catch (NullPointerException e){
+                reg1.setAttendance(0);
+            }
+        }
         req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents());
         req.getRequestDispatcher("attendance.jsp").include(req, resp);
     }

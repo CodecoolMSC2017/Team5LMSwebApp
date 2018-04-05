@@ -16,9 +16,15 @@ public class UserProfileEditServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Registration reg = (Registration) req.getSession().getAttribute("user");
-        req.setAttribute("userProfile", reg);
+//        int id = Integer.parseInt(req.getParameter("id"));
+        String id = req.getParameter("id");
+        for ( Registration reg : SingletonDataBase.getInstance().getAllRegistration() ) {
+            if ( id.equals(reg.getName()) ) {
+                req.setAttribute("profile", reg);
 
+                req.setAttribute("userProfile", req.getSession().getAttribute("user"));
+            }
+        }
         req.getRequestDispatcher("edit_profile.jsp").include(req, resp);
     }
 }
