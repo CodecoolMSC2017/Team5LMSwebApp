@@ -29,9 +29,28 @@ https://fontawesome.com/v4.7.0/icons/
                         <b>Maximum points:</b> <input type="number" name="date" value="${quiz.maxPoint}">
                     </p>
 
-                    ...
-                    ...
-                    ...
+
+
+                    <input type="hidden" name="id" value="${quiz.getId()}">
+
+                    <c:forEach items="${quiz.getQuestions()}" var="question">
+                        <div class="quiz_frame">
+                            <div class="title">
+                                <div class="points">${question.getMaxPoint()} pt</div>
+                                <div class="question_no">${quiz.getTitle()}</div>
+                            </div>
+                            <div class="question">
+                                <div class="text">${question.getDescription()}</div>
+                                <c:forEach items="${question.getAnswers()}" var="answers">
+                                    <div class="answer">
+                                        <input type="radio" name="question${loop.index}" value="${answers.getName()}">${answers.getName()}
+                                    </div>
+                                </c:forEach>
+                            </div>
+                        </div>
+                    </c:forEach>
+
+
 
                 </div>
                 <center>
