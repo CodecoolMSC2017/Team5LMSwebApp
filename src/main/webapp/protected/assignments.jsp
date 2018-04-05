@@ -29,20 +29,20 @@ https://fontawesome.com/v4.7.0/icons/
                     <div class="title">
                         <c:if test="${userProfile.role == 'Mentor'}">
                             <div class="admin">
-                                <a href="<c:url value="/protected/AssignmentCreateServlet"><c:param name="id" value="${element.getTitle()}"/></c:url>">
+                                <a href="<c:url value="/protected/AssignmentCreateServlet"><c:param name="id" value="${element.getId()}"/></c:url>">
                                     <span class="fa-layers fa-lg" title="Add Text Page">
                                         <i class="fa fa-file-text-o fa-1x"></i>
                                         <span class="fa fa-plus-square-o fa-1x" style="background:#F5F5F5;margin-left:-10px"></span>
                                     </span>
                                 </a>
-                                <a href="<c:url value="/protected/AssignmentCreateServlet"><c:param name="id" value="${element.getTitle()}"/></c:url>">
+                                <a href="<c:url value="/protected/AssignmentCreateServlet"><c:param name="id" value="${element.getId()}"/></c:url>">
                                     <span class="fa-layers fa-lg" title="Add Quiz">
                                         <i class="fa fa-list-ol fa-1x"></i>
                                         <span class="fa fa-plus-square-o fa-1x" style="background:#F5F5F5;margin-left:-10px"></span>
                                     </span>
                                 </a>
-                                <a href="<c:url value="/protected/AssignmentsEditServlet"><c:param name="id" value="${element.getTitle()}"/></c:url>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
-                                <a href="<c:url value="/protected/AandQStoreDelServlet"><c:param name="id" value="${element.getTitle()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
+                                <a href="<c:url value="/protected/AandQStoreEditServlet"><c:param name="id" value="${element.getId()}"/></c:url>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
+                                <a href="<c:url value="/protected/AandQStoreDelServlet"><c:param name="id" value="${element.getId()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
                             </div>
                         </c:if>
                         <div class="text">${element.getTitle()}</div>
