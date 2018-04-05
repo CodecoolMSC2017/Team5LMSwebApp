@@ -39,11 +39,11 @@ public class SingletonDataBase implements Storing {
         store.getAssignments().add(new Assignment( "TryName", "Try short description", 2, "Try long description"));
         store.getAssignments().add(new Assignment( "TryName 2", "Try short description 2", 1, "Try long description 2"));
         store.getQuizzes().add(new Quiz( "TryNameQ", "Try short description Q", 4, 1));
-        store.getQuizzes().get(0).getQuestions().add(new Question("Try short description/question", 1, new ArrayList<>(), "kutya"));
+        store.getQuizzes().get(0).getQuestions().add(new Question("Try short description/question", 1, new ArrayList<>(), "Kutya"));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Cica"));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Kutya"));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("MokaFóka"));
-        store.getQuizzes().get(0).getQuestions().add(new Question("Mi a fasz van ?", 3, new ArrayList<>(), "semmi"));
+        store.getQuizzes().get(0).getQuestions().add(new Question("Mi a fasz van ?", 3, new ArrayList<>(), "Semmi"));
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("apád anyád hátán"));
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Büdös"));
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Semmi"));
