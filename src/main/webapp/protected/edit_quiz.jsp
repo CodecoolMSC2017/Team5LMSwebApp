@@ -8,7 +8,7 @@ https://fontawesome.com/v4.7.0/icons/
 		<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 		<link rel="stylesheet" type="text/css" href="../css/menu_vertical.css">
 		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
-		<title>Edit Text Page</title>
+		<title>Edit Quiz</title>
 	</head>
 	<body>
         <jsp:include page="importNavBar.jsp"/>
@@ -17,7 +17,7 @@ https://fontawesome.com/v4.7.0/icons/
 		<!-- CONTENT START -->
 		<div class="content">
 			<div class="content_title">
-				<div class="text">Edit Text Page : ...</div>
+				<div class="text">Edit Quiz : ...</div>
 			</div>
 
             <form action="attendanceServlet" method="post">
