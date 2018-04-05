@@ -27,6 +27,7 @@ public class EvaluationServlet extends HttpServlet {
 
         String chosenAnswer = "";
         List<String> chosenAnswers = new ArrayList<>();
+        List<String> godAnswerList = new ArrayList<>();
         int points = 0;
 
         for (int i = 0; i < quiz.getQuestions().size(); i++) {
@@ -35,16 +36,21 @@ public class EvaluationServlet extends HttpServlet {
             chosenAnswer = req.getParameter("question" + i);
             chosenAnswers.add(chosenAnswer);
 
+
             if(chosenAnswer.equals(godanswer)) {
                 points += quiz.getQuestions().get(i).getPoint();
             }
         }
 
+        req.setAttribute("quiz", service.getQuiz(id));
+
+
         req.setAttribute("points", points);
 
+        Registration reg = (Registration) req.getSession().getAttribute("user");
+        req.setAttribute("userProfile", reg);
 
-
-        req.getRequestDispatcher("quizResult.jsp").forward(req, resp);
+        req.getRequestDispatcher("quiz.jsp").forward(req, resp);
     }
 
 

@@ -18,6 +18,12 @@ import java.util.Map;
 
 @WebServlet("/protected/attendanceServlet")
 public class AttendanceServlet extends HttpServlet {
+    public String currentDate() {
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        return formatter.format(date);
+
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,11 +38,8 @@ public class AttendanceServlet extends HttpServlet {
             }
         }
 
-        Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        formatter.format(date);
 
-        if (SingletonDataBase.getInstance().getAttendancesTitle().contains(formatter.format(date))) {
+        if (SingletonDataBase.getInstance().getAttendancesTitle().contains(currentDate())) {
 
             req.setAttribute("error", "This day's attendance is already checked.");
 
@@ -56,6 +59,7 @@ public class AttendanceServlet extends HttpServlet {
 
         Registration reg = (Registration) req.getSession().getAttribute("user");
         req.setAttribute("userProfile", reg);
+        req.setAttribute("date", currentDate());
 
         req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents());
         req.getRequestDispatcher("attendance.jsp").include(req, resp);
@@ -81,6 +85,7 @@ public class AttendanceServlet extends HttpServlet {
             }
         }
         req.setAttribute("studentlist", SingletonDataBase.getInstance().getStudents());
+        req.setAttribute("date", currentDate());
         req.getRequestDispatcher("attendance.jsp").include(req, resp);
     }
 }
