@@ -31,4 +31,18 @@ public class AssignmentService {
         ass.setDescription(shortDesc);
         ass.setFullDescription(fullDisc);
     }
+
+    public void delAssignment(int id){
+
+        List<AandQStore> aQstores = SingletonDataBase.getInstance().getaQStores();
+
+        for(AandQStore aq:aQstores){
+            List<Assignment> assigns = aq.getAssignments();
+            for(int i=0; assigns.size() > i;i++){
+                if(id == assigns.get(i).getId()){
+                    assigns.remove(i);
+                }
+            }
+        }
+    }
 }
