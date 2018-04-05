@@ -44,8 +44,8 @@ public class SingletonDataBase implements Storing {
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Cica"));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Kutya"));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("MokaFóka"));
-        store.getQuizzes().get(0).getQuestions().add(new Question("Mi a fasz van ?", 3, new ArrayList<>(), "Semmi"));
-        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("apád anyád hátán"));
+        store.getQuizzes().get(0).getQuestions().add(new Question("Mi van ?", 3, new ArrayList<>(), "Semmi"));
+        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Valami"));
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Büdös"));
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Semmi"));
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Mondom semmi"));
