@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Attendance {
 
-    private  List<Registration> currentStudents;
+    private List<Registration> currentStudents;
     private String title;
 
     public Attendance(List<Registration> currentStudents) {

@@ -17,7 +17,7 @@ https://fontawesome.com/v4.7.0/icons/
 		<!-- CONTENT START -->
 		<div class="content">
 			<div class="content_title">
-				<div class="text">Student Attendance</div>
+				<div class="text">Student Attendance, ${date}</div>
 			</div>
 
             <form action="attendanceServlet" method="post">
