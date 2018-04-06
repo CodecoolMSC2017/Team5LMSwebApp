@@ -25,13 +25,13 @@ public class SingletonDataBase implements Storing {
         //Hardcoded things
 
         //Hardcoded users
-        registrations.add(new Registration("Robi", "asd@asd.com", "a", "Róbert", "Kohányi"));
-        registrations.add(new Registration("Pako", "qwe@qwe.com", "a", "Pál", "Monoczki"));
-        registrations.add(new Registration("Ben", "wer@wer.hu", "a", "Bence",""));
-        registrations.add(new Registration("Tib", "eoirt@wer.hu", "a", "",""));
-        registrations.add(new Registration("Norb", "klydjasid@wer.hu", "a", "",""));
-        registrations.add(new Registration("krisz", "yxcas@wer.hu", "a", "","" ));
-        registrations.add(new Registration("Moki", "moki@wer.hu", "a","Fóka","P**A" ));
+        registrations.add(new Registration("Robi", "\n" +
+            "robert.kohanyi@codecool.com", "a", "Róbert", "Kohányi"));
+        registrations.add(new Registration("Pako", "pal.monoczki@codecool.com", "a", "Pál", "Monoczki"));
+        registrations.add(new Registration("Ben", "o.g.bence@totalcar.hu", "a", "Bence","Ambrus"));
+        registrations.add(new Registration("Tib", "domokos.tibor.82@gmail.com", "a", "Tibor","Domokos"));
+        registrations.add(new Registration("Norb", "dnorbert@gmail.com", "a", "Norbert","Dörner"));
+        registrations.add(new Registration("Krisz", "kollarkr@gmail.com", "a", "Krisztián","Kollár" ));
         registrations.get(0).setRole("Mentor");
         registrations.get(1).setRole("Mentor");
 
