@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/protected/quizSubmit")
-public class EvaluationServlet extends HttpServlet {
+public class QuizEvaluationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -46,15 +46,18 @@ public class EvaluationServlet extends HttpServlet {
 
         RegistrationService registrationService =  new RegistrationService();
 
+        req.setAttribute("quiz", service.getQuiz(id));
+        Registration reg = (Registration) req.getSession().getAttribute("user");
+        req.setAttribute("userProfile", reg);
 
+        reg.setPoints(points);
 
         req.setAttribute("quiz", service.getQuiz(id));
 
 
         req.setAttribute("points", points);
 
-        Registration reg = (Registration) req.getSession().getAttribute("user");
-        req.setAttribute("userProfile", reg);
+        
 
         req.getRequestDispatcher("quiz.jsp").forward(req, resp);
     }
