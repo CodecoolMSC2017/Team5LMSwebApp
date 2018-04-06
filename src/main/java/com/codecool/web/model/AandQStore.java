@@ -2,6 +2,7 @@ package com.codecool.web.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class AandQStore {
 
@@ -9,16 +10,22 @@ public class AandQStore {
     private String title;
     private List<Assignment> assignments = new ArrayList<>();
     private List<Quiz> quizzes = new ArrayList<>();
+    private int id;
 
     //Constructors
-    public AandQStore(String title){
+    public AandQStore(String title) {
+
         this.title = title;
+        Random rnd = new Random();
+        this.id = rnd.nextInt(99999) + 10000;
     }
 
     public AandQStore(AandQStore original) {
         this.title = original.title;
         this.assignments = new ArrayList<>(original.assignments);
         this.quizzes = new ArrayList<>(original.quizzes);
+        Random rnd = new Random();
+        this.id = rnd.nextInt(99999) + 10000;
     }
 
     //Setters/Getters
@@ -41,5 +48,13 @@ public class AandQStore {
 
     public void setQuizzes(List<Quiz> quizzes) {
         this.quizzes = quizzes;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

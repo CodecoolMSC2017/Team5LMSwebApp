@@ -22,7 +22,7 @@ public class AandQStoreDelServlet extends HttpServlet{
         req.setAttribute("userProfile", reg);
 
         AandQService service = new AandQService();
-        AandQStore delStore = service.getAandQStore(req.getParameter("id"));
+        AandQStore delStore = service.getAandQStore(Integer.parseInt(req.getParameter("id")));
 
         SingletonDataBase.getInstance().getaQStores().remove(delStore);
 

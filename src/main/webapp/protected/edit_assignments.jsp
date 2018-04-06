@@ -17,14 +17,14 @@ https://fontawesome.com/v4.7.0/icons/
 		<!-- CONTENT START -->
 
 		<div class="content">
-		    <form action="AssignmentsSaveServlet" method="post">
+		    <form action="AandQStoreSaveServlet" method="post">
                 <div class="content_title">
-                    <div class="text">Title: <input type="text" name="title" value="${assign.title}"></div>
+                    <div class="text">Title: <input type="text" name="title" value="${AandQStore.getTitle()}"></div>
                 </div>
                 <center>
-                    <input type="hidden" name="id" value="">
+                    <input type="hidden" name="id" value="${AandQStore.getId()}">
                     <input type="submit" class="submit" value="Submit">
-                    <a href="AandQStoreServlet"><div class="submit">Cancel</div></a>
+                    <a href="AandQStoreSaveServlet"><div class="submit">Cancel</div></a>
                 </center>
             </form>
 		</div>

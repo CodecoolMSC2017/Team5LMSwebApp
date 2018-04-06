@@ -24,9 +24,9 @@ public class AssignmentCreateServlet extends HttpServlet{
         Registration reg = (Registration) req.getSession().getAttribute("user");
         req.setAttribute("userProfile", reg);
 
-        String aQname = req.getParameter("id");
+        int aQID = Integer.parseInt(req.getParameter("id"));
         AandQService service = new AandQService();
-        AandQStore aandQStore = service.getAandQStore(aQname);
+        AandQStore aandQStore = service.getAandQStore(aQID);
         Assignment ass = new Assignment("New Assignment", "New Assignment description", 0, "New Assignment long description");
         aandQStore.getAssignments().add(ass);
 
