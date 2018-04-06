@@ -35,7 +35,7 @@ https://fontawesome.com/v4.7.0/icons/
                                         <span class="fa fa-plus-square-o fa-1x" style="background:#F5F5F5;margin-left:-10px"></span>
                                     </span>
                                 </a>
-                                <a href="<c:url value="/protected/AssignmentCreateServlet"><c:param name="id" value="${element.getId()}"/></c:url>">
+                                <a href="<c:url value="/protected/QuizCreateServlet"><c:param name="id" value="${element.getId()}"/></c:url>">
                                     <span class="fa-layers fa-lg" title="Add Quiz">
                                         <i class="fa fa-list-ol fa-1x"></i>
                                         <span class="fa fa-plus-square-o fa-1x" style="background:#F5F5F5;margin-left:-10px"></span>
@@ -90,7 +90,7 @@ https://fontawesome.com/v4.7.0/icons/
                                                 <a href="<c:url value="/protected/QuizEditServlet"><c:param name="id" value="${quiz.getId()}"/></c:url>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
                                             </td>
                                             <td class="col-del">
-                                                <a href="#"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
+                                                <a href="<c:url value="/protected/QuizDelServlet"><c:param name="id" value="${quiz.getId()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
                                             </td>
                                             <td class="col-published">
 

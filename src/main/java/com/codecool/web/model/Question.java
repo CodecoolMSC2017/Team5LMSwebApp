@@ -2,6 +2,7 @@ package com.codecool.web.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Question {
 
@@ -10,6 +11,7 @@ public class Question {
     private int point;
     private List<Answer> answers = new ArrayList<>();
     private String goodAnswer;
+    private int id;
 
     //Constructor
     public Question(String description, int point, List<Answer> answers, String goodAnswer) {
@@ -17,6 +19,8 @@ public class Question {
         this.point = point;
         this.answers = answers;
         this.goodAnswer = goodAnswer;
+        Random rnd = new Random();
+        this.id = rnd.nextInt(90000)+10000;
     }
 
     //Getters/SEtters
@@ -35,5 +39,9 @@ public class Question {
 
     public String getGoodAnswer() {
         return goodAnswer;
+    }
+
+    public int getId() {
+        return id;
     }
 }
