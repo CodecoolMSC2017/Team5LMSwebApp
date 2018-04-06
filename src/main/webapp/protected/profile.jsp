@@ -21,6 +21,9 @@ https://fontawesome.com/v4.7.0/icons/
 			</div>
 
 			<div class="profile_frame">
+			    <div class="profile_image">
+			        <img src="../images/user_pics/no_profile_pic.png">
+				</div>
 				<table class="table">
 					<tr>
 						<td class="title">User Name:</td>

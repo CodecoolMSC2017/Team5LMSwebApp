@@ -33,7 +33,7 @@ h1 {
 }
 .content_title .text {
 	float: left;
-	width: 100%;
+	width: 90%;
 	height: 30px;
 	font-size: 1.8em;
 	font-weight: bold;
@@ -376,6 +376,14 @@ h1 {
 	height: auto;
 	border: 0px solid #A5AFB5;
 }
+.profile_frame .profile_image img {
+    float: right;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    width: 165px;
+    margin-bottom: -200px;
+    background-color: white;
+}
 .profile_frame .table {
 	width: 100%;
 	border-collapse: collapse;
@@ -447,7 +455,7 @@ h1 {
     border-image: initial;
 }
 .content .content_title .text input[type=text] {
-    width: 90%;
+    width: 80%;
 }
 .content .quiz_frame .title .points input[type=text] {
     width: 50%;

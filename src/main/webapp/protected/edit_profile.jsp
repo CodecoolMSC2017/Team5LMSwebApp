@@ -21,6 +21,9 @@ https://fontawesome.com/v4.7.0/icons/
 			</div>
 
 			<div class="profile_frame">
+			    <div class="profile_image">
+			        <img src="../images/user_pics/no_profile_pic.png">
+				</div>
 				<form action="userProfileSaveServlet" method="post">
 					<table class="table">
 						<tr>
@@ -50,6 +53,10 @@ https://fontawesome.com/v4.7.0/icons/
 						<tr>
 							<td class="title">Introduction:</td>
 							<td class="info"><input type="text" name="introduction" value="current introduction"></td>
+						</tr>
+						<tr>
+							<td class="title">Profile picture:</td>
+							<td class="info"><input type="file" name="profile_picture"></td>
 						</tr>
 					</table>
 					<center>
