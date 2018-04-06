@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet("/protected/Quiz")
@@ -24,9 +25,12 @@ public class QuizServlet extends HttpServlet {
         Registration reg = (Registration) req.getSession().getAttribute("user");
         req.setAttribute("userProfile", reg);
 
-        RegistrationService registrationService =  new RegistrationService();
 
 
+        Integer points = reg.getPoints();
+        final PrintWriter writerA = resp.getWriter();
+
+        req.setAttribute("points", points);
 
         req.getRequestDispatcher("quiz.jsp").include(req, resp);
     }
