@@ -21,12 +21,12 @@
     position: relative;
     display: block;
     margin: 0px;
-    padding: 16px 0px;
-    width: 130px;
+    padding: 10px 0px;
+    width: 100px;
     border-bottom: 1px solid #CCC;
     background-color: #4CAF50;
     color: white;
-    font-size: 1.25em;
+    font-size: 1.0em;
     cursor: pointer;
     text-decoration: none;
     color: white;
@@ -35,10 +35,23 @@
     background-color: #3e8e41;
 }
 
+.menu_option img {
+    width: 35px;
+    -webkit-filter: brightness(0%) invert(100%);
+    filter: brightness(0%) invert(100%);
+}
+.menu_option img,
+.fa-1x,
+.fa-2x,
+.fa-3x {
+    font-size: 2em;
+    margin-bottom: 7px;
+}
+
 .sub_menu {
     display: none;
     position: absolute;
-	margin-top: -35px;
+	margin-top: -55px;
     min-width: 250px;
     background-color: #f9f9f9;
     z-index: -1;
@@ -50,7 +63,7 @@
 
 .sub_menu a {
     display: block;
-	margin-left: 130px;
+	margin-left: 100px;
     padding: 12px 16px;
 	width: 150px;
     color: black;
