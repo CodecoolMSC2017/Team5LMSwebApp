@@ -18,7 +18,6 @@ https://fontawesome.com/v4.7.0/icons/
 		<div class="content">
 			<div class="content_title">
 				<div class="text">${assignment.title}</div>
-				<div class="add"><a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></div>
 			</div>
 
 			<h1>${assignment.description}</h1>

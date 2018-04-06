@@ -19,13 +19,12 @@ https://fontawesome.com/v4.7.0/icons/
 		<div class="content">
 			<div class="content_title">
 				<div class="text">${quiz.title}</div>
-				<div class="add"><a href="#"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></div>
 			</div>
 
 			<h1>${quiz.description}</h1>
-			<p>Date: ${quiz.date}, Maximum points: ${quiz.maxPoint} </p>
+			<p><b>Date:</b> ${quiz.date}, <b>Maximum points:</b> ${quiz.maxPoint}</p>
+            <p><b>Your total points:</b> ${points}</p>
 
-            <p>Your total point:</p><p>${points}</p>
 			<form action="quizSubmit" method="post">
 			    <input type="hidden" name="id" value="${quiz.id}">
                 <c:forEach items="${quiz.getQuestions()}" var="question" varStatus="loop">
@@ -38,14 +37,14 @@ https://fontawesome.com/v4.7.0/icons/
                             <div class="text">${question.description}</div>
                             <c:forEach items="${question.getAnswers()}" var="answers">
                                 <div class="answer">
-                                    <input type="radio" name="question${loop.index}" value="${answers.getName()}">${answers.name}
+                                    <input type="radio" name="question${loop.index}" value="${answers.getName()}" required>${answers.name}
                                 </div>
                             </c:forEach>
                         </div>
                     </div>
                 </c:forEach>
-                <c:if test="${empty points}">
-                    <div class="quiz_button"><input type="submit" class="submit" value="Submit"></div>
+                <c:if test="${empty points && userProfile.role == 'Student'}">
+                    <center><input type="submit" class="submit" value="Submit"></center>
                 </c:if>
 			</form>
 		</div>
