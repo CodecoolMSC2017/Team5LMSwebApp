@@ -10,7 +10,7 @@ public class Registration {
     private String message;
     private String role;
     private float attendance;
-    private int points;
+    private Integer points;
 
     //Constructor
     public Registration(String name, String email, String password, String firstName, String lastName) {
@@ -20,7 +20,7 @@ public class Registration {
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = "Student";
-
+        this.points = null;
     }
 
     //Getters, Setters
@@ -88,11 +88,11 @@ public class Registration {
         this.attendance = attendance;
     }
 
-    public int getPoints() {
+    public Integer getPoints() {
         return points;
     }
 
-    public void setPoints(int points) {
+    public void setPoints(Integer points) {
         this.points = points;
     }
 }
