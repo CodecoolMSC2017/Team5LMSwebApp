@@ -86,7 +86,6 @@
        right: 0;
        padding: 10px;
        width: 180px;
-       height: 80px;
        background-color: #4CAF50;
        color: white;
        border-left: 2px solid #CCC;
@@ -95,50 +94,23 @@
 .logged_in img {
        float: left;
        margin-right: 10px;
-       width: 50px;
+       width: 60px;
        border-radius: 50%;
        border: 2px solid #CCC;
 }
 .logged_in .message {
        font-size: 1.0em;
-       margin-bottom: 10px;
-       font-size: 1.25em;
+       margin-bottom: 5px;
+       font-size: 1.15em;
        font-weight: bold;
 }
 .logged_in .name {
        height: 24px;
        line-height: 24px;
-       font-size: 1.25em;
+       font-size: 1.15em;
        font-weight: bold;
 }
 .logged_in .role {
        height: 15px;
        line-height: 15px;
 }
-.logged_in .role {
-       height: 15px;
-       line-height: 15px;
-}
-.logged_in .else {
-       height: 15px;
-       line-height: 15px;
-}
-
-/* ********** ********** USAGE ********** **********
-
-<div class="menu_option">
-  <button class="menu_button">Menu 1</button>
-  <div class="sub_menu">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-<div class="menu_option">
-  <button class="menu_button"><a href="#">Menu 1</a></button>
-</div>
-<div class="menu_option" style="float: right">
-  <button class="menu_button"><a href="#">Logout</a></button>
-</div>
-
-  ********** ********** ***** ********** ********** */

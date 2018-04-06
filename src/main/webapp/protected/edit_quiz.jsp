@@ -52,11 +52,13 @@ https://fontawesome.com/v4.7.0/icons/
                         </div>
                     </div>
                 </c:forEach>
-                <div class="add"><a href="<c:url value="/protected/QuestionCreateServlet"><c:param name="id" value="${quiz.getId()}"/></c:url>"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true" title="Add new question"></i></a></div>
-                <center>
-                    <input type="submit" class="submit" value="Submit">
-                    <a href="AandQStoreServlet"><div class="submit">Cancel</div></a>
-                </center>
+                <div class="text">
+                    <div class="add"><a href="<c:url value="/protected/QuestionCreateServlet"><c:param name="id" value="${quiz.getId()}"/></c:url>"><i class="fa fa-plus-square-o fa-2x" aria-hidden="true" title="Add new question"></i></a></div>
+                    <center>
+                        <input type="submit" class="submit" value="Submit">
+                        <a href="AandQStoreServlet"><div class="submit">Cancel</div></a>
+                    </center>
+                </div>
             </form>
 		</div>
 

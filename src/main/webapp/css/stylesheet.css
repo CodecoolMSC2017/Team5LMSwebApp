@@ -470,12 +470,12 @@ h1 {
     margin-top: -20px;
     width: 100%;
 }
-
-.content .quiz_frame .title,
-.content .quiz_frame .question {
+.content .quiz_frame .title .question_no .fa-lg,
+.content .quiz_frame .question .answer .fa-lg,
+.content .quiz_frame .question .fa-2x,
+.content .quiz_frame .question .fa-2x,
+.content .text .fa-2x {
 	text-decoration: none;
 	color: black;
 }
-
-
 /* ********** EDIT QUIZ & TEXT & ASSIGN END ********** */
