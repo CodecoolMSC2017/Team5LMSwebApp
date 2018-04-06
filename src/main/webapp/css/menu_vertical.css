@@ -77,7 +77,7 @@
        border-left: 2px solid #CCC;
        border-bottom: 2px solid #CCC;
 }
-img {
+.logged_in img {
        float: left;
        margin-right: 10px;
        width: 50px;

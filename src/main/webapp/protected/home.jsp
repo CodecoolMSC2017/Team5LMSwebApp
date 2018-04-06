@@ -17,36 +17,20 @@ https://fontawesome.com/v4.7.0/icons/
 		<!-- CONTENT START -->
 
 		<div class="content">
-			<div class="content_title">
-				<div class="text">${quiz.title}</div>
-			</div>
 
-			<h1>${quiz.description}</h1>
-			<p><b>Date:</b> ${quiz.date}, <b>Maximum points:</b> ${quiz.maxPoint}</p>
-            <p><b>Your total points:</b> ${points}</p>
+            <h1>Welcome!</h1>
+            <p style="font-size: 1.2em; line-height: 1.5em">This learning management system (LMS) is a software application for the administration, documentation,
+            tracking, reporting and delivery of educational courses or training programs.</p>
+            <p style="font-size: 1.2em; line-height: 1.5em">It helps the Mentor deliver
+            material to the Students, administer tests and other assignments, track Student progress, and manage
+            record-keeping. This LMS is focused on online learning delivery but support a range of uses, acting as a
+            platform for fully online courses, as well as several hybrid forms, such as blended learning and flipped
+            classrooms. It can be complemented by other learning technologies such as a training management system to
+            manage instructor-led training or a Learning Record Store to store and track learning data.</p>
+            <center>
+                <img src="../images/logo.png">
+            </center>
 
-			<form action="quizSubmit" method="post">
-			    <input type="hidden" name="id" value="${quiz.id}">
-                <c:forEach items="${quiz.getQuestions()}" var="question" varStatus="loop">
-                    <div class="quiz_frame">
-                        <div class="title">
-                            <div class="points">${question.point} pt</div>
-                            <div class="question_no">Question ${loop.index}</div>
-                        </div>
-                        <div class="question">
-                            <div class="text">${question.description}</div>
-                            <c:forEach items="${question.getAnswers()}" var="answers">
-                                <div class="answer">
-                                    <input type="radio" name="question${loop.index}" value="${answers.getName()}" required>${answers.name}
-                                </div>
-                            </c:forEach>
-                        </div>
-                    </div>
-                </c:forEach>
-                <c:if test="${empty points && userProfile.role == 'Student'}">
-                    <center><input type="submit" class="submit" value="Submit"></center>
-                </c:if>
-			</form>
 		</div>
 
 		<!-- CONTENT END  -->

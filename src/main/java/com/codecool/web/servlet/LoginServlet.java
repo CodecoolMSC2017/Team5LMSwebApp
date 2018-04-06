@@ -26,7 +26,8 @@ public class LoginServlet extends HttpServlet {
             Registration reg = SingletonDataBase.getInstance().getRegistration(nameOrEmail);
             req.getSession().setAttribute("user", reg);
 
-            resp.sendRedirect("protected/AandQStoreServlet");
+//            resp.sendRedirect("protected/AandQStoreServlet");
+            resp.sendRedirect("protected/HomeServlet");
 
         } else {
             req.setAttribute("error", "Incorrect login parameters.");

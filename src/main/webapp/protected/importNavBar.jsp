@@ -3,7 +3,7 @@
     <body>
         <div class="menu_bar">
             <div class="menu_option">
-                <button class="menu_button"><a href="#">Home</a></button>
+                <button class="menu_button"><a href="HomeServlet">Home</a></button>
             </div>
             <div class="menu_option">
                 <button class="menu_button"><a href="AandQStoreServlet">Assignments</a></button>
@@ -20,11 +20,8 @@
                     <button class="menu_button"><a href="#">Stats</a></button>
                     <div class="sub_menu">
                         <a href="attendanceServlet">Attendance</a>
-
                         <a href="AttendanceHistoryServlet">Attendance History</a>
-                        <a href="#">Assignment Status</a>
-                        <a href="#">User Grades</a>
-                        <a href="#">Charts</a>
+
                     </div>
                 </div>
             </c:if>
@@ -34,9 +31,6 @@
             </div>
             <div class="menu_option">
                 <button class="menu_button"><a href="userProfileServlet?id=${userProfile.name}">Profile</a></button>
-            </div>
-            <div class="menu_option">
-                <button class="menu_button"><a href="#">Help</a></button>
             </div>
             <div class="menu_option" style="position: absolute; bottom: 0;">
                 <button class="menu_button"><a href="logoutServlet">Logout</a></button>
