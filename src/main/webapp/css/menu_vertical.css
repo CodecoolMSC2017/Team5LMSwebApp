@@ -7,32 +7,38 @@
 	text-align: center;
 }
 
-.menu_button {
-	margin: 0px;
-	padding: 16px 0px;
-	width: 130px;
+.menu_bar a,
+.menu_bar a:active,
+.menu_bar a:link,
+.menu_bar a:visited {
+	text-decoration: none;
+}
+
+.menu_option,
+.menu_option:link,
+.menu_option:visited,
+.menu_option:active {
+    position: relative;
+    display: block;
+    margin: 0px;
+    padding: 16px 0px;
+    width: 130px;
+    border-bottom: 1px solid #CCC;
     background-color: #4CAF50;
-    border: none;
     color: white;
     font-size: 1.25em;
     cursor: pointer;
+    text-decoration: none;
+    color: white;
 }
-
-.menu_option {
-    position: relative;
-	width: 130px;
-	border-bottom: 1px solid #CCC;
-}
-
-.menu_option a {
-	text-decoration: none;
-	color: white;
+.menu_option:hover {
+    background-color: #3e8e41;
 }
 
 .sub_menu {
     display: none;
     position: absolute;
-	margin-top: -50px;
+	margin-top: -35px;
     min-width: 250px;
     background-color: #f9f9f9;
     z-index: -1;
@@ -57,10 +63,6 @@
 
 .menu_option:hover .sub_menu {
     display: block;
-}
-
-.menu_option:hover .menu_button {
-    background-color: #3e8e41;
 }
 
 /* ********** ********** LOGGED IN MENU ********** ********** */

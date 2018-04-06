@@ -31,16 +31,20 @@ https://fontawesome.com/v4.7.0/icons/
 					<c:if test="${userProfile.role == 'Mentor'}">
                         <c:forEach items="${mentorlist}" var="element">
                             <tr>
-                                <td>${element.getName()}</a></td>
-                                <td>${element.getEmail()}</td>
-                                <td>${element.getRole()}</td>
+                                <td><a href="<c:url value="/protected/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getName()}</a></td>
+                                <td>
+                                     <a href="mailto:${element.getEmail()}?subject=Message from LMS site" title="Send e-mail">${element.getEmail()}</a>
+                                </td>
+                                <td><a href="<c:url value="/protected/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getRole()}</a</td>
                             </tr>
                         </c:forEach>
 					</c:if>
 					<c:forEach items="${studentlist}" var="element">
                         <tr>
                             <td><a href="<c:url value="/protected/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getName()}</a></td>
-                            <td><a href="<c:url value="/protected/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getEmail()}</a></td>
+                                <td>
+                                    <a href="mailto:${element.getEmail()}?subject=Message from LMS site" title="Send e-mail">${element.getEmail()}</a>
+                                </td>
                             <td><a href="<c:url value="/protected/userProfileServlet"><c:param name="id" value="${element.getName()}"/></c:url>">${element.getRole()}</a></td>
                         </tr>
                     </c:forEach>
