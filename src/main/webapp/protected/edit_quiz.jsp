@@ -20,49 +20,44 @@ https://fontawesome.com/v4.7.0/icons/
 		    <form action="QuizEditServlet" method="post">
                 <div class="content_title">
                     <div class="text">Title: <input type="text" name="title" value="${quiz.title}"></div>
-                    <div class="add"><a href="<c:url value="/protected/QuestionCreateServlet"><c:param name="id" value="${quiz.getId()}"/></c:url>"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true" title="Add"></i></a></div>
                 </div>
                 <div class="text">
                     <p><h1>Short description:</h1></p>
                     <p><textarea rows="4" cols="50" name="description">${quiz.description}</textarea></p>
                     <p>
-                        <b>Date:</b> <input type="text" name="date" value="${quiz.date}">
+                        <b>Date:</b> <input type="date" name="date" value="${quiz.date}">
                         <b>Maximum points:</b> <input type="number" name="date" value="${quiz.maxPoint}">
                     </p>
                     <input type="hidden" name="id" value="${quiz.getId()}">
                 </div>
+                <c:forEach items="${quiz.getQuestions()}" var="question" varStatus="loop">
+                    <div class="quiz_frame">
+                        <div class="title">
+                            <div class="points"><input type="text" name="???" value="${question.point}"> pt</div>
+                            <div class="question_no">
+                                <a href="<c:url value="/protected/QuestionDelServlet"><c:param name="id" value="${quiz.getId()}${question.getId()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete question"></i></a>
+                                <input type="text" name="???" value="Question ${loop.index}">
+                            </div>
+                        </div>
+                        <div class="question">
+                            <div class="text"><input type="text" name="???" value="${question.description}"></div>
+                            <c:forEach items="${question.getAnswers()}" var="answers">
+                                <div class="answer">
+                                    <i class="fa fa-circle-o fn-lg" aria-hidden="true"></i>
+                                    <input type="text" name="question${loop.index}" value="${answers.name}">
+                                    <a href="<c:url value="/protected/AandQStoreDelServlet"><c:param name="id" value="${element.getId()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete answer"></i></a>
+                                </div>
+                            </c:forEach>
+                            <a href="AandQStoreCreateServlet"><i class="fa fa-plus-square-o fa-2x" aria-hidden="true" title="Add answer"></i></a>
+                        </div>
+                    </div>
+                </c:forEach>
+                <div class="add"><a href="<c:url value="/protected/QuestionCreateServlet"><c:param name="id" value="${quiz.getId()}"/></c:url>"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true" title="Add new question"></i></a></div>
                 <center>
                     <input type="submit" class="submit" value="Submit">
                     <a href="AandQStoreServlet"><div class="submit">Cancel</div></a>
                 </center>
             </form>
-            <c:forEach items="${quiz.getQuestions()}" var="question" varStatus="loop">
-                <div class="quiz_frame">
-                    <div class="title">
-
-                        <div class="admin">
-                            <a href="AandQStoreCreateServlet"><i class="fa fa-plus-square-o fa-lg" aria-hidden="true" title="Add"></i></a>
-                            <a href="<c:url value="/protected/AandQStoreEditServlet"><c:param name="id" value="${element.getId()}"/></c:url>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
-                            <a href="<c:url value="/protected/QuestionDelServlet"><c:param name="id" value="${quiz.getId()}${question.getId()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
-                        </div>
-
-                        <div class="points">${question.point} pt</div>
-                        <div class="question_no">Question ${loop.index}</div>
-                    </div>
-                    <div class="question">
-                        <div class="text">${question.description}</div>
-                        <c:forEach items="${question.getAnswers()}" var="answers">
-                            <div class="answer">
-                                <input type="radio" name="question${loop.index}" value="${answers.getName()}" required>${answers.name}
-                                <div class="admin">
-                                    <a href="<c:url value="/protected/AandQStoreEditServlet"><c:param name="id" value="${element.getId()}"/></c:url>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
-                                    <a href="<c:url value="/protected/AandQStoreDelServlet"><c:param name="id" value="${element.getId()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
-                                </div>
-                            </div>
-                        </c:forEach>
-                    </div>
-                </div>
-            </c:forEach>
 		</div>
 
 		<!-- CONTENT END  -->

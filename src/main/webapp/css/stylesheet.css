@@ -33,7 +33,7 @@ h1 {
 }
 .content_title .text {
 	float: left;
-	width: auto;
+	width: 100%;
 	height: 30px;
 	font-size: 1.8em;
 	font-weight: bold;
@@ -282,13 +282,16 @@ h1 {
 .quiz_frame .title .points {
 	float: right;
 	padding-right: 15px;
+    width: 20%;
 	font-size: 1.5em;
+    text-align: right;
 }
 .quiz_frame .question {
 	margin: 20px;
 }
 .quiz_frame .question .text {
 	margin: 20px 0px;
+	width: 100%;
 	font-size: 1.3em;
 }
 .quiz_frame .question .answer {
@@ -433,7 +436,6 @@ h1 {
 
 /* ********** EDIT QUIZ & TEXT & ASSIGN. START ********** */
 .content .text input[type=text] {
-    width: 500px;
     -webkit-appearance: textfield;
     -webkit-rtl-ordering: logical;
     background-color: white;
@@ -444,14 +446,36 @@ h1 {
     border-color: initial;
     border-image: initial;
 }
+.content .content_title .text input[type=text] {
+    width: 90%;
+}
+.content .quiz_frame .title .points input[type=text] {
+    width: 50%;
+    text-align: right;
+}
+.content .quiz_frame .title .question_no input[type=text] {
+    width: 70%;
+}
+.content .quiz_frame .question .text input[type=text] {
+    width: 100%;
+}
+.content .quiz_frame .question .answer input[type=text] {
+    width: 90%;
+}
+
 .content .text input[type=number] {
-    width: 50px;
+    width: 70px;
 }
 .content .text textarea {
     margin-top: -20px;
-    width:100%;
+    width: 100%;
 }
 
+.content .quiz_frame .title,
+.content .quiz_frame .question {
+	text-decoration: none;
+	color: black;
+}
 
 
 /* ********** EDIT QUIZ & TEXT & ASSIGN END ********** */
