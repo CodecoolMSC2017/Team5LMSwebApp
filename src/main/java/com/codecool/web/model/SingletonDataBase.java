@@ -66,8 +66,11 @@ public class SingletonDataBase implements Storing {
         attendance1.setTitle("2018-04-03");
         Attendance attendance2 = new Attendance(getStudents());
         attendance2.setTitle("2018-04-04");
+        Attendance attendance3 = new Attendance(getStudents());
+        attendance3.setTitle("2018-04-05");
         attendanceList.add(attendance1);
         attendanceList.add(attendance2);
+        attendanceList.add(attendance3);
         }
 
 
