@@ -31,7 +31,7 @@ public class SingletonDataBase implements Storing {
         registrations.add(new Registration("Tib", "eoirt@wer.hu", "a", "",""));
         registrations.add(new Registration("Norb", "klydjasid@wer.hu", "a", "",""));
         registrations.add(new Registration("krisz", "yxcas@wer.hu", "a", "","" ));
-        registrations.add(new Registration("Moki", "moki@wer.hu", "a","Fóka","Mokácska" ));
+        registrations.add(new Registration("Moki", "moki@wer.hu", "a","Fóka","P**A" ));
         registrations.get(0).setRole("Mentor");
         registrations.get(1).setRole("Mentor");
 
@@ -40,15 +40,15 @@ public class SingletonDataBase implements Storing {
         store.getAssignments().add(new Assignment( "TryName", "Try short description", 2, "Try long description"));
         store.getAssignments().add(new Assignment( "TryName 2", "Try short description 2", 1, "Try long description 2"));
         store.getQuizzes().add(new Quiz( "TryNameQ", "Try short description Q", 4));
-        store.getQuizzes().get(0).getQuestions().add(new Question("Try short description/question", 1, new ArrayList<>(), "Kutya"));
-        store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Cica"));
-        store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Kutya"));
-        store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("MokaFóka"));
-        store.getQuizzes().get(0).getQuestions().add(new Question("Mi van ?", 3, new ArrayList<>(), "Semmi"));
-        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Valami"));
-        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Büdös"));
-        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Semmi"));
-        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Mondom semmi"));
+        store.getQuizzes().get(0).getQuestions().add(new Question("How can you see what's inside the current directory?", 2, new ArrayList<>(), "By running 'ls' "));
+        store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("By running 'ls' "));
+        store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("By running 'tree' "));
+        store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("By running 'list' "));
+        store.getQuizzes().get(0).getQuestions().add(new Question("What will the following command do: ls ../..", 3, new ArrayList<>(), "List the content of the 'grandparent' of the current directory "));
+        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("List the content of the 'grandparent' of the current directory "));
+        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Nothing, ls only can show the content of the directory I'm in "));
+        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("List the content of the current directory "));
+        store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("List the content of the 'parent' of the current directory "));
         aQStores.add(store);
 
         AandQStore store2 = new AandQStore("Try 2 Not Hardcoded View");
