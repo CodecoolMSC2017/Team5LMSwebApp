@@ -33,14 +33,14 @@ https://fontawesome.com/v4.7.0/icons/
                 <c:forEach items="${quiz.getQuestions()}" var="question" varStatus="loop">
                     <div class="quiz_frame">
                         <div class="title">
-                            <div class="points"><input type="text" name="???" value="${question.point}"> pt</div>
+                            <div class="points"><input type="text" name="points" value="${question.point}"> pt</div>
                             <div class="question_no">
                                 <a href="<c:url value="/protected/QuestionDelServlet"><c:param name="id" value="${quiz.getId()}${question.getId()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete question"></i></a>
-                                <input type="text" name="???" value="Question ${loop.index}">
+                                <input type="text" name="question_title" value="Question ${loop.index}">
                             </div>
                         </div>
                         <div class="question">
-                            <div class="text"><input type="text" name="???" value="${question.description}"></div>
+                            <div class="text"><input type="text" name="question_description" value="${question.description}"></div>
                             <c:forEach items="${question.getAnswers()}" var="answers">
                                 <div class="answer">
                                     <i class="fa fa-circle-o fn-lg" aria-hidden="true"></i>
