@@ -45,7 +45,8 @@ https://fontawesome.com/v4.7.0/icons/
                             <c:forEach items="${question.getAnswers()}" var="answers">
                                 <div class="answer">
                                     <i class="fa fa-circle-o fn-lg" aria-hidden="true"></i>
-                                    <input type="text" name="question${loop.index}" value="${answers.name}">
+                                        <input type="hidden" name="answer_id" value="${answers.id}">
+                                        <input type="text" name="answer_name" value="${answers.name}">
                                     <a href="<c:url value="/protected/AnswerDelServlet"><c:param name="id" value="${quiz.getId()}${answers.getId()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete answer"></i></a>
                                 </div>
                             </c:forEach>

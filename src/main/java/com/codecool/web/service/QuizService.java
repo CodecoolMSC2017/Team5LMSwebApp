@@ -79,6 +79,17 @@ public class QuizService {
         question.getAnswers().add(new Answer("New Answer"));
     }
 
+    public Answer getAnswer(Quiz quiz, int id){
+        for (Question q:quiz.getQuestions()) {
+            for (Answer a : q.getAnswers()) {
+                if (a.getId() == id) {
+                    return a;
+                }
+            }
+        }
+        return null;
+    }
+
     public void delAnswer(int id){
         for(AandQStore aq:SingletonDataBase.getInstance().getaQStores()){
             List<Quiz> quizzes = aq.getQuizzes();

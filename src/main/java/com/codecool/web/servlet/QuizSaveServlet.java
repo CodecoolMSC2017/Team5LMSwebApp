@@ -1,6 +1,7 @@
 package com.codecool.web.servlet;
 
 
+import com.codecool.web.model.Answer;
 import com.codecool.web.model.Question;
 import com.codecool.web.model.Quiz;
 import com.codecool.web.model.Registration;
@@ -23,13 +24,13 @@ public class QuizSaveServlet extends HttpServlet{
         String title = req.getParameter("title");
         String description = req.getParameter("description");
         String date = req.getParameter("date");
-
         //Question(s) parameters
         String[] questiondIDs = req.getParameterValues("QuId");
         String[] questionsPoints = req.getParameterValues("points");
         String[] questionsDescripton = req.getParameterValues("question_description");
-
         //Answer(s) parameters
+        String[] answerIDs = req.getParameterValues("answer_id");
+        String[] answerNames = req.getParameterValues("answer_name");
 
         QuizService service = new QuizService();
 
@@ -42,11 +43,16 @@ public class QuizSaveServlet extends HttpServlet{
             Question q = service.getQuestion(quiz, Integer.parseInt(questiondIDs[i]));
             service.updateQuestion(q, Integer.parseInt(questionsPoints[i]), questionsDescripton[i]);
         }
+        //Answer(s) update
+        for(int i=0; answerIDs.length > i;i++) {
+            Answer a = service.getAnswer(quiz, Integer.parseInt(answerIDs[i]));
+            a.setName(answerNames[i]);
+        }
 
         Registration reg = (Registration) req.getSession().getAttribute("user");
         req.setAttribute("userProfile", reg);
 
-        req.getRequestDispatcher("AandQStoreServlet").forward(req, resp);
+        req.getRequestDispatcher("QuizEditServlet").forward(req, resp);
     }
 
     @Override
