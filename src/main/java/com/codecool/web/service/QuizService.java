@@ -42,6 +42,14 @@ public class QuizService {
         quiz.getQuestions().add(new Question("New Question", 0, new ArrayList<>(), "good answer"));
     }
 
+    public Question getQuestion(Quiz quiz, int id){
+        for (Question q:quiz.getQuestions()){
+            if (q.getId() == id){
+                return q;
+            }
+        }return null;
+    }
+
     public void delQuestion(int id){
 
         for(AandQStore aq:SingletonDataBase.getInstance().getaQStores()){
@@ -51,6 +59,27 @@ public class QuizService {
                 for (int i = 0; questions.size() > i; i++)
                 if(id == questions.get(i).getId()){
                     questions.remove(i);
+                }
+            }
+        }
+    }
+
+    public void addAnswer(Question question){
+        question.getAnswers().add(new Answer("New Answer"));
+    }
+
+    public void delAnswer(int id){
+        for(AandQStore aq:SingletonDataBase.getInstance().getaQStores()){
+            List<Quiz> quizzes = aq.getQuizzes();
+            for(Quiz q:quizzes){
+                List<Question> questions = q.getQuestions();
+                for (Question que:questions){
+                    List<Answer> answers = que.getAnswers();
+                    for(int i = 0; answers.size()>i;i++){
+                        if(answers.get(i).getId() == id){
+                            answers.remove(i);
+                        }
+                    }
                 }
             }
         }

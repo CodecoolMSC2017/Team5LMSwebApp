@@ -12,9 +12,6 @@ public class SingletonDataBase implements Storing {
     private List<Registration> registrations = new ArrayList<>();
     private List<AandQStore> aQStores = new ArrayList<>();
     private List<Attendance> attendanceList = new ArrayList<>();
-    private int globalAttendance;
-
-
 
     public static SingletonDataBase getInstance() {
         return Instance;
@@ -36,10 +33,9 @@ public class SingletonDataBase implements Storing {
         registrations.get(1).setRole("Mentor");
 
         //Hardcoded aAndQStore with assignment and quiz+questions
-        AandQStore store = new AandQStore("Try  Not Hardcoded View");
-        store.getAssignments().add(new Assignment( "TryName", "Try short description", 2, "Try long description"));
-        store.getAssignments().add(new Assignment( "TryName 2", "Try short description 2", 1, "Try long description 2"));
-        store.getQuizzes().add(new Quiz( "TryNameQ", "Try short description Q", 4));
+        AandQStore store = new AandQStore("Python");
+        store.getAssignments().add(new Assignment( "Python basics", "The very begining of a long journey", 2, ""));
+        store.getQuizzes().add(new Quiz( "Python basics Quiz", "Please give a lot attention for the Python basics Text Page then fill this quiz."));
         store.getQuizzes().get(0).getQuestions().add(new Question("How can you see what's inside the current directory?", 2, new ArrayList<>(), "By running 'ls' "));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("By running 'ls' "));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("By running 'tree' "));
@@ -51,17 +47,7 @@ public class SingletonDataBase implements Storing {
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("List the content of the 'parent' of the current directory "));
         aQStores.add(store);
 
-        AandQStore store2 = new AandQStore("Try 2 Not Hardcoded View");
-        store2.getAssignments().add(new Assignment( "TryName", "Try short description", 2, "Try long description"));
-        store2.getAssignments().add(new Assignment( "TryName 2", "Try short description 2", 1, "Try long description 2"));
-        store2.getQuizzes().add(new Quiz( "TryNameQ", "Try short description Q", 4));
-        store2.getQuizzes().get(0).getQuestions().add(new Question("Try short description/question", 1, new ArrayList<>(), "kutya"));
-        store2.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Cica"));
-        store2.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("Kutya"));
-        store2.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("MokaBálna"));
-        aQStores.add(store2);
-
-
+        //Attendance Hardcode history
         Attendance attendance1 = new Attendance(getStudents());
         attendance1.setTitle("2018-04-03");
         Attendance attendance2 = new Attendance(getStudents());
@@ -109,7 +95,6 @@ public class SingletonDataBase implements Storing {
         registrations.remove(registration);
     }
 
-
     @Override
     public boolean addRegistration(Registration registration) {
 
@@ -153,6 +138,7 @@ public class SingletonDataBase implements Storing {
         return aQStores;
     }
 
+    @Override
     public List<AandQStore> getAQStoresPublished(){
         List<AandQStore> tempStores = new ArrayList<>();
         AandQStore tempStore;
@@ -199,10 +185,12 @@ public class SingletonDataBase implements Storing {
         }return temp;
     }
 
+    @Override
     public List<Attendance> getAttendanceList() {
         return attendanceList;
     }
 
+    @Override
     public Map<Registration, Integer> getStudentsAttendance(){
         Map<Registration, Integer> studentsAttendance = new HashMap<>();
         for (Attendance a:attendanceList){
@@ -217,6 +205,7 @@ public class SingletonDataBase implements Storing {
         return studentsAttendance;
     }
 
+    @Override
     public List<String> getAttendancesTitle() {
         List<String> names = new ArrayList<>();
         for(Attendance a: attendanceList){

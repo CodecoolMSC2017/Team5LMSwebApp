@@ -13,7 +13,7 @@ public abstract class Task {
     //Constructor
     public Task( String title, String description){
         Random rnd = new Random();
-        this.id = rnd.nextInt(9999) + 1000;
+        this.id = rnd.nextInt(9000) + 1000;
         this.title = title;
         this.description = description;
         this.isPublished = false;

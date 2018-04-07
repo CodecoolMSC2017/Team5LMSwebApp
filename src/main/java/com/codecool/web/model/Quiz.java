@@ -9,17 +9,16 @@ public class Quiz extends Task{
 
     //fields
     private String date;
-    private int maxPoint;
+    private int maxPoint = 0;
     private List<Question> questions = new ArrayList<>();
 
 
     //Constructor
-    public Quiz(String title, String description, int maxPoint) {
+    public Quiz(String title, String description) {
         super(title, description);
         java.util.Date date = new Date( );
         SimpleDateFormat sdf = new SimpleDateFormat ("yyyy.MM.dd");
         this.date = sdf.format(date);
-        this.maxPoint = maxPoint;
     }
 
     //Getters/SEtters
@@ -30,7 +29,11 @@ public class Quiz extends Task{
     }
 
     public int getMaxPoint() {
-        return maxPoint;
+        int counter = 0;
+        for(Question q:this.questions){
+            counter += q.getPoint();
+        }
+        return counter;
     }
 
     public List<Question> getQuestions() {

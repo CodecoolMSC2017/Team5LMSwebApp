@@ -26,7 +26,7 @@ https://fontawesome.com/v4.7.0/icons/
                     <p><textarea rows="4" cols="50" name="description">${quiz.description}</textarea></p>
                     <p>
                         <b>Date:</b> <input type="date" name="date" value="${quiz.date}">
-                        <b>Maximum points:</b> <input type="number" name="date" value="${quiz.maxPoint}">
+                        <b>Maximum points:</b> ${quiz.maxPoint}
                     </p>
                     <input type="hidden" name="id" value="${quiz.getId()}">
                 </div>
@@ -45,10 +45,10 @@ https://fontawesome.com/v4.7.0/icons/
                                 <div class="answer">
                                     <i class="fa fa-circle-o fn-lg" aria-hidden="true"></i>
                                     <input type="text" name="question${loop.index}" value="${answers.name}">
-                                    <a href="<c:url value="/protected/AandQStoreDelServlet"><c:param name="id" value="${element.getId()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete answer"></i></a>
+                                    <a href="<c:url value="/protected/AnswerDelServlet"><c:param name="id" value="${quiz.getId()}${answers.getId()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete answer"></i></a>
                                 </div>
                             </c:forEach>
-                            <a href="AandQStoreCreateServlet"><i class="fa fa-plus-square-o fa-2x" aria-hidden="true" title="Add answer"></i></a>
+                            <a href="<c:url value="/protected/AnswerCreateServlet"><c:param name="id" value="${quiz.getId()}${question.getId()}"/></c:url>"><i class="fa fa-plus-square-o fa-2x" aria-hidden="true" title="Add answer"></i></a>
                         </div>
                     </div>
                 </c:forEach>

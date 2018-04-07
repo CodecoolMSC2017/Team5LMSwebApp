@@ -17,7 +17,7 @@ public class AandQStore {
 
         this.title = title;
         Random rnd = new Random();
-        this.id = rnd.nextInt(99999) + 10000;
+        this.id = rnd.nextInt(90000) + 10000;
     }
 
     public AandQStore(AandQStore original) {
@@ -25,7 +25,7 @@ public class AandQStore {
         this.assignments = new ArrayList<>(original.assignments);
         this.quizzes = new ArrayList<>(original.quizzes);
         Random rnd = new Random();
-        this.id = rnd.nextInt(99999) + 10000;
+        this.id = rnd.nextInt(90000) + 10000;
     }
 
     //Setters/Getters

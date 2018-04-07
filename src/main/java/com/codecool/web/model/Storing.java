@@ -1,6 +1,7 @@
 package com.codecool.web.model;
 
 import java.util.List;
+import java.util.Map;
 
 public interface Storing {
 
@@ -15,5 +16,10 @@ public interface Storing {
     List<AandQStore> getaQStores();
     List<Registration> getStudents();
     List<Registration> getMentors();
+    List<AandQStore> getAQStoresPublished();
+    List<Attendance> getAttendanceList();
+    List<String> getAttendancesTitle();
+    Map<Registration, Integer> getStudentsAttendance();
+
 
 }

@@ -24,7 +24,7 @@ public class QuizCreateServlet extends HttpServlet{
         int aQID = Integer.parseInt(req.getParameter("id"));
         AandQService service = new AandQService();
         AandQStore aandQStore = service.getAandQStore(aQID);
-        Quiz quiz = new Quiz("New Quiz", "New Quiz Description", 0);
+        Quiz quiz = new Quiz("New Quiz", "New Quiz Description");
         aandQStore.getQuizzes().add(quiz);
 
         if (reg.getRole().equals("Mentor")) {
