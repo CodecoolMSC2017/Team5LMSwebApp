@@ -70,9 +70,10 @@ public class QuizService {
         }
     }
 
-    public void updateQuestion(Question q, int point, String description){
+    public void updateQuestion(Question q, int point, String description, String goodAnswer){
         q.setPoint(point);
         q.setDescription(description);
+        q.setGoodAnswer(goodAnswer);
     }
 
     public void addAnswer(Question question){

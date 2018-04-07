@@ -41,7 +41,8 @@ https://fontawesome.com/v4.7.0/icons/
                             </div>
                         </div>
                         <div class="question">
-                            <div class="text"><input type="text" name="question_description" value="${question.description}"></div>
+                            <div class="text"><b>Question:</b> <input type="text" name="question_description" value="${question.description}"></div>
+                            <div class="text"><b>Correct answer:</b> <input type="text" name="good_answer" value="${question.goodAnswer}"></div>
                             <c:forEach items="${question.getAnswers()}" var="answers">
                                 <div class="answer">
                                     <i class="fa fa-circle-o fn-lg" aria-hidden="true"></i>

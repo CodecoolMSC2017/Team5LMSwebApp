@@ -49,6 +49,10 @@ public class Question {
         this.description = description;
     }
 
+    public void setGoodAnswer(String goodAnswer) {
+        this.goodAnswer = goodAnswer;
+    }
+
     public void setPoint(int point) {
         this.point = point;
     }

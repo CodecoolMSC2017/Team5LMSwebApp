@@ -31,6 +31,7 @@ public class QuizSaveServlet extends HttpServlet{
         //Answer(s) parameters
         String[] answerIDs = req.getParameterValues("answer_id");
         String[] answerNames = req.getParameterValues("answer_name");
+        String[] questionsGoodAnswer = req.getParameterValues("good_answer");
 
         QuizService service = new QuizService();
 
@@ -39,9 +40,9 @@ public class QuizSaveServlet extends HttpServlet{
         service.update(quiz, title, date, description);
 
         //Question(s) update
-        for(int i=0; questiondIDs.length > i;i++){
+        for(int i=0; questiondIDs.length > i; i++){
             Question q = service.getQuestion(quiz, Integer.parseInt(questiondIDs[i]));
-            service.updateQuestion(q, Integer.parseInt(questionsPoints[i]), questionsDescripton[i]);
+            service.updateQuestion(q, Integer.parseInt(questionsPoints[i]), questionsDescripton[i], questionsGoodAnswer[i]);
         }
         //Answer(s) update
         for(int i=0; answerIDs.length > i;i++) {
