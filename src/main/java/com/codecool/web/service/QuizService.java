@@ -24,6 +24,12 @@ public class QuizService {
         return null;
     }
 
+    public void update(Quiz quiz, String title, String date, String description){
+        quiz.setTitle(title);
+        quiz.setDate(date);
+        quiz.setDescription(description);
+    }
+
     public void delQuiz(int id){
 
         List<AandQStore> aQstores = SingletonDataBase.getInstance().getaQStores();
@@ -62,6 +68,11 @@ public class QuizService {
                 }
             }
         }
+    }
+
+    public void updateQuestion(Question q, int point, String description){
+        q.setPoint(point);
+        q.setDescription(description);
     }
 
     public void addAnswer(Question question){

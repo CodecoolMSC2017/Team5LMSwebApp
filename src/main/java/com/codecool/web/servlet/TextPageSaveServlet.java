@@ -29,8 +29,8 @@ public class TextPageSaveServlet extends HttpServlet{
 
         service.update(ass, title, estimatedtime, description, fulldescription);
 
-        req.setAttribute("profile", req.getSession().getAttribute("user"));
-        req.setAttribute("userProfile", req.getSession().getAttribute("user"));
+        Registration reg = (Registration) req.getSession().getAttribute("user");
+        req.setAttribute("userProfile", reg);
 
 
         req.getRequestDispatcher("AandQStoreServlet").forward(req, resp);

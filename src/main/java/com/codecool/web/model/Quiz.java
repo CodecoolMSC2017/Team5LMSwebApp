@@ -17,7 +17,7 @@ public class Quiz extends Task{
     public Quiz(String title, String description) {
         super(title, description);
         java.util.Date date = new Date( );
-        SimpleDateFormat sdf = new SimpleDateFormat ("yyyy.MM.dd");
+        SimpleDateFormat sdf = new SimpleDateFormat ("yyyy-MM-dd");
         this.date = sdf.format(date);
     }
 
@@ -26,6 +26,10 @@ public class Quiz extends Task{
 
     public String getDate() {
         return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public int getMaxPoint() {

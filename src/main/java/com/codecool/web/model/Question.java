@@ -44,4 +44,12 @@ public class Question {
     public int getId() {
         return id;
     }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPoint(int point) {
+        this.point = point;
+    }
 }

@@ -17,7 +17,7 @@ https://fontawesome.com/v4.7.0/icons/
 		<!-- CONTENT START -->
 
 		<div class="content">
-		    <form action="QuizEditServlet" method="post">
+		    <form action="QuizSaveServlet" method="post">
                 <div class="content_title">
                     <div class="text">Title: <input type="text" name="title" value="${quiz.title}"></div>
                 </div>
@@ -33,10 +33,11 @@ https://fontawesome.com/v4.7.0/icons/
                 <c:forEach items="${quiz.getQuestions()}" var="question" varStatus="loop">
                     <div class="quiz_frame">
                         <div class="title">
+                            <input type="hidden" name="QuId" value="${question.id}">
                             <div class="points"><input type="text" name="points" value="${question.point}"> pt</div>
                             <div class="question_no">
                                 <a href="<c:url value="/protected/QuestionDelServlet"><c:param name="id" value="${quiz.getId()}${question.getId()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete question"></i></a>
-                                <input type="text" name="question_title" value="Question ${loop.index}">
+                                Question ${loop.index}
                             </div>
                         </div>
                         <div class="question">
