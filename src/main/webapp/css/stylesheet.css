@@ -486,4 +486,31 @@ h1 {
 	text-decoration: none;
 	color: black;
 }
+.quiz_frame .question .answer .show_correct_answer {
+    margin-left: -125px;
+    margin-bottom: -20px;
+    width: 122px;
+    height: 20px;
+}
+.quiz_frame .question .answer .show_correct_answer .sign {
+    float: left;
+    width: 110px;
+    height: 20px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: #4CAF50;
+    font-size: 0.7em;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: bold;
+    line-height: 20px;
+}
+.quiz_frame .question .answer .show_correct_answer .triangle {
+    float: left;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #4CAF50;
+}
 /* ********** EDIT QUIZ & TEXT & ASSIGN END ********** */

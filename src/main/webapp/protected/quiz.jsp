@@ -37,7 +37,16 @@ https://fontawesome.com/v4.7.0/icons/
                             <div class="text">${question.description}</div>
                             <c:forEach items="${question.getAnswers()}" var="answers">
                                 <div class="answer">
-                                    <input type="radio" name="question${loop.index}" value="${answers.getName()}" required>${answers.name}
+                                    <c:if test="${not empty points && answers.getName() == question.getGoodAnswer()}">
+                                        <div class="show_correct_answer">
+                                            <div class="sign">Correct Answer</div>
+                                            <div class="triangle"></div>
+                                        </div>
+                                    </c:if>
+                                    <c:if test="${empty points && userProfile.role == 'Student'}">
+                                        <input type="radio" name="question${loop.index}" value="${answers.getName()}" required>
+                                    </c:if>
+                                    ${answers.name}
                                 </div>
                             </c:forEach>
                         </div>

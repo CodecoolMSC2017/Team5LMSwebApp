@@ -37,9 +37,9 @@ public class SingletonDataBase implements Storing {
         store.getAssignments().add(new Assignment( "Python basics", "The very begining of a long journey", 2, ""));
         store.getQuizzes().add(new Quiz( "Python basics Quiz", "Please give a lot attention for the Python basics Text Page then fill this quiz."));
         store.getQuizzes().get(0).getQuestions().add(new Question("How can you see what's inside the current directory?", 2, new ArrayList<>(), "By running 'ls' "));
+        store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("By running 'list' "));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("By running 'ls' "));
         store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("By running 'tree' "));
-        store.getQuizzes().get(0).getQuestions().get(0).getAnswers().add(new Answer("By running 'list' "));
         store.getQuizzes().get(0).getQuestions().add(new Question("What will the following command do: ls ../..", 3, new ArrayList<>(), "List the content of the 'grandparent' of the current directory "));
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("List the content of the 'grandparent' of the current directory "));
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Nothing, ls only can show the content of the directory I'm in "));
