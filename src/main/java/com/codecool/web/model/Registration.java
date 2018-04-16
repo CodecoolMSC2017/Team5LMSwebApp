@@ -1,5 +1,7 @@
 package com.codecool.web.model;
 
+import java.util.HashMap;
+
 public class Registration {
     //fields
     private String name;
@@ -10,7 +12,8 @@ public class Registration {
     private String message;
     private String role;
     private float attendance;
-    private Integer points;
+    private HashMap<Integer, Integer> quizResult = new HashMap<>();
+
 
     //Constructor
     public Registration(String name, String email, String password, String firstName, String lastName) {
@@ -20,7 +23,6 @@ public class Registration {
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = "Student";
-        this.points = null;
     }
 
     //Getters, Setters
@@ -88,11 +90,11 @@ public class Registration {
         this.attendance = attendance;
     }
 
-    public Integer getPoints() {
-        return points;
+    public HashMap<Integer, Integer> getQuizResult() {
+        return quizResult;
     }
 
-    public void setPoints(Integer points) {
-        this.points = points;
+    public void setQuizResult(HashMap<Integer, Integer> quizResult) {
+        this.quizResult = quizResult;
     }
 }

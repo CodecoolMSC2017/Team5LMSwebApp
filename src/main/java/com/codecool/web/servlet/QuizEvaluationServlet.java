@@ -1,6 +1,7 @@
 package com.codecool.web.servlet;
 
 import com.codecool.web.model.*;
+import com.codecool.web.service.AandQService;
 import com.codecool.web.service.QuizService;
 import com.codecool.web.model.Quiz;
 import com.codecool.web.model.Question;
@@ -16,10 +17,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @WebServlet("/protected/quizSubmit")
 public class QuizEvaluationServlet extends HttpServlet {
+
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,14 +54,14 @@ public class QuizEvaluationServlet extends HttpServlet {
         Registration reg = (Registration) req.getSession().getAttribute("user");
         req.setAttribute("userProfile", reg);
 
-        reg.setPoints(points);
+        reg.getQuizResult().put(id, points);
 
         req.setAttribute("quiz", service.getQuiz(id));
 
 
         req.setAttribute("points", points);
 
-        
+
 
         req.getRequestDispatcher("quiz.jsp").forward(req, resp);
     }
