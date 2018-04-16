@@ -6,7 +6,7 @@ import java.util.List;
 public class Exercise extends Task {
 
     private int maxPoint = 0;
-    private List<ExcQuestion> excQuestions = new ArrayList<>();
+    private List<Question> excQuestions = new ArrayList<>();
 
     public Exercise(String title, String description) {
         super(title, description);
@@ -20,11 +20,11 @@ public class Exercise extends Task {
         this.maxPoint = maxPoint;
     }
 
-    public List<ExcQuestion> getExcQuestions() {
+    public List<Question> getExcQuestions() {
         return excQuestions;
     }
 
-    public void setExcQuestions(List<ExcQuestion> excQuestions) {
+    public void setExcQuestions(List<Question> excQuestions) {
         this.excQuestions = excQuestions;
     }
 }

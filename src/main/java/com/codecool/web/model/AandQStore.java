@@ -20,6 +20,7 @@ public class AandQStore {
         this.id = rnd.nextInt(90000) + 10000;
     }
 
+    //Deep copy Constructor
     public AandQStore(AandQStore original) {
         this.title = original.title;
         this.assignments = new ArrayList<>(original.assignments);

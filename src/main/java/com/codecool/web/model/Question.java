@@ -11,14 +11,23 @@ public class Question {
     private int point;
     private List<Answer> answers = new ArrayList<>();
     private String goodAnswer;
+    private String excerciseAnswer;
     private int id;
 
-    //Constructor
+    //QUizQuestion Constructor
     public Question(String description, int point, List<Answer> answers, String goodAnswer) {
         this.description = description;
         this.point = point;
         this.answers = answers;
         this.goodAnswer = goodAnswer;
+        Random rnd = new Random();
+        this.id = rnd.nextInt(90000)+10000;
+    }
+
+    //ExcercieQuestion Constructor
+    public Question(String description, int point) {
+        this.description = description;
+        this.point = point;
         Random rnd = new Random();
         this.id = rnd.nextInt(90000)+10000;
     }
