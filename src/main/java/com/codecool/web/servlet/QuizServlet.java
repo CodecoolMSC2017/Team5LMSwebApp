@@ -24,13 +24,17 @@ public class QuizServlet extends HttpServlet {
         req.setAttribute("quiz", service.getQuiz(id));
         Registration reg = (Registration) req.getSession().getAttribute("user");
         req.setAttribute("userProfile", reg);
+        if(reg.getQuizResult().containsKey(id)) {
+            Integer points = reg.getQuizResult().get(id);
+            req.setAttribute("points", points);
+
+        }
 
 
 
-        Integer points = reg.getPoints();
+        //Integer points = reg.getPoints();
         final PrintWriter writerA = resp.getWriter();
 
-        req.setAttribute("points", points);
 
         req.getRequestDispatcher("quiz.jsp").include(req, resp);
     }

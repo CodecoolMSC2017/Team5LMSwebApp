@@ -40,14 +40,22 @@ public class QuizSaveServlet extends HttpServlet{
         service.update(quiz, title, date, description);
 
         //Question(s) update
-        for(int i=0; questiondIDs.length > i; i++){
-            Question q = service.getQuestion(quiz, Integer.parseInt(questiondIDs[i]));
-            service.updateQuestion(q, Integer.parseInt(questionsPoints[i]), questionsDescripton[i], questionsGoodAnswer[i]);
-        }
+            try {
+                for ( int i = 0;questiondIDs.length > i;i++){
+                    Question q = service.getQuestion(quiz, Integer.parseInt(questiondIDs[i]));
+                    service.updateQuestion(q, Integer.parseInt(questionsPoints[i]), questionsDescripton[i], questionsGoodAnswer[i]);
+                }
+            } catch (NullPointerException e){
+                e.printStackTrace();
+            }
         //Answer(s) update
-        for(int i=0; answerIDs.length > i;i++) {
-            Answer a = service.getAnswer(quiz, Integer.parseInt(answerIDs[i]));
-            a.setName(answerNames[i]);
+        try {
+            for(int i=0; answerIDs.length > i;i++) {
+                Answer a = service.getAnswer(quiz, Integer.parseInt(answerIDs[i]));
+                a.setName(answerNames[i]);
+            }
+        } catch (NullPointerException e){
+            e.printStackTrace();
         }
 
         Registration reg = (Registration) req.getSession().getAttribute("user");
