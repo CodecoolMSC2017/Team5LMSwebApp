@@ -464,6 +464,8 @@ h1 {
 .content .quiz_frame .title .question_no input[type=text] {
     width: 70%;
 }
+.content .exercise_description input[type=text],
+.content .exercise_question input[type=text],
 .content .quiz_frame .question .text input[type=text] {
     width: 100%;
 }
@@ -473,6 +475,9 @@ h1 {
 
 .content .text input[type=number] {
     width: 70px;
+}
+.content .exercise_description textarea {
+    width: 100%;
 }
 .content .text textarea {
     margin-top: -20px;
@@ -512,5 +517,24 @@ h1 {
     border-style: solid;
     border-width: 10px 0 10px 10px;
     border-color: transparent transparent transparent #4CAF50;
+}
+
+.content .exercise_description {
+    margin-bottom: 40px;
+}
+.content .exercise_description h1,
+.content .exercise_question h1 {
+	padding-bottom: 0px;
+}
+.content .exercise_description .informations {
+    float: right;
+    padding-right: 20px;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+.content .exercise_question {
+}
+.content .exercise_question textarea {
+    width: 100%;
 }
 /* ********** EDIT QUIZ & TEXT & ASSIGN END ********** */

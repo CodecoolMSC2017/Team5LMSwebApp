@@ -41,6 +41,12 @@ https://fontawesome.com/v4.7.0/icons/
                                         <span class="fa fa-plus-square-o fa-1x" style="background:#F5F5F5;margin-left:-10px"></span>
                                     </span>
                                 </a>
+                                <a href="<c:url value="/protected/ExerciseCreateServlet"><c:param name="id" value="${element.getId()}"/></c:url>">
+                                    <span class="fa-layers fa-lg" title="Add Exercise">
+                                        <i class="fa fa-list fa-1x"></i>
+                                        <span class="fa fa-plus-square-o fa-1x" style="background:#F5F5F5;margin-left:-10px"></span>
+                                    </span>
+                                </a>
                                 <a href="<c:url value="/protected/AandQStoreEditServlet"><c:param name="id" value="${element.getId()}"/></c:url>"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true" title="Edit"></i></a>
                                 <a href="<c:url value="/protected/AandQStoreDelServlet"><c:param name="id" value="${element.getId()}"/></c:url>"><i class="fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></i></a>
                             </div>
