@@ -3,11 +3,13 @@ package com.codecool.web.service.singletonServices;
 import com.codecool.web.model.AandQStore;
 import com.codecool.web.model.Assignment;
 import com.codecool.web.dao.singletonDB.SingletonDataBase;
+import com.codecool.web.service.AssignmentService;
 
 import java.util.List;
 
-public class SingletonAssignmentService {
+public class SingletonAssignmentService implements AssignmentService {
 
+    @Override
     public Assignment getAssignment(int id){
 
         Assignment assignment;
@@ -25,6 +27,7 @@ public class SingletonAssignmentService {
         return null;
     }
 
+    @Override
     public void update(Assignment ass, String title, String time, String shortDesc, String fullDisc){
         ass.setTitle(title);
         ass.setTime(Integer.parseInt(time));
@@ -32,6 +35,7 @@ public class SingletonAssignmentService {
         ass.setFullDescription(fullDisc);
     }
 
+    @Override
     public void delAssignment(int id){
 
         List<AandQStore> aQstores = SingletonDataBase.getInstance().getaQStores();
