@@ -17,7 +17,7 @@ public class DaoDB extends AbstractDB implements Storing{
     @Override
     public List<Registration> getAllRegistration() throws SQLException {
 
-        String sql = "SELECT id, name, email, password, firstName, lastName, role FROM users";
+        String sql = "SELECT user_id, user_name, user_email, user_password, user_firstName, user_lastName, user_role FROM users";
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
             List<Registration> users = new ArrayList<>();
@@ -29,13 +29,13 @@ public class DaoDB extends AbstractDB implements Storing{
     }
 
     private Registration creatReg (ResultSet resultSet) throws SQLException {
-        int id = resultSet.getInt("id");
-        String name = resultSet.getString("name");
-        String email = resultSet.getString("email");
-        String password = resultSet.getString("password");
-        String fname = resultSet.getString("firstName");
-        String lname = resultSet.getString("lastName");
-        String role = resultSet.getString("role");
+        int id = resultSet.getInt("user_id");
+        String name = resultSet.getString("user_name");
+        String email = resultSet.getString("user_email");
+        String password = resultSet.getString("user_password");
+        String fname = resultSet.getString("user_firstName");
+        String lname = resultSet.getString("user_lastName");
+        String role = resultSet.getString("user_role");
         return new Registration(id, name, email, password, fname, lname, role);
     }
 
@@ -49,7 +49,7 @@ public class DaoDB extends AbstractDB implements Storing{
         if (nameOrEmail == null || "".equals(nameOrEmail)) {
             throw new IllegalArgumentException("Name or Email cannot be null or empty");
         }
-        String sql = "SELECT id, name, email, password, firstName, lastName, role FROM users WHERE name = ? OR email = ?";
+        String sql = "SELECT user_id, user_name, user_email, user_password, user_firstName, user_lastName, user_role FROM users WHERE user_name = ? OR user_email = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, nameOrEmail);
             statement.setString(2, nameOrEmail);
