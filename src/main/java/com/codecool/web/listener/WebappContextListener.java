@@ -56,9 +56,9 @@ public final class WebappContextListener implements ServletContextListener {
 
     private void runDatabaseInitScript(DataSource dataSource, String resource) {
         /*
-            A new Connection is obtained to the database to run the initialization
+            A new Connection is obtained to the singletonDB to run the initialization
             script on startup. Because of the try-with-resource construct the
-            database connection is automatically closed at the end of the try-catch
+            singletonDB connection is automatically closed at the end of the try-catch
             block.
         */
         try (Connection connection = dataSource.getConnection()) {
@@ -69,7 +69,6 @@ public final class WebappContextListener implements ServletContextListener {
         }
         /*
             Doing this is basically it's equivalent to this
-
             Connection connection = null;
             try {
                 connection = dataSource.getConnection();
