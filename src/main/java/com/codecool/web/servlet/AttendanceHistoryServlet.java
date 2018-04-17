@@ -3,10 +3,9 @@ package com.codecool.web.servlet;
 
 import com.codecool.web.model.Attendance;
 import com.codecool.web.model.Registration;
-import com.codecool.web.model.SingletonDataBase;
+import com.codecool.web.dao.singletonDB.SingletonDataBase;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

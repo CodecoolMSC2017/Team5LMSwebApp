@@ -2,8 +2,7 @@ package com.codecool.web.servlet;
 
 import com.codecool.web.model.Assignment;
 import com.codecool.web.model.Registration;
-import com.codecool.web.model.SingletonDataBase;
-import com.codecool.web.service.AssignmentService;
+import com.codecool.web.service.singletonServices.SingletonAssignmentService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +18,7 @@ public class TextPageSaveServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
 
-        AssignmentService service = new AssignmentService();
+        SingletonAssignmentService service = new SingletonAssignmentService();
         Assignment ass = service.getAssignment(id);
 
         String title = req.getParameter("title");

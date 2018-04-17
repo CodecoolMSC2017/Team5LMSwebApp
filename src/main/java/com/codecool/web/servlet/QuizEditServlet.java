@@ -1,7 +1,7 @@
 package com.codecool.web.servlet;
 
 import com.codecool.web.model.Registration;
-import com.codecool.web.service.QuizService;
+import com.codecool.web.service.singletonServices.SingletonQuizService;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +16,7 @@ public class QuizEditServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         int id = Integer.parseInt(req.getParameter("id"));
-        QuizService service = new QuizService();
+        SingletonQuizService service = new SingletonQuizService();
         req.setAttribute("quiz", service.getQuiz(id));
 
         Registration reg = (Registration) req.getSession().getAttribute("user");

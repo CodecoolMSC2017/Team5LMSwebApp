@@ -1,4 +1,7 @@
-package com.codecool.web.model;
+package com.codecool.web.dao.singletonDB;
+
+import com.codecool.web.dao.Storing;
+import com.codecool.web.model.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;

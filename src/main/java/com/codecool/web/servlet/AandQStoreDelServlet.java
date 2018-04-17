@@ -2,8 +2,8 @@ package com.codecool.web.servlet;
 
 import com.codecool.web.model.AandQStore;
 import com.codecool.web.model.Registration;
-import com.codecool.web.model.SingletonDataBase;
-import com.codecool.web.service.AandQService;
+import com.codecool.web.dao.singletonDB.SingletonDataBase;
+import com.codecool.web.service.singletonServices.SingletonAandQService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +21,7 @@ public class AandQStoreDelServlet extends HttpServlet{
         Registration reg = (Registration) req.getSession().getAttribute("user");
         req.setAttribute("userProfile", reg);
 
-        AandQService service = new AandQService();
+        SingletonAandQService service = new SingletonAandQService();
         AandQStore delStore = service.getAandQStore(Integer.parseInt(req.getParameter("id")));
 
         SingletonDataBase.getInstance().getaQStores().remove(delStore);

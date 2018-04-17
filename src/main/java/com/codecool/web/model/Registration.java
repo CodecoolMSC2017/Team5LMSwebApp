@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 public class Registration {
     //fields
+    private int id;
     private String name;
     private String firstName;
     private String lastName;
@@ -23,6 +24,16 @@ public class Registration {
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = "Student";
+    }
+
+    public Registration(int id, String name, String email, String password, String firstName, String lastName, String role) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.role = role;
     }
 
     //Getters, Setters

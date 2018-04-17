@@ -1,5 +1,6 @@
 package com.codecool.web.servlet;
 
+import com.codecool.web.dao.singletonDB.SingletonDataBase;
 import com.codecool.web.model.*;
 
 import javax.servlet.ServletException;

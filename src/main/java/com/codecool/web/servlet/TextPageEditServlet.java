@@ -1,8 +1,7 @@
 package com.codecool.web.servlet;
 
 import com.codecool.web.model.Registration;
-import com.codecool.web.service.AssignmentService;
-import com.codecool.web.service.RegistrationService;
+import com.codecool.web.service.singletonServices.SingletonAssignmentService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +17,7 @@ public class TextPageEditServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         int id = Integer.parseInt(req.getParameter("id"));
-        AssignmentService service = new AssignmentService();
+        SingletonAssignmentService service = new SingletonAssignmentService();
         req.setAttribute("assignment", service.getAssignment(id));
 
         Registration reg = (Registration) req.getSession().getAttribute("user");

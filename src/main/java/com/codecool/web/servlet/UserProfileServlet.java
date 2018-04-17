@@ -1,7 +1,7 @@
 package com.codecool.web.servlet;
 
 import com.codecool.web.model.Registration;
-import com.codecool.web.service.RegistrationService;
+import com.codecool.web.service.singletonServices.SingletonRegistrationService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +18,7 @@ public class UserProfileServlet extends HttpServlet{
 
 //        int id = Integer.parseInt(req.getParameter("id"));
         String id = req.getParameter("id");
-        RegistrationService service = new RegistrationService();
+        SingletonRegistrationService service = new SingletonRegistrationService();
 
         if (id.equals("")) req.setAttribute("profile", req.getSession().getAttribute("user"));
         else req.setAttribute("profile", service.getProfile(id));

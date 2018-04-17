@@ -1,9 +1,7 @@
 package com.codecool.web.servlet;
 
 import com.codecool.web.model.AandQStore;
-import com.codecool.web.model.Assignment;
-import com.codecool.web.service.AandQService;
-import com.codecool.web.service.AssignmentService;
+import com.codecool.web.service.singletonServices.SingletonAandQService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +18,7 @@ public class AandQStoreSaveServlet extends HttpServlet{
 
         int id = Integer.parseInt(req.getParameter("id"));
 
-        AandQService service = new AandQService();
+        SingletonAandQService service = new SingletonAandQService();
         AandQStore aandQStore = service.getAandQStore(id);
 
         String title = req.getParameter("title");

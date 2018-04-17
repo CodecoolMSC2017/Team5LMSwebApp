@@ -1,8 +1,8 @@
 package com.codecool.web.servlet;
 
 import com.codecool.web.model.Registration;
-import com.codecool.web.model.SingletonDataBase;
-import com.codecool.web.service.RegistrationService;
+import com.codecool.web.dao.singletonDB.SingletonDataBase;
+import com.codecool.web.service.singletonServices.SingletonRegistrationService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +15,7 @@ import java.io.IOException;
 @WebServlet("/registrationServlet")
 public class RegistrationServlet extends HttpServlet {
 
-    private final RegistrationService service = new RegistrationService();
+    private final SingletonRegistrationService service = new SingletonRegistrationService();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
