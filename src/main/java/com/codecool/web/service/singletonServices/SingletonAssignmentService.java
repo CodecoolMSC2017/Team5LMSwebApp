@@ -1,12 +1,12 @@
-package com.codecool.web.service;
+package com.codecool.web.service.singletonServices;
 
 import com.codecool.web.model.AandQStore;
 import com.codecool.web.model.Assignment;
-import com.codecool.web.model.SingletonDataBase;
+import com.codecool.web.dao.singletonDB.SingletonDataBase;
 
 import java.util.List;
 
-public class AssignmentService {
+public class SingletonAssignmentService {
 
     public Assignment getAssignment(int id){
 

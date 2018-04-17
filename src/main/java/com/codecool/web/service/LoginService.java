@@ -1,20 +1,9 @@
 package com.codecool.web.service;
 
-import com.codecool.web.model.Registration;
-import com.codecool.web.model.SingletonDataBase;
-import java.util.List;
+import java.sql.SQLException;
 
-public final class LoginService {
+public interface LoginService {
 
-    public boolean login(String nameOrEmail, String password) {
+    boolean login(String nameOrEmail, String password) throws SQLException;
 
-        List<Registration> registrations = SingletonDataBase.getInstance().getAllRegistration();
-
-        for (Registration registeredUser : registrations) {
-            if (((registeredUser.getName().equals(nameOrEmail)||registeredUser.getEmail().equals(nameOrEmail)) && registeredUser.getPassword().equals(password))) {
-                return true;
-            }
-        }
-        return false;
-    }
 }

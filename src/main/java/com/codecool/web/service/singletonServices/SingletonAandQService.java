@@ -1,9 +1,9 @@
-package com.codecool.web.service;
+package com.codecool.web.service.singletonServices;
 
 import com.codecool.web.model.AandQStore;
-import com.codecool.web.model.SingletonDataBase;
+import com.codecool.web.dao.singletonDB.SingletonDataBase;
 
-public class AandQService {
+public class SingletonAandQService {
 
     public AandQStore getAandQStore(int id){
 

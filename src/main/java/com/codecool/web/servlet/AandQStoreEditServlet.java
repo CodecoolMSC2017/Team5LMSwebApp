@@ -1,9 +1,7 @@
 package com.codecool.web.servlet;
 
-import com.codecool.web.model.AandQStore;
 import com.codecool.web.model.Registration;
-import com.codecool.web.service.AandQService;
-import com.codecool.web.service.AssignmentService;
+import com.codecool.web.service.singletonServices.SingletonAandQService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +17,7 @@ public class AandQStoreEditServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         int id = Integer.parseInt(req.getParameter("id"));
-        AandQService service = new AandQService();
+        SingletonAandQService service = new SingletonAandQService();
         req.setAttribute("AandQStore", service.getAandQStore(id));
 
         Registration reg = (Registration) req.getSession().getAttribute("user");

@@ -1,14 +1,10 @@
 package com.codecool.web.servlet;
 
-import com.codecool.web.model.*;
-import com.codecool.web.service.AandQService;
-import com.codecool.web.service.QuizService;
+import com.codecool.web.service.singletonServices.SingletonQuizService;
 import com.codecool.web.model.Quiz;
 import com.codecool.web.model.Question;
-import com.codecool.web.model.SingletonDataBase;
-import com.codecool.web.model.AandQStore;
 import com.codecool.web.model.Registration;
-import com.codecool.web.service.RegistrationService;
+import com.codecool.web.service.singletonServices.SingletonRegistrationService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 @WebServlet("/protected/quizSubmit")
@@ -28,7 +23,7 @@ public class QuizEvaluationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
-        QuizService service = new QuizService();
+        SingletonQuizService service = new SingletonQuizService();
         Quiz quiz = service.getQuiz(id);
 
         String chosenAnswer = "";
@@ -48,7 +43,7 @@ public class QuizEvaluationServlet extends HttpServlet {
             }
         }
 
-        RegistrationService registrationService =  new RegistrationService();
+        SingletonRegistrationService registrationService =  new SingletonRegistrationService();
 
         req.setAttribute("quiz", service.getQuiz(id));
         Registration reg = (Registration) req.getSession().getAttribute("user");

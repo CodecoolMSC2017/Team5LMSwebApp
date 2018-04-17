@@ -2,7 +2,7 @@ package com.codecool.web.servlet;
 
 
 import com.codecool.web.model.Registration;
-import com.codecool.web.service.QuizService;
+import com.codecool.web.service.singletonServices.SingletonQuizService;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +23,7 @@ public class AnswerCreateServlet extends HttpServlet{
         String id = req.getParameter("id");
         int quizId = Integer.parseInt(id.substring(0,4));
         int questionId = Integer.parseInt(id.substring(4,9));
-        QuizService service = new QuizService();
+        SingletonQuizService service = new SingletonQuizService();
         service.addAnswer(service.getQuestion(service.getQuiz(quizId), questionId));
 
         req.setAttribute("quiz", service.getQuiz(quizId));

@@ -1,8 +1,6 @@
 package com.codecool.web.servlet;
 
 import com.codecool.web.model.Registration;
-import com.codecool.web.model.SingletonDataBase;
-import com.codecool.web.service.RegistrationService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

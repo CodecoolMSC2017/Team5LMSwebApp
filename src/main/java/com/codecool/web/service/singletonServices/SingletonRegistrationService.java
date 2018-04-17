@@ -1,11 +1,11 @@
-package com.codecool.web.service;
+package com.codecool.web.service.singletonServices;
 
 import com.codecool.web.model.Registration;
-import com.codecool.web.model.SingletonDataBase;
+import com.codecool.web.dao.singletonDB.SingletonDataBase;
 
 import java.util.List;
 
-public final class RegistrationService {
+public final class SingletonRegistrationService {
 
     public Registration getReg(String name, String email, String password, String firstName, String lastName) {
 

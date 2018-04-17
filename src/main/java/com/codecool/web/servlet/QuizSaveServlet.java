@@ -5,7 +5,7 @@ import com.codecool.web.model.Answer;
 import com.codecool.web.model.Question;
 import com.codecool.web.model.Quiz;
 import com.codecool.web.model.Registration;
-import com.codecool.web.service.QuizService;
+import com.codecool.web.service.singletonServices.SingletonQuizService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,7 +33,7 @@ public class QuizSaveServlet extends HttpServlet{
         String[] answerNames = req.getParameterValues("answer_name");
         String[] questionsGoodAnswer = req.getParameterValues("good_answer");
 
-        QuizService service = new QuizService();
+        SingletonQuizService service = new SingletonQuizService();
 
         //Quiz update
         Quiz quiz = service.getQuiz(id);
