@@ -27,6 +27,7 @@ public class UserProfileSaveServlet extends AbstractServlet{
             String name = req.getParameter("id");
             String email = null;
 
+            //get user we wish to update (with name), update it
             for (Registration reg : regs) {
                 if (name.equals(reg.getName())) {
                     String fname = req.getParameter("first_name");
@@ -36,23 +37,23 @@ public class UserProfileSaveServlet extends AbstractServlet{
                     db.updateReg(reg, regs, fname, lname, email, password);
                 }
             }
-
+            // get current session
             Registration chreg = (Registration) req.getSession().getAttribute("user");
 
+            //if current session name = name we updated, then the session also updated
             if(chreg.getName().equals(name)){
                 Registration reg = db.getRegistration(email); //Temporary Solution
                 req.getSession().setAttribute("user", reg);
                 req.setAttribute("profile", reg);
                 req.setAttribute("userProfile", reg);
+                req.getRequestDispatcher("profile.jsp").forward(req, resp);
+            //else only attributes set
             }else{
                 req.setAttribute("profile", chreg);
                 req.setAttribute("userProfile", chreg);
+                req.getRequestDispatcher("userListServlet").forward(req, resp);
             }
 
-
-            if (name.equals(chreg.getName())) {
-                req.getRequestDispatcher("profile.jsp").forward(req, resp);
-            } else req.getRequestDispatcher("userListServlet").forward(req, resp);
         } catch (SQLException e){
             e.printStackTrace();
         }
