@@ -80,17 +80,15 @@ public class SingletonDataBase implements Storing {
     }
 
     @Override
-    public Registration updateReg(Registration reg, String fname, String lname, String email, String pass) {
-        for(Registration registration:registrations){
+    public void updateReg(Registration reg, List<Registration> regs, String fname, String lname, String email, String pass) {
+        for(Registration registration:regs){
             if (reg.equals(registration)){
                 registration.setFirstName(fname);
                 registration.setLastName(lname);
                 registration.setEmail(email);
                 registration.setPassword(pass);
-                return registration;
             }
         }
-        return null;
     }
 
     @Override

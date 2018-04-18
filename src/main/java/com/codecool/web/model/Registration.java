@@ -37,6 +37,12 @@ public class Registration {
     }
 
     //Getters, Setters
+
+
+    public int getId() {
+        return id;
+    }
+
     public String getMessage() {
         return message;
     }

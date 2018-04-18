@@ -63,8 +63,16 @@ public class DaoDB extends AbstractDB implements Storing{
     }
 
     @Override
-    public Registration updateReg(Registration reg, String fname, String lname, String email, String pass) {
-        return null;
+    public void updateReg(Registration reg, List<Registration> regs, String fname, String lname, String email, String pass) throws SQLException {
+        String sql = "UPDATE users SET user_firstname = ?, user_lastname = ?, user_email = ?, user_password = ? WHERE user_id = ?;";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, fname);
+            statement.setString(2, lname);
+            statement.setString(3, email);
+            statement.setString(4, pass);
+            statement.setInt(5, reg.getId());
+            statement.executeUpdate();
+        }
     }
 
     @Override

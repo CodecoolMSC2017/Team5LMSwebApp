@@ -13,7 +13,7 @@ public interface Storing {
     List<Registration> getAllRegistration() throws SQLException;
     boolean addRegistration(Registration registration);
     Registration getRegistration(String nameOrEmail) throws SQLException;
-    Registration updateReg(Registration reg, String fname, String lname, String email, String pass);
+    void updateReg(Registration reg, List<Registration> regs, String fname, String lname, String email, String pass) throws SQLException;
     void deleteReg(Registration registration);
     List<String> getNames();
     List<String> getEmails();
