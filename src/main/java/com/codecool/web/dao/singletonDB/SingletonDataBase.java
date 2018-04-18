@@ -25,7 +25,7 @@ public class SingletonDataBase implements Storing {
         //Hardcoded things
 
         //Hardcoded users
-        registrations.add(new Registration("Robi", "\n" +
+        /*registrations.add(new Registration("Robi", "\n" +
             "robert.kohanyi@codecool.com", "a", "Róbert", "Kohányi"));
         registrations.add(new Registration("Pako", "pal.monoczki@codecool.com", "a", "Pál", "Monoczki"));
         registrations.add(new Registration("Ben", "o.g.bence@totalcar.hu", "a", "Bence","Ambrus"));
@@ -33,7 +33,7 @@ public class SingletonDataBase implements Storing {
         registrations.add(new Registration("Norb", "dnorbert@gmail.com", "a", "Norbert","Dörner"));
         registrations.add(new Registration("Krisz", "kollarkr@gmail.com", "a", "Krisztián","Kollár" ));
         registrations.get(0).setRole("Mentor");
-        registrations.get(1).setRole("Mentor");
+        registrations.get(1).setRole("Mentor");*/
 
         //Hardcoded aAndQStore with assignment and quiz+questions
         AandQStore store = new AandQStore("Python");
