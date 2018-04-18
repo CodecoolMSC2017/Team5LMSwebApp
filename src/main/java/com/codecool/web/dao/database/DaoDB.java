@@ -1,9 +1,7 @@
 package com.codecool.web.dao.database;
 
 import com.codecool.web.dao.Storing;
-import com.codecool.web.model.AandQStore;
-import com.codecool.web.model.Attendance;
-import com.codecool.web.model.Registration;
+import com.codecool.web.model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class DaoDB extends AbstractDB implements Storing{
+
 
     public DaoDB(Connection connection) { super(connection); }
 
@@ -88,8 +87,22 @@ public class DaoDB extends AbstractDB implements Storing{
     }
 
     @Override
-    public List<AandQStore> getaQStores() {
-        return null;
+    public List<AandQStore> getaQStores() throws SQLException {
+        String sql = "SELECT * FROM task";
+        try (Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(sql)) {
+            List<AandQStore> aQStores = new ArrayList<>();
+            while (resultSet.next()) {
+                aQStores.add(createAandQStore(resultSet));
+            }
+            return aQStores;
+        }
+    }
+
+    public AandQStore createAandQStore(ResultSet resultSet) throws SQLException {
+        int id = resultSet.getInt("task_id");
+        String name = resultSet.getString("task_name");
+        return new AandQStore(id, name);
     }
 
     @Override
@@ -115,8 +128,30 @@ public class DaoDB extends AbstractDB implements Storing{
     }
 
     @Override
-    public List<AandQStore> getAQStoresPublished() {
-        return null;
+    public List<AandQStore> getAQStoresPublished() throws SQLException {
+        List<AandQStore> tempStores = new ArrayList<>();
+        AandQStore tempStore;
+        Assignment assign;
+        Quiz quiz;
+        for (AandQStore store:getaQStores()){
+            List<Assignment>tempa = new ArrayList<>();
+            List<Quiz>tempq = new ArrayList<>();
+            tempStore = new AandQStore(store);
+            for (Assignment a:tempStore.getAssignments()){
+                if (a.isPublished()){
+                    tempa.add(a);
+                }
+            }
+            tempStore.setAssignments(tempa);
+            for (Quiz q:tempStore.getQuizzes()){
+                if(q.isPublished()){
+                    tempq.add(q);
+                }
+            }
+            tempStore.setQuizzes(tempq);
+            tempStores.add(tempStore);
+        }
+        return tempStores;
     }
 
     @Override
