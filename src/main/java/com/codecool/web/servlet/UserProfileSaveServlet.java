@@ -42,10 +42,13 @@ public class UserProfileSaveServlet extends AbstractServlet{
             if(chreg.getName().equals(name)){
                 Registration reg = db.getRegistration(email); //Temporary Solution
                 req.getSession().setAttribute("user", reg);
+                req.setAttribute("profile", reg);
+                req.setAttribute("userProfile", reg);
+            }else{
+                req.setAttribute("profile", chreg);
+                req.setAttribute("userProfile", chreg);
             }
 
-            req.setAttribute("profile", chreg);
-            req.setAttribute("userProfile", chreg);
 
             if (name.equals(chreg.getName())) {
                 req.getRequestDispatcher("profile.jsp").forward(req, resp);
