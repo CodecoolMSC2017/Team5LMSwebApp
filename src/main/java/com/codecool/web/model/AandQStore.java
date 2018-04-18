@@ -20,6 +20,12 @@ public class AandQStore {
         this.id = rnd.nextInt(90000) + 10000;
     }
 
+    public AandQStore(int id, String title) {
+
+        this.id = id;
+        this.title = title;
+    }
+
     //Deep copy Constructor
     public AandQStore(AandQStore original) {
         this.title = original.title;
