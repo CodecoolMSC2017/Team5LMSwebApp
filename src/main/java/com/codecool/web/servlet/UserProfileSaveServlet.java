@@ -23,12 +23,12 @@ public class UserProfileSaveServlet extends AbstractServlet{
 
         try (Connection connection = getConnection(req.getServletContext())) {
             Storing db = new DaoDB(connection);
-            List<Registration> regs = db.getAllRegistration();
-            String id = req.getParameter("id");
+            List<Registration> regs = db.getAllRegistration(); //Opt. search for reg with name in SQL
+            String name = req.getParameter("id");
             String email = null;
 
             for (Registration reg : regs) {
-                if (id.equals(reg.getName())) {
+                if (name.equals(reg.getName())) {
                     String fname = req.getParameter("first_name");
                     String lname = req.getParameter("last_name");
                     email = req.getParameter("email");
@@ -37,12 +37,17 @@ public class UserProfileSaveServlet extends AbstractServlet{
                 }
             }
 
-            Registration reg = db.getRegistration(email); //Temporary Solution
-            req.getSession().setAttribute("user", reg);
-            req.setAttribute("profile", reg);
-            req.setAttribute("userProfile", reg);
+            Registration chreg = (Registration) req.getSession().getAttribute("user");
 
-            if (id.equals(reg.getName())) {
+            if(chreg.getName().equals(name)){
+                Registration reg = db.getRegistration(email); //Temporary Solution
+                req.getSession().setAttribute("user", reg);
+            }
+
+            req.setAttribute("profile", chreg);
+            req.setAttribute("userProfile", chreg);
+
+            if (name.equals(chreg.getName())) {
                 req.getRequestDispatcher("profile.jsp").forward(req, resp);
             } else req.getRequestDispatcher("userListServlet").forward(req, resp);
         } catch (SQLException e){
