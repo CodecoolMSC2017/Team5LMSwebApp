@@ -9,12 +9,10 @@ import com.codecool.web.service.LoginService;
 import java.sql.SQLException;
 import java.util.List;
 
-public class DatabaseLoginService implements LoginService{
-
-    private final Storing db;
+public class DatabaseLoginService extends AbstractDatabaseService implements LoginService{
 
     public DatabaseLoginService(Storing db) {
-        this.db = db;
+        super(db);
     }
 
     @Override

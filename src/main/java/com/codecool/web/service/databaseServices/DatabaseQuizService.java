@@ -1,11 +1,16 @@
 package com.codecool.web.service.databaseServices;
 
+import com.codecool.web.dao.Storing;
 import com.codecool.web.model.Answer;
 import com.codecool.web.model.Question;
 import com.codecool.web.model.Quiz;
 import com.codecool.web.service.QuizService;
 
-public class DatabaseQuizService implements QuizService {
+public class DatabaseQuizService extends AbstractDatabaseService implements QuizService {
+
+    public DatabaseQuizService(Storing db) {
+        super(db);
+    }
 
     @Override
     public Quiz getQuiz(int id) {
