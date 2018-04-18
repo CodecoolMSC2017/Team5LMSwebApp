@@ -18,13 +18,14 @@ public interface Storing {
     List<String> getNames();
     List<String> getEmails();
     List<String> getPasswords();
-    List<AandQStore> getaQStores();
+    List<AandQStore> getaQStores() throws SQLException;
     List<Registration> getStudents() throws SQLException;
     List<Registration> getMentors() throws SQLException;
-    List<AandQStore> getAQStoresPublished();
+    List<AandQStore> getAQStoresPublished() throws SQLException;
     List<Attendance> getAttendanceList();
     List<String> getAttendancesTitle();
     Map<Registration, Integer> getStudentsAttendance();
+    AandQStore addAQStores(String name) throws SQLException;
 
 
 }

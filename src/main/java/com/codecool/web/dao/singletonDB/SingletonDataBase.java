@@ -3,6 +3,7 @@ package com.codecool.web.dao.singletonDB;
 import com.codecool.web.dao.Storing;
 import com.codecool.web.model.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,7 +37,7 @@ public class SingletonDataBase implements Storing {
         registrations.get(1).setRole("Mentor");*/
 
         //Hardcoded aAndQStore with assignment and quiz+questions
-        AandQStore store = new AandQStore("Python");
+        /*AandQStore store = new AandQStore("Python");
         store.getAssignments().add(new Assignment( "Python basics", "The very begining of a long journey", 2, ""));
         store.getQuizzes().add(new Quiz( "Python basics Quiz", "Please give a lot attention for the Python basics Text Page then fill this quiz."));
         store.getQuizzes().get(0).getQuestions().add(new Question("How can you see what's inside the current directory?", 2, new ArrayList<>(), "By running 'ls' "));
@@ -48,7 +49,7 @@ public class SingletonDataBase implements Storing {
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("Nothing, ls only can show the content of the directory I'm in "));
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("List the content of the current directory "));
         store.getQuizzes().get(0).getQuestions().get(1).getAnswers().add(new Answer("List the content of the 'parent' of the current directory "));
-        aQStores.add(store);
+        aQStores.add(store);*/
 
         //Attendance Hardcode history
         Attendance attendance1 = new Attendance(getStudents());
@@ -207,6 +208,11 @@ public class SingletonDataBase implements Storing {
     }
 
     @Override
+    public AandQStore addAQStores(String name) throws SQLException {
+        return null;
+    }
+
+    @Override
     public List<String> getAttendancesTitle() {
         List<String> names = new ArrayList<>();
         for(Attendance a: attendanceList){
@@ -214,4 +220,6 @@ public class SingletonDataBase implements Storing {
         }
         return names;
     }
+
+
 }
