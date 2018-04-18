@@ -19,8 +19,8 @@ public interface Storing {
     List<String> getEmails();
     List<String> getPasswords();
     List<AandQStore> getaQStores();
-    List<Registration> getStudents();
-    List<Registration> getMentors();
+    List<Registration> getStudents() throws SQLException;
+    List<Registration> getMentors() throws SQLException;
     List<AandQStore> getAQStoresPublished();
     List<Attendance> getAttendanceList();
     List<String> getAttendancesTitle();

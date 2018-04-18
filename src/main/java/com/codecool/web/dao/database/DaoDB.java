@@ -17,7 +17,7 @@ public class DaoDB extends AbstractDB implements Storing{
     @Override
     public List<Registration> getAllRegistration() throws SQLException {
 
-        String sql = "SELECT user_id, user_name, user_email, user_password, user_firstName, user_lastName, user_role FROM users";
+        String sql = "SELECT * FROM users";
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
             List<Registration> users = new ArrayList<>();
@@ -93,13 +93,25 @@ public class DaoDB extends AbstractDB implements Storing{
     }
 
     @Override
-    public List<Registration> getStudents() {
-        return null;
+    public List<Registration> getStudents() throws SQLException {
+        List<Registration> registrations = getAllRegistration();
+        List<Registration> temp = new ArrayList<>();
+        for(Registration reg:registrations){
+            if(reg.getRole().equals("Student")){
+                temp.add(reg);
+            }
+        }return temp;
     }
 
     @Override
-    public List<Registration> getMentors() {
-        return null;
+    public List<Registration> getMentors() throws SQLException {
+        List<Registration> registrations = getAllRegistration();
+        List<Registration> temp = new ArrayList<>();
+        for(Registration reg:registrations){
+            if(reg.getRole().equals("Mentor")){
+                temp.add(reg);
+            }
+        }return temp;
     }
 
     @Override
