@@ -67,7 +67,7 @@ CREATE TABLE task_item (
     task_item_category_id INT NOT NULL
 );
 
-INSERT INTO task_item (task_item_title, task_item_short_description, task_item_estimated_time, task_item_task_id, task_item_category_id) VALUES 
+INSERT INTO task_item (task_item_title, task_item_short_description, task_item_estimated_time, task_item_task_id, task_item_category_id) VALUES
     ('Python basics','The very beginning of a long journey',2,1,1),
     ('Python basics Quiz','Please give a lot attention for the Python basics Text Page then fill this quiz',5,1,2)
 ;
