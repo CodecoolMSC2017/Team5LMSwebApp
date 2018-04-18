@@ -25,6 +25,7 @@ public interface Storing {
     List<Attendance> getAttendanceList();
     List<String> getAttendancesTitle();
     Map<Registration, Integer> getStudentsAttendance();
+    AandQStore addAQStores(String name) throws SQLException;
 
 
 }

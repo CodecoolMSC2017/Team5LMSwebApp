@@ -3,6 +3,7 @@ package com.codecool.web.dao.singletonDB;
 import com.codecool.web.dao.Storing;
 import com.codecool.web.model.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -209,6 +210,11 @@ public class SingletonDataBase implements Storing {
     }
 
     @Override
+    public AandQStore addAQStores(String name) throws SQLException {
+        return null;
+    }
+
+    @Override
     public List<String> getAttendancesTitle() {
         List<String> names = new ArrayList<>();
         for(Attendance a: attendanceList){
@@ -216,4 +222,6 @@ public class SingletonDataBase implements Storing {
         }
         return names;
     }
+
+
 }

@@ -25,7 +25,6 @@ public class AandQStoreServlet extends AbstractServlet {
 
         try (Connection connection = getConnection(req.getServletContext())) {
             Storing db = new DaoDB(connection);
-            LoginService service = new DatabaseLoginService(db);
 
             Registration reg = (Registration) req.getSession().getAttribute("user");
             req.setAttribute("userProfile", reg);
