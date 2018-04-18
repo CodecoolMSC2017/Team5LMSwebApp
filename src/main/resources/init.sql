@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS task;
 DROP TABLE IF EXISTS task_item_category;
 DROP TABLE IF EXISTS task_item;
 DROP TABLE IF EXISTS task_question;
+DROP TABLE IF EXISTS task_answer;
 DROP TABLE IF EXISTS attendance;
 
 
@@ -67,23 +68,38 @@ CREATE TABLE task_item (
 );
 
 INSERT INTO task_item (task_item_title, task_item_short_description, task_item_estimated_time, task_item_task_id, task_item_category_id) VALUES
-    ('Python basics','The very beginning of a long journey','2','1'),
-    ('Python basics Quiz','Please give a lot attention for the Python basics Text Page then fill this quiz','5','1','2')
+    ('Python basics','The very beginning of a long journey',2,1,1),
+    ('Python basics Quiz','Please give a lot attention for the Python basics Text Page then fill this quiz',5,1,2)
 ;
 
 CREATE TABLE task_question (
     task_q_id SERIAL PRIMARY KEY,
     task_q_question TEXT NOT NULL,
     task_q_correct_answer TEXT NOT NULL,
-    task_q_answers TEXT NOT NULL,
     task_q_point INT NOT NULL,
     task_q_submitted_user_id TEXT NULL,
     task_q_item_id INT NOT NULL
 );
 
-INSERT INTO task_question (task_q_question, task_q_correct_answer, task_q_answers, task_q_submitted_user_id, task_q_point, task_q_item_id) VALUES
-    ('How can you see what''s inside the current directory?', 'By running "ls"', 'By running "list"|By running "ls"|By running "tree"', '', 2, 2),
-    ('What will the following command do: "ls ../.."', 'List the content of the "grandparent" of the current directory', 'List the content of the "grandparent" of the current directory|Nothing, ls only can show the content of the directory I''m in|List the content of the current directory|List the content of the "parent" of the current directory', '', 3, 2)
+INSERT INTO task_question (task_q_question, task_q_correct_answer, task_q_submitted_user_id, task_q_point, task_q_item_id) VALUES
+    ('How can you see what''s inside the current directory?', 'By running "ls"', '', 2, 2),
+    ('What will the following command do: "ls ../.."', 'List the content of the "grandparent" of the current directory', '', 3, 2)
+;
+
+CREATE TABLE task_answer (
+    task_a_id SERIAL PRIMARY KEY,
+    task_a_answer TEXT NOT NULL,
+    task_a_question_id INT NOT NULL
+);
+
+INSERT INTO task_answer (task_a_answer, task_a_question_id) VALUES
+    ('By running "list"',1),
+    ('By running "ls"',1),
+    ('By running "tree"',1),
+    ('List the content of the "grandparent" of the current directory',2),
+    ('Nothing, ls only can show the content of the directory I''m in',2),
+    ('List the content of the current directory',2),
+    ('List the content of the "parent" of the current directory',2)
 ;
 
 CREATE TABLE attendance (
