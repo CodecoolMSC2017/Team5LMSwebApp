@@ -25,18 +25,20 @@ public class UserProfileSaveServlet extends AbstractServlet{
             Storing db = new DaoDB(connection);
             List<Registration> regs = db.getAllRegistration();
             String id = req.getParameter("id");
+            String email = null;
 
             for (Registration reg : regs) {
                 if (id.equals(reg.getName())) {
                     String fname = req.getParameter("first_name");
                     String lname = req.getParameter("last_name");
-                    String email = req.getParameter("email");
+                    email = req.getParameter("email");
                     String password = req.getParameter("password");
                     db.updateReg(reg, regs, fname, lname, email, password);
                 }
             }
 
-            Registration reg = (Registration) req.getSession().getAttribute("user");
+            Registration reg = db.getRegistration(email); //Temporary Solution
+            req.getSession().setAttribute("user", reg);
             req.setAttribute("profile", reg);
             req.setAttribute("userProfile", reg);
 

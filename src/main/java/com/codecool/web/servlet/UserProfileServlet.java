@@ -27,8 +27,10 @@ public class UserProfileServlet extends AbstractServlet{
             String id = req.getParameter("id");
             RegistrationService service = new DatabaseRegistrationService(db);
 
-            if (id.equals("")) req.setAttribute("profile", req.getSession().getAttribute("user"));
-            else req.setAttribute("profile", service.getProfile(id));
+            if (id.equals(""))
+                 req.setAttribute("profile", req.getSession().getAttribute("user"));
+            else
+                   req.setAttribute("profile", service.getProfile(id));
 
             Registration reg = (Registration) req.getSession().getAttribute("user");
             req.setAttribute("userProfile", reg);
