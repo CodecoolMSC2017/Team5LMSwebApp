@@ -5,12 +5,23 @@ public class Assignment extends Task{
     //fields
     private int time;
     private String fullDescription;
+    private int id;
+    private int categoryId;
 
     //Constructor
     public Assignment(String title, String description, int time, String fullDescription) {
         super(title, description);
         this.time = time;
         this.fullDescription = fullDescription;
+    }
+
+    public Assignment(int id, String title, String description, int time, String fullDescription, int categoryId) {
+        super(title, description);
+        this.id = id;
+        this.time = time;
+        this.fullDescription = fullDescription;
+        this.categoryId = categoryId;
+
     }
 
     //Getters

@@ -17,7 +17,6 @@ public class DaoDB extends AbstractDB implements Storing {
 
     @Override
     public List<Registration> getAllRegistration() throws SQLException {
-
         String sql = "SELECT * FROM users";
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
@@ -77,6 +76,16 @@ public class DaoDB extends AbstractDB implements Storing {
     }
 
     @Override
+    public void userPromote(String name, String role) throws SQLException {
+        String sql = "UPDATE users SET user_role = ? WHERE user_name = ?;";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, role);
+            statement.setString(2, name);
+            statement.executeUpdate();
+        }
+    }
+
+    @Override
     public void deleteReg(Registration registration) {
 
     }
@@ -103,7 +112,10 @@ public class DaoDB extends AbstractDB implements Storing {
              ResultSet resultSet = statement.executeQuery(sql)) {
             List<AandQStore> aQStores = new ArrayList<>();
             while (resultSet.next()) {
-                aQStores.add(createAandQStore(resultSet));
+                AandQStore store = createAandQStore(resultSet);
+                store.setAssignments(getAssignments(store.getId()));
+                store.setQuizzes(getQuizes(store.getId()));
+                aQStores.add(store);
             }
             return aQStores;
         }
@@ -114,6 +126,58 @@ public class DaoDB extends AbstractDB implements Storing {
         String name = resultSet.getString("task_name");
         return new AandQStore(id, name);
     }
+
+    public List<Assignment> getAssignments(int aAndQid) throws SQLException {
+        String sql = "SELECT * FROM task_item WHERE task_item_task_id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, aAndQid);
+            List<Assignment> assignments = new ArrayList<>();
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    Assignment ass = createAssignment(resultSet);
+                    assignments.add(ass);
+                }
+            }
+            return assignments;
+        }
+    }
+
+    public Assignment createAssignment(ResultSet resultSet) throws SQLException {
+
+        int id = resultSet.getInt("task_item_id");
+        String title = resultSet.getString("task_item_title");
+        String description = resultSet.getString("task_item_short_description");
+        int time = resultSet.getInt("task_item_estimated_time");
+        String fullDescription = resultSet.getString("task_item_long_description");
+        int categoryId = resultSet.getInt("task_item_category_id");
+        return new Assignment(id, title, description, time, fullDescription, categoryId);
+    }
+
+    public List<Quiz> getQuizes(int aAndQid) throws SQLException {
+        String sql = "SELECT * FROM task_item WHERE task_item_task_id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, aAndQid);
+            List<Quiz> quizes = new ArrayList<>();
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    Quiz quiz = createQuiz(resultSet);
+                    quizes.add(quiz);
+                }
+            }
+            return quizes;
+        }
+    }
+
+    public Quiz createQuiz(ResultSet resultSet) throws SQLException {
+        int id = resultSet.getInt("task_item_id");
+        String title = resultSet.getString("task_item_title");
+        String description = resultSet.getString("task_item_short_description");
+        int time = resultSet.getInt("task_item_estimated_time");
+        //String fullDescription = resultSet.getString("task_item_long_description");
+        int categoryId = resultSet.getInt("task_item_category_id");
+        return new Quiz(id, title, description, time, categoryId);
+    }
+
 
     @Override
     public AandQStore addAQStores(String name) throws SQLException {

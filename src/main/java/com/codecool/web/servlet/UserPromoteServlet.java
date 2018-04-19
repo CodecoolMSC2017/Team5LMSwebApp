@@ -1,5 +1,7 @@
 package com.codecool.web.servlet;
 
+import com.codecool.web.dao.Storing;
+import com.codecool.web.dao.database.DaoDB;
 import com.codecool.web.model.Registration;
 import com.codecool.web.dao.singletonDB.SingletonDataBase;
 
@@ -9,21 +11,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 @WebServlet("/protected/UserPromoteServlet")
-public class UserPromoteServlet extends HttpServlet{
+public class UserPromoteServlet extends AbstractServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-//        int id = Integer.parseInt(req.getParameter("id"));
-        String id = req.getParameter("id");
-        for ( Registration reg : SingletonDataBase.getInstance().getAllRegistration() ) {
-                if ( id.equals(reg.getName()) ) {
-                    reg.setRole("Mentor");
+
+        try (Connection connection = getConnection(req.getServletContext())) {
+            Storing db = new DaoDB(connection);
+
+            String name = req.getParameter("id");
+            for (Registration reg : db.getAllRegistration()) {
+                if (name.equals(reg.getName())) {
+                    db.userPromote(name,"Mentor");
                 }
+            }
+            resp.sendRedirect("userListServlet");
+
+        } catch (SQLException e){
+            e.printStackTrace();
         }
-        resp.sendRedirect("userListServlet");
 
     }
 }
