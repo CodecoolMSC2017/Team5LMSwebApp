@@ -17,7 +17,6 @@ public class DaoDB extends AbstractDB implements Storing {
 
     @Override
     public List<Registration> getAllRegistration() throws SQLException {
-
         String sql = "SELECT * FROM users";
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
@@ -72,6 +71,16 @@ public class DaoDB extends AbstractDB implements Storing {
             statement.setString(3, email);
             statement.setString(4, pass);
             statement.setInt(5, reg.getId());
+            statement.executeUpdate();
+        }
+    }
+
+    @Override
+    public void userPromote(String name, String role) throws SQLException {
+        String sql = "UPDATE users SET user_role = ? WHERE user_name = ?;";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, role);
+            statement.setString(2, name);
             statement.executeUpdate();
         }
     }
