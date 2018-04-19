@@ -285,6 +285,7 @@ public class DaoDB extends AbstractDB implements Storing {
         Integer[] temo = (Integer[]) tempRegs.getArray();
         List<Registration> regs = getStudentsbyId(temo);
 
+        System.out.println(regs);
         return new Attendance(id, title, regs);
 
     }
