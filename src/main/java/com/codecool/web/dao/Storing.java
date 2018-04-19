@@ -22,7 +22,7 @@ public interface Storing {
     List<Registration> getStudents() throws SQLException;
     List<Registration> getMentors() throws SQLException;
     List<AandQStore> getAQStoresPublished() throws SQLException;
-    List<Attendance> getAttendanceList();
+    List<Attendance> getAttendanceList() throws SQLException;
     List<String> getAttendancesTitle();
     Map<Registration, Integer> getStudentsAttendance();
     AandQStore addAQStores(String name) throws SQLException;

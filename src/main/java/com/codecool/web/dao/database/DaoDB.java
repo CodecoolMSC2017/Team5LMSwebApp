@@ -187,8 +187,36 @@ public class DaoDB extends AbstractDB implements Storing {
     }
 
     @Override
-    public List<Attendance> getAttendanceList() {
-        return null;
+    public List<Attendance> getAttendanceList() throws SQLException {
+        String sql = "SELECT * FROM attendance";
+        try (Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(sql)) {
+            List<Attendance> attendances = new ArrayList<>();
+            while (resultSet.next()) {
+                attendances.add(createAttandance(resultSet));
+            }
+            return attendances;
+        }
+    }
+
+    private Attendance createAttandance(ResultSet resultSet) throws SQLException {
+        int id = resultSet.getInt("attendance_id");
+        String title = resultSet.getString("attendance_date");
+        Array tempregs = resultSet.getArray("attendance_user_id");
+        List<Registration> regs = getRegistrationsbyId((Integer[]) tempregs.getArray());
+
+        return new Attendance(id, title, regs);
+
+    }
+
+    private List<Registration> getRegistrationsbyId(Integer[] regsId) throws SQLException{
+        List<Registration> registrations = getAllRegistration();
+        List<Registration> tempRegs = new ArrayList<>();
+        for(int i = 0; registrations.size() > i; i++){
+            if(regsId[i] == registrations.get(i).getId()){
+                tempRegs.add(registrations.get(i));
+            }
+        }return tempRegs;
     }
 
     @Override
