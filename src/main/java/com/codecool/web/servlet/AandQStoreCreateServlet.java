@@ -39,7 +39,8 @@ public class AandQStoreCreateServlet extends AbstractServlet{
                 req.setAttribute("AandQlist", db.getAQStoresPublished());
             }
 
-            req.getRequestDispatcher("assignments.jsp").include(req, resp);
+            //req.getRequestDispatcher("assignments.jsp").include(req, resp);
+            resp.sendRedirect("AandQStoreServlet");
 
         } catch (SQLException ex) {
             ex.printStackTrace();
