@@ -5,8 +5,6 @@ public class Assignment extends Task{
     //fields
     private int time;
     private String fullDescription;
-    private int id;
-    private int categoryId;
 
     //Constructor
     public Assignment(String title, String description, int time, String fullDescription) {
@@ -16,12 +14,9 @@ public class Assignment extends Task{
     }
 
     public Assignment(int id, String title, String description, int time, String fullDescription, int categoryId) {
-        super(title, description);
-        this.id = id;
+        super(id, title, description, categoryId);
         this.time = time;
         this.fullDescription = fullDescription;
-        this.categoryId = categoryId;
-
     }
 
     //Getters

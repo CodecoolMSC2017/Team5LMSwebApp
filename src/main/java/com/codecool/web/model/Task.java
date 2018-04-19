@@ -8,6 +8,7 @@ public abstract class Task {
     private String title;
     private String description;
     private int id;
+    private int categoryId;
     private boolean isPublished;
 
     //Constructor
@@ -16,6 +17,14 @@ public abstract class Task {
         this.id = rnd.nextInt(9000) + 1000;
         this.title = title;
         this.description = description;
+        this.isPublished = false;
+    }
+
+    public Task(int id, String title, String description, int categoryId){
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.categoryId = categoryId;
         this.isPublished = false;
     }
 

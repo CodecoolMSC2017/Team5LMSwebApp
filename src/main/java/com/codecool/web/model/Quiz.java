@@ -11,8 +11,6 @@ public class Quiz extends Task{
     private String date;
     private int maxPoint = 0;
     private List<Question> questions = new ArrayList<>();
-    private int id;
-    private int categoryId;
     private int time;
 
 
@@ -27,12 +25,10 @@ public class Quiz extends Task{
 
 
     public Quiz(int id,String title,String description,int time,int  categoryId) {
-        super(title, description);
+        super(id, title, description, categoryId);
         java.util.Date date = new Date( );
         SimpleDateFormat sdf = new SimpleDateFormat ("yyyy-MM-dd");
         this.date = sdf.format(date);
-        this.id = id;
-        this.categoryId = categoryId;
         this.time = time;
     }
     //Getters/SEtters
