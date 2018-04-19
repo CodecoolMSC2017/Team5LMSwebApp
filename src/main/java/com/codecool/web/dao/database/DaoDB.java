@@ -62,6 +62,20 @@ public class DaoDB extends AbstractDB implements Storing {
         return null;
     }
 
+    public Registration getRegistration(int id) throws SQLException {
+
+        String sql = "SELECT user_id, user_name, user_email, user_password, user_firstName, user_lastName, user_role FROM users WHERE user_id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, id);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return creatReg(resultSet);
+                }
+            }
+        }
+        return null;
+    }
+
     @Override
     public void updateReg(Registration reg, List<Registration> regs, String fname, String lname, String email, String pass) throws SQLException {
         String sql = "UPDATE users SET user_firstname = ?, user_lastname = ?, user_email = ?, user_password = ? WHERE user_id = ?;";
@@ -267,19 +281,19 @@ public class DaoDB extends AbstractDB implements Storing {
         int id = resultSet.getInt("attendance_id");
         String title = resultSet.getString("attendance_date");
         Array tempRegs = resultSet.getArray("attendance_user_id");
-        List<Registration> regs = getRegistrationsbyId((String[]) tempRegs.getArray());
+        System.out.println(tempRegs);
+        Integer[] temo = (Integer[]) tempRegs.getArray();
+        List<Registration> regs = getStudentsbyId(temo);
 
         return new Attendance(id, title, regs);
 
     }
 
-    private List<Registration> getRegistrationsbyId(String[] regsId) throws SQLException{
-        List<Registration> registrations = getAllRegistration();
+    private List<Registration> getStudentsbyId(Integer[] regsId) throws SQLException{
         List<Registration> tempRegs = new ArrayList<>();
-        for(int i = 0; registrations.size() > i; i++){
-            if(Integer.parseInt(regsId[i]) == registrations.get(i).getId()){
-                tempRegs.add(registrations.get(i));
-            }
+        for(int i = 0; regsId.length > i; i++){
+            Registration tempStudents = getRegistration(regsId[i]);
+            tempRegs.add(tempStudents);
         }return tempRegs;
     }
 
