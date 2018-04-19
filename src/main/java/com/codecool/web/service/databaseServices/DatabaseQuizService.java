@@ -27,6 +27,8 @@ public class DatabaseQuizService extends AbstractDatabaseService implements Quiz
             for (Quiz q : quizzes) {
                 if (id == q.getId()) {
                     quiz = q;
+                    quiz.setQuestions(db.getQuestions(quiz.getId()));
+                    System.out.println(quiz.getQuestions());
                     return quiz;
                 }
             }
@@ -50,9 +52,7 @@ public class DatabaseQuizService extends AbstractDatabaseService implements Quiz
     }
 
     @Override
-    public Question getQuestion(Quiz quiz, int id) {
-        return null;
-    }
+    public Question getQuestion(Quiz quiz, int id) {return null;}
 
     @Override
     public void delQuestion(int id) {

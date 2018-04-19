@@ -2,6 +2,7 @@ package com.codecool.web.dao;
 
 import com.codecool.web.model.AandQStore;
 import com.codecool.web.model.Attendance;
+import com.codecool.web.model.Question;
 import com.codecool.web.model.Registration;
 
 import java.sql.SQLException;
@@ -27,6 +28,7 @@ public interface Storing {
     Map<Registration, Integer> getStudentsAttendance();
     AandQStore addAQStores(String name) throws SQLException;
     void userPromote(String name, String role) throws SQLException;
+    List<Question> getQuestions(int id) throws SQLException;
 
 
 }

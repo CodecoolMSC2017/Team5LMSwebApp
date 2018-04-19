@@ -226,5 +226,8 @@ public class SingletonDataBase implements Storing {
 
     }
 
-
+    @Override
+    public List<Question> getQuestions(int id) throws SQLException {
+        return null;
+    }
 }

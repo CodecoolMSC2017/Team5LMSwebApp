@@ -13,6 +13,8 @@ public class Question {
     private String goodAnswer;
     private String excerciseAnswer;
     private int id;
+    private int user_id;
+    private int item_id;
 
     //QUizQuestion Constructor
     public Question(String description, int point, List<Answer> answers, String goodAnswer) {
@@ -22,6 +24,14 @@ public class Question {
         this.goodAnswer = goodAnswer;
         Random rnd = new Random();
         this.id = rnd.nextInt(90000)+10000;
+    }
+
+    public Question(int id, String description, String answer, int point, int item_id) {
+        this.id = id;
+        this.description = description;
+        this.goodAnswer = answer;
+        this.point = point;
+        this.item_id = item_id;
     }
 
     //ExcercieQuestion Constructor

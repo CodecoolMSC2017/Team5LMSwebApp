@@ -128,7 +128,7 @@ public class DaoDB extends AbstractDB implements Storing {
     }
 
     public List<Assignment> getAssignments(int aAndQid) throws SQLException {
-        String sql = "SELECT * FROM task_item WHERE task_item_task_id = ?";
+        String sql = "SELECT * FROM task_item WHERE task_item_task_id = ? AND task_item_category_id = 1";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, aAndQid);
             List<Assignment> assignments = new ArrayList<>();
@@ -154,7 +154,7 @@ public class DaoDB extends AbstractDB implements Storing {
     }
 
     public List<Quiz> getQuizes(int aAndQid) throws SQLException {
-        String sql = "SELECT * FROM task_item WHERE task_item_task_id = ?";
+        String sql = "SELECT * FROM task_item WHERE task_item_task_id = ? AND task_item_category_id = 2";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, aAndQid);
             List<Quiz> quizes = new ArrayList<>();
@@ -292,4 +292,40 @@ public class DaoDB extends AbstractDB implements Storing {
     public Map<Registration, Integer> getStudentsAttendance() {
         return null;
     }
+
+    @Override
+    public List<Question> getQuestions(int id) throws SQLException {
+        String sql = "SELECT * FROM task_question WHERE task_q_item_id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, id);
+            List<Question> questions = new ArrayList<>();
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    Question q = createQuestion(resultSet);
+                    questions.add(q);
+                }
+            }
+            return questions;
+        }
+    }
+
+    private Question createQuestion(ResultSet resultSet) throws SQLException {
+        int id = resultSet.getInt("task_q_id");
+        String description = resultSet.getString("task_q_question");
+        String answer = resultSet.getString("task_q_correct_answer");
+        int point = resultSet.getInt("task_q_point");
+        int item_id = resultSet.getInt("task_q_item_id");
+        return new Question(id, description, answer, point, item_id);
+    }
+
+
+
+
+
+
+
+
+
+
+
 }

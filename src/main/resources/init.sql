@@ -77,13 +77,13 @@ CREATE TABLE task_question (
     task_q_question TEXT NOT NULL,
     task_q_correct_answer TEXT NOT NULL,
     task_q_point INT NOT NULL,
-    task_q_submitted_user_id TEXT NULL,
+    task_q_submitted_user_id INT NULL,
     task_q_item_id INT NOT NULL
 );
 
-INSERT INTO task_question (task_q_question, task_q_correct_answer, task_q_submitted_user_id, task_q_point, task_q_item_id) VALUES
-    ('How can you see what''s inside the current directory?', 'By running "ls"', '', 2, 2),
-    ('What will the following command do: "ls ../.."', 'List the content of the "grandparent" of the current directory', '', 3, 2)
+INSERT INTO task_question (task_q_question, task_q_correct_answer, task_q_point, task_q_item_id) VALUES
+    ('How can you see what''s inside the current directory?', 'By running "ls"', 2, 2),
+    ('What will the following command do: "ls ../.."', 'List the content of the "grandparent" of the current directory', 3, 2)
 ;
 
 CREATE TABLE task_answer (
