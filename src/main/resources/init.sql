@@ -105,12 +105,12 @@ INSERT INTO task_answer (task_a_answer, task_a_question_id) VALUES
 CREATE TABLE attendance (
     attendance_id SERIAL PRIMARY KEY,
     attendance_date DATE NOT NULL,
-    attendance_user_id TEXT NOT NULL
+    attendance_user_id integer ARRAY NOT NULL
 );
 
 INSERT INTO attendance (attendance_date, attendance_user_id) VALUES
-    ('2018-04-01','3,4,5,6'),
-    ('2018-04-02','3,4,5'),
-    ('2018-04-03','3,5,6'),
-    ('2018-04-04','3,4')
+    ('2018-04-01','{3,4,5,6}'),
+    ('2018-04-02','{3,4,5}'),
+    ('2018-04-03','{3,5,6}'),
+    ('2018-04-04','{3,4}')
 ;
