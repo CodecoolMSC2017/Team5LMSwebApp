@@ -4,9 +4,11 @@ import com.codecool.web.model.Answer;
 import com.codecool.web.model.Question;
 import com.codecool.web.model.Quiz;
 
+import java.sql.SQLException;
+
 public interface QuizService {
 
-    Quiz getQuiz(int id);
+    Quiz getQuiz(int id) throws SQLException;
     void update(Quiz quiz, String title, String date, String description);
     void delQuiz(int id);
     void addQuestion(Quiz quiz);
