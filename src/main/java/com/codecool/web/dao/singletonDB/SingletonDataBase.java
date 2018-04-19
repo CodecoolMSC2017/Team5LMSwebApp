@@ -12,16 +12,17 @@ import java.util.Map;
 public class SingletonDataBase implements Storing {
 
     //fields
+
     private static final SingletonDataBase Instance = new SingletonDataBase();
     private List<Registration> registrations = new ArrayList<>();
     private List<AandQStore> aQStores = new ArrayList<>();
     private List<Attendance> attendanceList = new ArrayList<>();
-
     public static SingletonDataBase getInstance() {
         return Instance;
     }
 
     //Constructor
+
     private SingletonDataBase() {
         //Hardcoded things
 
@@ -62,7 +63,6 @@ public class SingletonDataBase implements Storing {
         attendanceList.add(attendance2);
         attendanceList.add(attendance3);
         }
-
 
 
     @Override
@@ -219,6 +219,11 @@ public class SingletonDataBase implements Storing {
             names.add(a.getTitle());
         }
         return names;
+    }
+
+    @Override
+    public void userPromote(String name, String role) throws SQLException {
+
     }
 
 
